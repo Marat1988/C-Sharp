@@ -11,6 +11,7 @@ namespace HomeWork9_10
         static void Main(string[] args)
         {
             Console.WriteLine("Привет гребанный Гит хаб");
+            Console.WriteLine("Я студент");
         }
     }
 }
