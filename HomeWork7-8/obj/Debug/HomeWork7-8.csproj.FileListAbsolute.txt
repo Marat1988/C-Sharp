@@ -1,0 +1,7 @@
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork7-8\bin\Debug\HomeWork7-8.exe.config
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork7-8\bin\Debug\HomeWork7-8.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork7-8\bin\Debug\HomeWork7-8.pdb
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork7-8\obj\Debug\HomeWork7-8.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork7-8\obj\Debug\HomeWork7-8.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork7-8\obj\Debug\HomeWork7-8.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork7-8\obj\Debug\HomeWork7-8.pdb
