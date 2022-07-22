@@ -53,9 +53,7 @@ namespace HomeWork9_10
             string str = Console.ReadLine();
             string[] st = str.Split(' '); //Загоняю в массив
             for (int i = 0; i < st.Length; i++)
-            {
                 st[i] = string.Join("", st[i].Reverse().ToArray()); //переворачиваю каждое слово
-            }
             Console.WriteLine(string.Join(" ", st)); //Вывожу
         }
 
