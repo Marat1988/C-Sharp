@@ -1,0 +1,7 @@
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork11-12\HomeWork11_12\bin\Debug\HomeWork11_12.exe.config
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork11-12\HomeWork11_12\bin\Debug\HomeWork11_12.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork11-12\HomeWork11_12\bin\Debug\HomeWork11_12.pdb
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork11-12\HomeWork11_12\obj\Debug\HomeWork11_12.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork11-12\HomeWork11_12\obj\Debug\HomeWork11_12.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork11-12\HomeWork11_12\obj\Debug\HomeWork11_12.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork11-12\HomeWork11_12\obj\Debug\HomeWork11_12.pdb
