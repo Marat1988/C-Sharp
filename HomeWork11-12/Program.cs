@@ -15,19 +15,19 @@ namespace HomeWork11_12
         }
         static void showTwoDimensionalArray(int[,] arr) //для вывода двумерного массива
         {
-            for (int i = 0; i < arr.GetUpperBound(0) + 1; i++) 
+            for (int i = 0; i < arr.GetLength(0); i++) 
             {
-                for (int j = 0; j < arr.GetUpperBound(1) + 1; j++)
+                for (int j = 0; j < arr.GetLength(1); j++)
                     Console.Write(arr[i,j] + "\t");
                 Console.WriteLine();
             }
         }
-        static void fillTwoDimensionalArray(int [,] arr) //для звполнения двумерного массива
+        static void fillTwoDimensionalArray(int [,] arr) //для заполнения двумерного массива
         {
             Random rand = new Random();
-            for (int i = 0; i < arr.GetUpperBound(0) + 1; i++)
+            for (int i = 0; i < arr.GetLength(0); i++)
             {
-                for (int j = 0; j < arr.GetUpperBound(1) + 1; j++)
+                for (int j = 0; j < arr.GetLength(1); j++)
                     arr[i, j] = rand.Next(50);
             }
         }
@@ -38,7 +38,7 @@ namespace HomeWork11_12
             Console.WriteLine("Исходный массив ");
             showOneDimensionalArray(arr);
             Console.Write("\nВведите число для поиска в массиве ");
-            Console.WriteLine((int.TryParse(Console.ReadLine(), out int number)) ? "Число встречается в массиве " + arr.Where(i => i == number).Count() + " раз" : "Вы ввели не число");
+            Console.WriteLine((int.TryParse(Console.ReadLine(), out int number)) ? "Число встречается в массиве " + arr.Where(i => i == number).Count() + " раз/а" : "Вы ввели не число");
         }
         /*2. В двумерном массиве порядка M на N поменяйте местами заданные столбцы.*/
         static void task2()
@@ -55,21 +55,36 @@ namespace HomeWork11_12
                     fillTwoDimensionalArray(arr);
                     Console.WriteLine("Исходный массив ");
                     showTwoDimensionalArray(arr);
-                    for (int i = 0; i < arr.GetUpperBound(0) + 1; i++)
-                        (arr[i, 2], arr[i, 5]) = (arr[i, 5], arr[i, 2]);
-                    Console.WriteLine("Конечный массив ");
-                    showTwoDimensionalArray(arr);
+                    Console.Write("Введите номер первого столбца для обмена (начиная с 1) ");
+                    string column1 = Console.ReadLine();
+                    Console.Write("Введите номер второго столбца для обмена (начиная с 1) ");
+                    string column2 = Console.ReadLine();
+                    if (int.TryParse(column1, out int swapColumn1) && int.TryParse(column2, out int swapColumn2))
+                    {
+                        if (swapColumn1 > 0 && swapColumn2 > 0 && swapColumn1 <= arr.GetLength(1) && swapColumn2 <= arr.GetLength(1))
+                        {
+                            for (int i = 0; i < arr.GetLength(0); i++)
+                                (arr[i, swapColumn1 - 1], arr[i, swapColumn2 - 1]) = (arr[i, swapColumn2 - 1], arr[i, swapColumn1 - 1]); /*Лучшего способа для обмена столбцами не нашел.
+                                                                                                                                         Если бы нужно было обменять строки, то тогда можно было использовать Array.Copy*/
+                            Console.Write("Конечный массив\n");
+                            showTwoDimensionalArray(arr);
+                        }
+                        else
+                            Console.Write("Не корректный ввод номера столбцов.\nНомера столбцов должны быть больше нуля и не превышать фактическом количество столбцов");
+                    }
+                    else
+                        Console.Write("Ошибка ввода. Вы ввели не число");                     
                 }
                 else
-                    Console.WriteLine("Число строк или столбцов должно быть больше нуля");
+                    Console.Write("Число строк или столбцов должно быть больше нуля");
             }
             else
-                Console.WriteLine("Не корректный ввод номера строк или столбцов");
+                Console.Write("Не корректный ввод номера строк или столбцов");
         }
         static void Main(string[] args)
         {
-            //task1();
-            Console.WriteLine("===========================================================");
+            task1();
+            Console.WriteLine("=================================================================================================================");
             task2();
         }
     }
