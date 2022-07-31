@@ -1,4 +1,6 @@
 ﻿using System;
+using Z.Expressions; //для работы с арифметическим выражением
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +21,24 @@ namespace HomeWork15_16
                     (key[j], key[j + 1]) = (key[j + 1], key[j]);
             return string.Join("", key);
         }
-
-        //Шифрование слова (метод "Цезаря")
+        private static bool checkText(string text) //Проверка введенных допустимых символов
+        {
+            bool flag = false;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (!((text[i] >= 1040 && text[i] <= 1103) || text[i] == 1105 || text[i] == 1025 || text[i] == '.' || text[i] == ',' || text[i] == ' '))
+                {
+                    flag = true;
+                    break;
+                }
+            }
+            return flag;
+        }
+        //Шифрование слова (метод "Цезаря"). Сайт для проверки https://planetcalc.ru/1434/?ysclid=l69btd0xzx544112516
         public static string encryptionWorld(string world, int countShift)
         {
+            string tempWorld = world; //Копия переданного стола world. Нужно для проверки регистра (большая буква)
+            world = world.ToLower(); //преобразую исходное переданное слово в нижний регистр
             string key = encryptionAlphabet(countShift);
             char[] worlds = world.ToCharArray();
             for (int i = 0; i < worlds.Length; i++)
@@ -36,6 +52,8 @@ namespace HomeWork15_16
                         if (world[i] == alphabet[j])
                         {
                             worlds[i] = key[j];
+                            if ((tempWorld[i] >= 1040 && tempWorld[i] <= 1071) || tempWorld[i] == 1025) //Проверяю буквы в верхнем регистре они или нет
+                                worlds[i] = char.ToUpper(worlds[i]); //Перевожу в вержний регистр
                             break;
                         }
                     }
@@ -43,27 +61,38 @@ namespace HomeWork15_16
             }
             return string.Join("", worlds);
         }
-
-        private static bool checkText(string text) //Проверка введенных допустимых символов
+        //Дешифрование слова
+        public static string descriptionWorld(string world, int countShift)
         {
-            bool flag = false;
-            for (int i = 0; i < text.Length; i++)
+            string tempWorld = world; //Копия переданного стола world. Нужно для проверки регистра (большая буква)
+            world = world.ToLower(); //преобразую исходное переданное слово в нижний регистр
+            string key = encryptionAlphabet(countShift);
+            char[] worlds = world.ToCharArray();
+            for (int i = 0; i < worlds.Length; i++)
             {
-                if (!((text[i] >= 1072 && text[i] <= 1103) || text[i] == 1105 || text[i]=='.' || text[i]==',' || text[i]==' '))
+                for (int j = 0; j < key.Length; j++)
                 {
-                    flag = true;
-                    break;
+                    if (worlds[i] == key[j])
+                    {
+                        worlds[i] = key[(j - countShift < 0) ? (j+(key.Length- countShift)) : (j - countShift)];
+                        if ((tempWorld[i] >= 1040 && tempWorld[i] <= 1071) || tempWorld[i] == 1025) //Проверяю буквы в верхнем регистре они или нет
+                            worlds[i] = char.ToUpper(worlds[i]); //Перевожу в вержний регистр
+                        break;
+                    }
                 }
             }
-            return flag;
+            return string.Join("", worlds);
         }
-
-        static void fillArray(double[,] arr) //для заполнения двумерного массива
+        //для заполнения двумерного массива
+        static void fillArray(double[,] mas1, double[,] mas2)
         {
             Random rand = new Random();
-            for (int i = 0; i < arr.GetLength(0); i++)
-                for (int j = 0; j < arr.GetLength(1); j++)
-                    arr[i, j] = rand.Next(0, 10);
+            for (int i = 0; i < mas1.GetLength(0); i++)
+                for (int j = 0; j < mas1.GetLength(1); j++)
+                {
+                    mas1[i, j] = rand.Next(0, 10); //Все равно оба массива одинакового размера
+                    mas2[i, j] = rand.Next(0, 10); //Все равно оба массива одинакового размера
+                }
         }
         /*Задание 1
         Пользователь вводит строку с клавиатуры. Необходимо зашифровать данную строку используя шифр Цезаря.
@@ -83,17 +112,22 @@ namespace HomeWork15_16
                 if (int.TryParse(Console.ReadLine(), out int countShift) && countShift >= 1 && countShift <= 32)
                 {
                     text = string.Join(" ", text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries)); //Удаление лишних пробелов
-                    string tempText = text;
-                    text = text.ToLower();//Преобразую в нижний регистр регистр
                     string[] str = text.Split(' '); //загоняю в массив
                     for (int i = 0; i < str.Length; i++)
                         str[i] = encryptionWorld(str[i], countShift); //Шифрую каждое слово в предложении
-                    Console.WriteLine(string.Join(" ",str));
+                    text = string.Join(" ", str);
+                    Console.WriteLine("Зашифрованное слово: " + text);
+                    //Расшифровываю слово
+                    string[] str2 = text.Split(' ');
+                    for (int i = 0; i < str2.Length; i++)
+                        str2[i] = descriptionWorld(str2[i], countShift); //Расшифровываю каждое слово в предложении
+                    text = string.Join(" ", str2);
+                    Console.WriteLine("Расшифрованное  слово: " + text);
+
                 }
                 else
                     Console.WriteLine("Не корректный ввод количества сдвигов!");
             }
-
         }
         /*Задание 2
         Создайте приложение, которое производит операции над матрицами:
@@ -107,8 +141,7 @@ namespace HomeWork15_16
             {
                 double[,] arr = new double[size, size];
                 double[,] arr2 = new double[size, size];
-                fillArray(arr);
-                fillArray(arr2);
+                fillArray(arr, arr2);
                 Matrix<double> matrixA = Matrix<double>.Build.DenseOfArray(arr);
                 Console.WriteLine("Матрица A");
                 Console.WriteLine(matrixA);
@@ -122,9 +155,9 @@ namespace HomeWork15_16
                 Console.Write("Введите число для умножения матрицы ");
                 if (int.TryParse(Console.ReadLine(), out int number))
                 {
-                    Console.WriteLine("Умножение матрицы A " + number);
+                    Console.WriteLine("Умножение матрицы A на число " + number);
                     Console.WriteLine(matrixA * number);
-                    Console.WriteLine("Умножение матрицы B " + number);
+                    Console.WriteLine("Умножение матрицы B на число " + number);
                     Console.WriteLine(matrixB * number);
                 }
                 else
@@ -133,10 +166,36 @@ namespace HomeWork15_16
             else
                 Console.WriteLine("Не корректный ввод количества строк и столбцов");
         }
+        /*Задание 3
+        Пользователь с клавиатуры вводит в строку арифметическое выражение. Приложение должно посчитать
+        его результат. Необходимо поддерживать только две операции: + и –.  */
+        static void task3()
+        {
+            Console.WriteLine("Введите строку с арифметического выражения, например 2+3 (допустимы только цифры и знак + и -)");
+            string expression = Console.ReadLine();
+            bool flag = false; //Проверка на допустимые символы
+            for (int i = 0; i < expression.Length; i++)
+            {
+                if (!((expression[i] >= 48 && expression[i] <= 57) || expression[i] == 43 || expression[i] == 45))
+                {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag)
+                Console.WriteLine("В введенной строке присутствуют недопустимые символы ");
+            else
+                Console.WriteLine(expression + " = " + Eval.Execute<int>(expression));
+        }
+
         static void Main(string[] args)
         {
-            task1();  
-
+            task1();
+            Console.WriteLine("=======================================================================================");
+            task2();
+            Console.WriteLine("=======================================================================================");
+            task3();
+            Console.ReadKey();
         }
     }
 }

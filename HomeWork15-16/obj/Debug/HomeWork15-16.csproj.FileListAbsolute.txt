@@ -10,3 +10,5 @@ C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork15-16\bin\Debug\System.ValueTuple.d
 C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork15-16\bin\Debug\MathNet.Numerics.xml
 C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork15-16\bin\Debug\System.ValueTuple.xml
 C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork15-16\obj\Debug\HomeWork15-16.csproj.CopyComplete
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork15-16\bin\Debug\Z.Expressions.Eval.dll
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork15-16\bin\Debug\Z.Expressions.Eval.xml
