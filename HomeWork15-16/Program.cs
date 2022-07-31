@@ -142,10 +142,11 @@ namespace HomeWork15_16
                 double[,] arr = new double[size, size];
                 double[,] arr2 = new double[size, size];
                 fillArray(arr, arr2);
-                Matrix<double> matrixA = Matrix<double>.Build.DenseOfArray(arr);
+                Matrix<double> matrixA = Matrix<double>.Build.DenseOfArray(arr); //создаем матрицу из двумерного массива
+                                                                                 // https://numerics.mathdotnet.com/Matrix.html#Creating-Matrices-and-Vectors
                 Console.WriteLine("Матрица A");
                 Console.WriteLine(matrixA);
-                Matrix<double> matrixB = Matrix<double>.Build.DenseOfArray(arr2);
+                Matrix<double> matrixB = Matrix<double>.Build.DenseOfArray(arr2); //создаем матрицу из двумерного массива
                 Console.WriteLine("Матрица B");
                 Console.WriteLine(matrixB);
                 Console.WriteLine("Умножение матрицы A на матрицу B");
@@ -185,7 +186,18 @@ namespace HomeWork15_16
             if (flag)
                 Console.WriteLine("В введенной строке присутствуют недопустимые символы ");
             else
-                Console.WriteLine(expression + " = " + Eval.Execute<int>(expression));
+            {
+                try
+                {
+                    Console.WriteLine(expression + " = " + Eval.Execute<int>(expression)); //Eval.Execute<int>(expression) выполняет
+                                                                                           //выражение (expression) и возвращает результат
+                                                                                          //сссылка https://eval-expression.net/eval-compile
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Ошибка при вычислении");
+                }    
+            }
         }
 
         static void Main(string[] args)
