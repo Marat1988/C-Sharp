@@ -172,7 +172,7 @@ namespace HomeWork15_16
         его результат. Необходимо поддерживать только две операции: + и –.  */
         static void task3()
         {
-            Console.WriteLine("Введите строку с арифметического выражения, например 2+3 (допустимы только цифры и знак + и -)");
+            Console.WriteLine("Введите строку арифметического выражения, например 2+3 (допустимы только цифры и знак + и -)");
             string expression = Console.ReadLine();
             bool flag = false; //Проверка на допустимые символы
             for (int i = 0; i < expression.Length; i++)
