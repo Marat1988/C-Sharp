@@ -13,9 +13,9 @@ namespace Exam1
         static void Main(string[] args)
         {
             MyDataBase.ShowInfo();
-           // MyDataBase.InsertData("Дувушка", "Girl");
-           // MyDataBase.ShowInfo();
-            MyDataBase.RenameWord("Дувушка", "Девушка");
+            // MyDataBase.InsertData("Дувушка", "Girl");
+            // MyDataBase.ShowInfo();
+            MyDataBase.InsertData("Кот", "Cat");
             MyDataBase.ShowInfo();
             Console.ReadKey();
         }

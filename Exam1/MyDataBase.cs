@@ -53,7 +53,7 @@ namespace MyDBHelper
             }
             connection.Close();
         }
-        //Добавление данных
+        //Добавление слова и его перевода в базу данных
         public static void InsertData(string word, string translateWord)
         {
             if (word.Length <= 0)
@@ -72,13 +72,29 @@ namespace MyDBHelper
             else
                 ExecuteSQL("UPDATE RusEng SET [Word] ='" + newWord + "' WHERE [Word] = '" + word + "'");
         }
-        //Удаление данных по id
-        public static void DeleteData(int id)
+        //Заменить перевод слова
+        public static void NewTranslateWord(string word, int id, string newTranslate)
+        {
+            if (word.Length <= 0 || id <= 0) 
+                Console.WriteLine("Слово или перевод слова не может быть пустым или введен не корректный id");
+            else
+                ExecuteSQL("UPDATE RusEng SET [Translate] ='" + newTranslate + "' WHERE [Word] = '" + word + "' AND [id] = " + id);
+        }
+        //Удаление слова по id
+        public static void DeleteWord(int id)
         {
             if (id <= 0)
-                Console.WriteLine("id не может быть меньше нуля");
+                Console.WriteLine("id слова не может быть меньше нуля");
             else
-                ExecuteSQL("DELETE FROM RusEng WHERE id = " + id);
+                ExecuteSQL("DELETE FROM RusEng WHERE [id] = " + id);
+        }
+        //Удаление слова
+        public static void DeleteWord(string word)
+        {
+            if (word.Length <= 0)
+                Console.WriteLine("Слово не может быть пустым");
+            else
+                ExecuteSQL("DELETE FROM RusEng WHERE [Word] ='" + word + "'");
         }
     }
 }
