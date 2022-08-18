@@ -14,6 +14,20 @@ namespace MyDBHelper
             command = new OleDbCommand(strSQL, connection);
             connection.Open();
         }
+        private static void ExecuteSQL(string strSQL)
+        {
+            try
+            {
+                OpenConnection(strSQL);
+                command.ExecuteNonQuery();
+                Console.WriteLine("Операция выполнена успешно.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            connection.Close();
+        }
         //Отображение данных таблицы
         public static void ShowInfo()
         {
@@ -42,38 +56,29 @@ namespace MyDBHelper
         //Добавление данных
         public static void InsertData(string word, string translateWord)
         {
-            string strSQL = "INSERT INTO RusEng ([Word], [Translate]) VALUES('" + word + "','" + translateWord + "')";
-            try
+            if (word.Length <= 0)
+                Console.WriteLine("Слово не может быть пустым");
+            else
             {
-                OpenConnection(strSQL);
-                using (command.ExecuteReader())
-                {
-                    Console.WriteLine("Успешное добавление в базу данных");
-                }
+                if (translateWord.Length <= 0) translateWord = null;
+                ExecuteSQL("INSERT INTO RusEng ([Word], [Translate]) VALUES('" + word + "','" + translateWord + "')");
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            connection.Close();
+        } 
+        //Заменить слово
+        public static void RenameWord(string word, string newWord)
+        {
+            if (word.Length <= 0 || newWord.Length <= 0)
+                Console.WriteLine("Слово не может быть пустым");
+            else
+                ExecuteSQL("UPDATE RusEng SET [Word] ='" + newWord + "' WHERE [Word] = '" + word + "'");
         }
         //Удаление данных по id
         public static void DeleteData(int id)
         {
-            string strSQL = "DELETE FROM RusEng WHERE id = " + id;
-            try
-            {
-                OpenConnection(strSQL);
-                using (command.ExecuteReader())
-                {
-                    Console.WriteLine("Успешное удаление из базы данных");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            connection.Close();
+            if (id <= 0)
+                Console.WriteLine("id не может быть меньше нуля");
+            else
+                ExecuteSQL("DELETE FROM RusEng WHERE id = " + id);
         }
     }
 }

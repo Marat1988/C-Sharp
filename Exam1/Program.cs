@@ -13,6 +13,10 @@ namespace Exam1
         static void Main(string[] args)
         {
             MyDataBase.ShowInfo();
+           // MyDataBase.InsertData("Дувушка", "Girl");
+           // MyDataBase.ShowInfo();
+            MyDataBase.RenameWord("Дувушка", "Девушка");
+            MyDataBase.ShowInfo();
             Console.ReadKey();
         }
     }
