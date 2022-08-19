@@ -15,9 +15,11 @@ namespace Exam1
             MyDataBase.ShowInfo();
             // MyDataBase.InsertData("Дувушка", "Girl");
             // MyDataBase.ShowInfo();
-            MyDataBase.InsertData("Кот", "Cat");
+            //MyDataBase.InsertData("Кот", "Cat");
+            //Console.WriteLine();
             MyDataBase.ShowInfo();
             Console.ReadKey();
+     
         }
     }
 }
