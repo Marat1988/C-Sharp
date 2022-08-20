@@ -17,12 +17,13 @@ namespace Exam1
 
             ConsoleMenu infoMenu = new ConsoleMenu("Информация");
             //infoMenu.ParrentMenu = mainMenu;
-            infoMenu.addMenuItem(0, "Отобразить весь список", null);
+
+            infoMenu.addMenuItem(0, "Отобразить весь список", InfoWordDistionary);
             infoMenu.addMenuItem(1, "Найти перевод слова", null);
             infoMenu.addMenuItem(2, "Назад", infoMenu.HideMenu);
            
             mainMenu.addMenuItem(0, "Выбрать словарь", null);
-            mainMenu.addMenuItem(1, "Редактирование словаря", infoMenu.ShowMenu);
+            mainMenu.addMenuItem(1, "Редактирование словаря", null);
             mainMenu.addMenuItem(2, "Информация", infoMenu.ShowMenu);
             mainMenu.addMenuItem(3, "Экспорт", null);
             mainMenu.addMenuItem(4, "Выход", Exit);
@@ -32,6 +33,11 @@ namespace Exam1
         }
 
         static void Exit() => Environment.Exit(0);
+        static void InfoWordDistionary()
+        {
+            MyDataBase.ShowInfo();
+            Console.ReadKey(true);
+        }
     }
 }
 

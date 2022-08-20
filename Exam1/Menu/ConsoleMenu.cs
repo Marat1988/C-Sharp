@@ -12,7 +12,7 @@ namespace Exam1.Menu
         private int cursor; //текущая позиция меню
         private string cursorText; //курсор
         private List<MenuItem> menuItemList; //Список меню
-        private bool ExitMenu { get; set; } = false; //флаг выхода из меню
+        private bool ExitMenu; //флаг выхода из меню
         private void ActiveCursorPozition(int cursorPozition)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -67,8 +67,11 @@ namespace Exam1.Menu
                     break;
                 case ConsoleKey.Enter:
                     {
+                        Console.Clear();
+                        Console.CursorVisible = true;
                         menuItemList[cursor]._delegate?.Invoke();
                         DrawMenu();
+                        Console.CursorVisible = false;
                     }
                     break;
             }
