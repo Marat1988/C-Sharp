@@ -12,6 +12,7 @@ namespace Exam1.Menu
         private int cursor; //текущая позиция меню
         private string cursorText; //курсор
         private List<MenuItem> menuItemList; //Список меню
+        private bool ExitMenu { get; set; } = false; //флаг выхода из меню
         private void ActiveCursorPozition(int cursorPozition)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -32,6 +33,22 @@ namespace Exam1.Menu
             Console.SetCursorPosition(menuItemList[cursor].CursorPosition.Item1, menuItemList[cursor].CursorPosition.Item2);
             ActiveCursorPozition(cursor);
         }
+        public void DrawMenu()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\t" + header + "\n");
+            Console.ResetColor();
+            for (int i = 0; i < menuItemList.Count; i++)
+            {
+                menuItemList[i].CursorPosition = (Console.CursorLeft, Console.CursorTop);
+                if (i == cursor)
+                    ActiveCursorPozition(i);
+                else
+                    CursorPozition(i);
+            }
+            Console.CursorVisible = false;
+        }
         public void NavigationMenu()
         {
             switch (Console.ReadKey(true).Key)
@@ -50,15 +67,12 @@ namespace Exam1.Menu
                     break;
                 case ConsoleKey.Enter:
                     {
-                        if (menuItemList[cursor]._delegate != null)
-                            ExitMenu = true;
                         menuItemList[cursor]._delegate?.Invoke();
+                        DrawMenu();
                     }
                     break;
             }
         }
-        public bool ExitMenu { get; set; } = false; //флаг выхода из меню
-        public ConsoleMenu ParrentMenu { get; set; } //Родительское меню
         public ConsoleMenu(string header, string cursorText="->")
         {
             this.header = header;
@@ -72,22 +86,15 @@ namespace Exam1.Menu
             if (!menuItemList.Any(item => item.id == id))
                 menuItemList.Add(new MenuItem(id, text, del));
         }
+        //Выход из меню
+        public void HideMenu()
+        {
+            ExitMenu = true;
+        }
         //Отображение меню
         public void ShowMenu()
         {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\t" + header + "\n");
-            Console.ResetColor();
-            for (int i = 0; i < menuItemList.Count; i++)
-            {
-                menuItemList[i].CursorPosition = (Console.CursorLeft, Console.CursorTop);
-                if (i == cursor)
-                    ActiveCursorPozition(i);
-                else
-                    CursorPozition(i);
-            }
-            Console.CursorVisible = false;
+            DrawMenu();
             ExitMenu = false;
             while (!ExitMenu)
             {
