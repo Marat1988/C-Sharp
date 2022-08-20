@@ -18,15 +18,15 @@ namespace Exam1
             ConsoleMenu infoMenu = new ConsoleMenu("Информация");
             //infoMenu.ParrentMenu = mainMenu;
 
-            infoMenu.addMenuItem(0, "Отобразить весь список", InfoWordDistionary);
-            infoMenu.addMenuItem(1, "Найти перевод слова", null);
-            infoMenu.addMenuItem(2, "Назад", infoMenu.HideMenu);
+            infoMenu.AddMenuItem(0, "Отобразить весь список", InfoWordDistionary);
+            infoMenu.AddMenuItem(1, "Найти перевод слова", null);
+            infoMenu.AddMenuItem(2, "Назад", infoMenu.HideMenu);
            
-            mainMenu.addMenuItem(0, "Выбрать словарь", null);
-            mainMenu.addMenuItem(1, "Редактирование словаря", null);
-            mainMenu.addMenuItem(2, "Информация", infoMenu.ShowMenu);
-            mainMenu.addMenuItem(3, "Экспорт", null);
-            mainMenu.addMenuItem(4, "Выход", Exit);
+            mainMenu.AddMenuItem(0, "Выбрать словарь", null);
+            mainMenu.AddMenuItem(1, "Редактирование словаря", null);
+            mainMenu.AddMenuItem(2, "Информация", infoMenu.ShowMenu);
+            mainMenu.AddMenuItem(3, "Экспорт", null);
+            mainMenu.AddMenuItem(4, "Выход", Exit);
             mainMenu.ShowMenu();
             Console.ReadKey();
    

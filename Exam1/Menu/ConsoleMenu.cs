@@ -84,7 +84,7 @@ namespace Exam1.Menu
             menuItemList = new List<MenuItem>();
         }
         //Добавление пункта меню
-        public void addMenuItem(int id, string text, Action del)
+        public void AddMenuItem(int id, string text, Action del)
         {
             if (!menuItemList.Any(item => item.id == id))
                 menuItemList.Add(new MenuItem(id, text, del));
