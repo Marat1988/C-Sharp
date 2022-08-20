@@ -11,15 +11,34 @@ namespace Exam1.Menu
         private string header; //заголовок
         private int cursor; //текущая позиция меню
         private string cursorText; //курсор
-        private bool exitMenu; //флаг выхода из меню
         private List<MenuItem> menuItemList; //Список меню
+        private void ActiveCursorPozition(int cursorPozition)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(cursorText + " ");
+            Console.WriteLine(menuItemList[cursorPozition].text);
+            Console.ResetColor();
+        }
+        private void CursorPozition(int cursorPozition)
+        {
+            Console.Write(new string(' ', cursorText.Length + 1));
+            Console.WriteLine(menuItemList[cursorPozition].text);
+        }
+        private void NavigationCursorPozition(ConsoleKey key)
+        {
+            Console.SetCursorPosition(menuItemList[cursor].CursorPosition.Item1, menuItemList[cursor].CursorPosition.Item2);
+            CursorPozition(cursor);
+            cursor = (key == ConsoleKey.UpArrow) ? (cursor-1) : (cursor+1);
+            Console.SetCursorPosition(menuItemList[cursor].CursorPosition.Item1, menuItemList[cursor].CursorPosition.Item2);
+            ActiveCursorPozition(cursor);
+        }
+        public bool ExitMenu { get; set; } = false; //флаг выхода из меню
         public ConsoleMenu ParrentMenu { get; set; } //Родительское меню
         public ConsoleMenu(string header, string cursorText="->")
         {
             this.header = header;
             this.cursorText = cursorText;
             cursor = 0;
-            exitMenu = false;
             menuItemList = new List<MenuItem>();
         }
         //Добавление пункта меню
@@ -39,26 +58,34 @@ namespace Exam1.Menu
             {
                 menuItemList[i].CursorPosition = (Console.CursorLeft, Console.CursorTop);
                 if (i == cursor)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(cursorText + " ");
-                    Console.WriteLine(menuItemList[i].text);
-                    Console.ResetColor();
-                }
+                    ActiveCursorPozition(i);
                 else
-                {
-                    Console.Write(new string(' ', cursorText.Length + 1));
-                    Console.WriteLine(menuItemList[i].text);
-                }
+                    CursorPozition(i);
             }
-
-            /*while (!exitMenu)
+            Console.CursorVisible = false;
+            while (!ExitMenu)
             {
                 switch (Console.ReadKey(true).Key)
                 {
-                    case ConsoleKey.UpArrow
-                }
-            }*/
+                    case ConsoleKey.UpArrow:
+                        {
+                            if (cursor > 0)
+                                NavigationCursorPozition(ConsoleKey.UpArrow);
+                        }
+                        break;
+                    case ConsoleKey.DownArrow:
+                        {
+                            if (cursor < menuItemList.Count - 1)
+                                NavigationCursorPozition(ConsoleKey.DownArrow);
+                        }
+                        break;
+                    case ConsoleKey.Enter:
+                        {
+                            menuItemList[cursor]._delegate();
+                        }
+                        break;
+                }  
+            }
         }
 
     }

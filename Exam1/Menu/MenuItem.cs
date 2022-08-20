@@ -11,7 +11,7 @@ namespace Exam1.Menu
         public int id { get; }
         public string text { get; }
         public Action _delegate { get; }
-        public (int, int) CursorPosition { get; set; } = (0, 0); //Пощиция на экране
+        public (int, int) CursorPosition { get; set; } = (0, 0); //Позиция меню на экране
         public MenuItem() { }
         public MenuItem(int id, string text, Action _del)
         {

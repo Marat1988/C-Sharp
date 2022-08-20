@@ -18,10 +18,14 @@ namespace Exam1
             mainMenu.addMenuItem(1, "Действия", null);
             mainMenu.addMenuItem(2, "Информация", null);
             mainMenu.addMenuItem(3, "Экспорт", null);
-            mainMenu.addMenuItem(4, "Выход", null);
+            mainMenu.addMenuItem(4, "Выход", Exit);
             mainMenu.ShowMenu();
+            int x = Console.CursorTop;
             Console.ReadKey();
+   
         }
+
+        static void Exit() => Environment.Exit(0);
     }
 }
 
