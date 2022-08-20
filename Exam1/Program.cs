@@ -14,13 +14,21 @@ namespace Exam1
         static void Main(string[] args)
         {
             ConsoleMenu mainMenu = new ConsoleMenu("Главное меню");
+
+            ConsoleMenu infoMenu = new ConsoleMenu("Информация");
+            infoMenu.ParrentMenu = mainMenu;
+            infoMenu.addMenuItem(0, "Отобразить весь список", null);
+            infoMenu.addMenuItem(1, "Найти перевод слова", null);
+            infoMenu.addMenuItem(2, "Назад", infoMenu.ParrentMenu.ShowMenu);
+            
+
+
             mainMenu.addMenuItem(0, "Выбрать словарь", null);
             mainMenu.addMenuItem(1, "Действия", null);
-            mainMenu.addMenuItem(2, "Информация", null);
+            mainMenu.addMenuItem(2, "Информация", infoMenu.ShowMenu);
             mainMenu.addMenuItem(3, "Экспорт", null);
             mainMenu.addMenuItem(4, "Выход", Exit);
             mainMenu.ShowMenu();
-            int x = Console.CursorTop;
             Console.ReadKey();
    
         }

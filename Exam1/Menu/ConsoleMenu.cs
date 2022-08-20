@@ -32,6 +32,31 @@ namespace Exam1.Menu
             Console.SetCursorPosition(menuItemList[cursor].CursorPosition.Item1, menuItemList[cursor].CursorPosition.Item2);
             ActiveCursorPozition(cursor);
         }
+        public void NavigationMenu()
+        {
+            switch (Console.ReadKey(true).Key)
+            {
+                case ConsoleKey.UpArrow:
+                    {
+                        if (cursor > 0)
+                            NavigationCursorPozition(ConsoleKey.UpArrow);
+                    }
+                    break;
+                case ConsoleKey.DownArrow:
+                    {
+                        if (cursor < menuItemList.Count - 1)
+                            NavigationCursorPozition(ConsoleKey.DownArrow);
+                    }
+                    break;
+                case ConsoleKey.Enter:
+                    {
+                        if (menuItemList[cursor]._delegate != null)
+                            ExitMenu = true;
+                        menuItemList[cursor]._delegate?.Invoke();
+                    }
+                    break;
+            }
+        }
         public bool ExitMenu { get; set; } = false; //флаг выхода из меню
         public ConsoleMenu ParrentMenu { get; set; } //Родительское меню
         public ConsoleMenu(string header, string cursorText="->")
@@ -63,30 +88,11 @@ namespace Exam1.Menu
                     CursorPozition(i);
             }
             Console.CursorVisible = false;
+            ExitMenu = false;
             while (!ExitMenu)
             {
-                switch (Console.ReadKey(true).Key)
-                {
-                    case ConsoleKey.UpArrow:
-                        {
-                            if (cursor > 0)
-                                NavigationCursorPozition(ConsoleKey.UpArrow);
-                        }
-                        break;
-                    case ConsoleKey.DownArrow:
-                        {
-                            if (cursor < menuItemList.Count - 1)
-                                NavigationCursorPozition(ConsoleKey.DownArrow);
-                        }
-                        break;
-                    case ConsoleKey.Enter:
-                        {
-                            menuItemList[cursor]._delegate();
-                        }
-                        break;
-                }  
+                NavigationMenu();
             }
         }
-
     }
 }
