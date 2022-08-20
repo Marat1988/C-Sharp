@@ -8,9 +8,10 @@ namespace Exam1.Menu
 {
     public class MenuItem
     {
-        private int id { get; }
-        private string text { get; }
-        private Action _delegate { get; }
+        public int id { get; }
+        public string text { get; }
+        public Action _delegate { get; }
+        public (int, int) CursorPosition { get; set; } = (0, 0); //Пощиция на экране
         public MenuItem() { }
         public MenuItem(int id, string text, Action _del)
         {
