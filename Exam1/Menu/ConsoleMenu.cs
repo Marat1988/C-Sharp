@@ -13,6 +13,7 @@ namespace Exam1.Menu
         private string cursorText; //курсор
         private List<MenuItem> menuItemList; //Список меню
         private bool ExitMenu; //флаг выхода из меню
+        //Активная позиция курсора
         private void ActiveCursorPozition(int cursorPozition)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -20,27 +21,30 @@ namespace Exam1.Menu
             Console.WriteLine(menuItemList[cursorPozition].text);
             Console.ResetColor();
         }
+        //Позиция курсора
         private void CursorPozition(int cursorPozition)
         {
             Console.Write(new string(' ', cursorText.Length + 1));
             Console.WriteLine(menuItemList[cursorPozition].text);
         }
+        //Навигация по меню
         private void NavigationCursorPozition(ConsoleKey key)
         {
             Console.SetCursorPosition(menuItemList[cursor].CursorPosition.Item1, menuItemList[cursor].CursorPosition.Item2);
             CursorPozition(cursor);
-            cursor = (key == ConsoleKey.UpArrow) ? (cursor-1) : (cursor+1);
+            cursor = (key == ConsoleKey.UpArrow) ? (cursor - 1) : (cursor + 1);
             Console.SetCursorPosition(menuItemList[cursor].CursorPosition.Item1, menuItemList[cursor].CursorPosition.Item2);
             ActiveCursorPozition(cursor);
         }
-        public ConsoleMenu(string header, string cursorText = "->")
+        //Конструктор
+        public ConsoleMenu(string header, string cursorText = "=>")
         {
             this.header = header;
             this.cursorText = cursorText;
             cursor = 0;
             menuItemList = new List<MenuItem>();
         }
-        //
+        //Прорисовка пунктов меню
         public void DrawMenu()
         {
             Console.Clear();
@@ -57,6 +61,7 @@ namespace Exam1.Menu
             }
             Console.CursorVisible = false;
         }
+        //Навигация по меню
         public void NavigationMenu()
         {
             switch (Console.ReadKey(true).Key)
@@ -91,10 +96,7 @@ namespace Exam1.Menu
                 menuItemList.Add(new MenuItem(id, text, del));
         }
         //Выход из меню
-        public void HideMenu()
-        {
-            ExitMenu = true;
-        }
+        public void HideMenu() => ExitMenu = true;
         //Отображение меню
         public void ShowMenu()
         {

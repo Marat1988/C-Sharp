@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Data.OleDb;
 
 namespace MyDBHelper
@@ -33,6 +34,7 @@ namespace MyDBHelper
             try
             {
                 OpenConnection(strSQL);
+                
                 using (OleDbDataReader reader = command.ExecuteReader())
                 {
                     Console.WriteLine("id\t\tСлово\t\t\tПеревод");
@@ -51,6 +53,36 @@ namespace MyDBHelper
             }
             connection.Close();
         }
+        private static void ExportInfoFile(string strSQL)
+        {
+            Console.WriteLine("Начинаю перевод");
+            try
+            {
+                OpenConnection(strSQL);
+                using (OleDbDataReader reader = command.ExecuteReader())               
+                using (StreamWriter writer = new StreamWriter("info.txt"))
+                {
+                    writer.WriteLine("id\t\tСлово\t\t\tПеревод");
+                    writer.WriteLine("======================================================");
+                    int countWorld = 1;
+                    while (reader.Read())
+                    {
+                        Console.WriteLine(countWorld + " слово");
+                        writer.WriteLine("{0}\t\t{1}\t\t{2}", reader["id"], reader["Word"], reader["Translate"]);
+                        countWorld++;
+                    }
+                }
+                Console.WriteLine("Перевод успешно выполнен");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            connection.Close();
+            Console.ReadKey(true);
+        }
+        //Экспорт информации в текстовый файл
+        public static void ExportAllWordInFile() => ExportInfoFile("SELECT * FROM RusEng ORDER BY 2,3");
         //Отображение данных таблицы
         public static void ShowInfo() => SelectSQL("SELECT * FROM RusEng ORDER BY 2,3");
         //Поиск перевода слова из таблицы
