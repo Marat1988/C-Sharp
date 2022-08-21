@@ -33,6 +33,14 @@ namespace Exam1.Menu
             Console.SetCursorPosition(menuItemList[cursor].CursorPosition.Item1, menuItemList[cursor].CursorPosition.Item2);
             ActiveCursorPozition(cursor);
         }
+        public ConsoleMenu(string header, string cursorText = "->")
+        {
+            this.header = header;
+            this.cursorText = cursorText;
+            cursor = 0;
+            menuItemList = new List<MenuItem>();
+        }
+        //
         public void DrawMenu()
         {
             Console.Clear();
@@ -75,13 +83,6 @@ namespace Exam1.Menu
                     }
                     break;
             }
-        }
-        public ConsoleMenu(string header, string cursorText="->")
-        {
-            this.header = header;
-            this.cursorText = cursorText;
-            cursor = 0;
-            menuItemList = new List<MenuItem>();
         }
         //Добавление пункта меню
         public void AddMenuItem(int id, string text, Action del)

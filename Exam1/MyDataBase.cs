@@ -28,10 +28,8 @@ namespace MyDBHelper
             }
             connection.Close();
         }
-        //Отображение данных таблицы
-        public static void ShowInfo()
+        private static void SelectSQL(string strSQL)
         {
-            string strSQL = "SELECT * FROM RusEng ORDER BY 2,3";
             try
             {
                 OpenConnection(strSQL);
@@ -53,6 +51,10 @@ namespace MyDBHelper
             }
             connection.Close();
         }
+        //Отображение данных таблицы
+        public static void ShowInfo() => SelectSQL("SELECT * FROM RusEng ORDER BY 2,3");
+        //Поиск перевода слова из таблицы
+        public static void ShowTranslateWord(string word) => SelectSQL("SELECT * FROM RusEng WHERE [Word] = '" + word + "'");
         //Добавление слова и его перевода в базу данных
         public static void InsertData(string word, string translateWord)
         {

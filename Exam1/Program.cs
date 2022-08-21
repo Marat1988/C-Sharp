@@ -14,28 +14,30 @@ namespace Exam1
         static void Main(string[] args)
         {
             ConsoleMenu mainMenu = new ConsoleMenu("Главное меню");
-
             ConsoleMenu infoMenu = new ConsoleMenu("Информация");
-            //infoMenu.ParrentMenu = mainMenu;
-
+            //Меню информация
             infoMenu.AddMenuItem(0, "Отобразить весь список", InfoWordDistionary);
-            infoMenu.AddMenuItem(1, "Найти перевод слова", null);
+            infoMenu.AddMenuItem(1, "Найти перевод слова", InfoTranslateWord);
             infoMenu.AddMenuItem(2, "Назад", infoMenu.HideMenu);
-           
+            //Формирование главного меню
             mainMenu.AddMenuItem(0, "Выбрать словарь", null);
             mainMenu.AddMenuItem(1, "Редактирование словаря", null);
             mainMenu.AddMenuItem(2, "Информация", infoMenu.ShowMenu);
             mainMenu.AddMenuItem(3, "Экспорт", null);
             mainMenu.AddMenuItem(4, "Выход", Exit);
             mainMenu.ShowMenu();
-            Console.ReadKey();
-   
+            Console.ReadKey();  
         }
-
         static void Exit() => Environment.Exit(0);
         static void InfoWordDistionary()
         {
             MyDataBase.ShowInfo();
+            Console.ReadKey(true);
+        }
+        static void InfoTranslateWord()
+        {
+            Console.Write("Введите слово: ");
+            MyDataBase.ShowTranslateWord(Console.ReadLine());
             Console.ReadKey(true);
         }
     }
