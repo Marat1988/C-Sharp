@@ -16,8 +16,9 @@ namespace Exam1
             editDictionatyMenu.AddMenuItem(0, "Добавить слово в словарь", InsertWordInDataBase);
             editDictionatyMenu.AddMenuItem(1, "Заменить слово в словаре", RenameWord);
             editDictionatyMenu.AddMenuItem(2, "Изменить перевод слова в словаре", EditTranslateWord);
-            editDictionatyMenu.AddMenuItem(3, "Удаление слова по id", DeleteWordId);
-            editDictionatyMenu.AddMenuItem(4, "Назад", editDictionatyMenu.HideMenu);
+            editDictionatyMenu.AddMenuItem(3, "Удаление слова по id из базы данных", DeleteWordId);
+            editDictionatyMenu.AddMenuItem(4, "Удаление слова из базы данных", DeleteWord);
+            editDictionatyMenu.AddMenuItem(5, "Назад", editDictionatyMenu.HideMenu);
             //Меню информация
             infoMenu.AddMenuItem(0, "Отобразить весь список", AllWords);
             infoMenu.AddMenuItem(1, "Найти перевод слова", InfoTranslateWord);
@@ -75,6 +76,11 @@ namespace Exam1
             Console.Write("Введите id слова: ");
             if (int.TryParse(Console.ReadLine(), out int id))
                 MyDataBase.DeleteWord(id);
+        }
+        static void DeleteWord()
+        {
+            Console.Write("Введите слово: ");
+            MyDataBase.DeleteWord(Console.ReadLine());
         }
         //Меню информация
         static void AllWords()
