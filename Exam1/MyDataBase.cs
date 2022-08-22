@@ -34,8 +34,7 @@ namespace MyDBHelper
         {
             try
             {
-                OpenConnection(strSQL);
-                
+                OpenConnection(strSQL);               
                 using (OleDbDataReader reader = command.ExecuteReader())
                 {
                     Console.WriteLine("id\t\tСлово\t\t\tПеревод");
@@ -46,6 +45,7 @@ namespace MyDBHelper
                         Console.SetCursorPosition(40, Console.CursorTop - 1);
                         Console.WriteLine(reader["Translate"]);
                     }
+                    Console.WriteLine("======================================================");
                 }
             }
             catch (Exception ex)
@@ -53,7 +53,6 @@ namespace MyDBHelper
                 Console.WriteLine(ex.Message);
             }
             connection.Close();
-            Console.ReadKey(true);
         }
         private static void ExportInfoFile(string strSQL)
         {
@@ -100,9 +99,7 @@ namespace MyDBHelper
             if (word.Length <= 0)
                 Console.WriteLine("Слово не может быть пустым");
             else
-            {
                 ExecuteSQL("INSERT INTO RusEng ([Word], [Translate]) VALUES('" + word + "','" + ((translateWord.Length == 0) ? null : translateWord) + "')");
-            }
         } 
         //Заменить слово
         public static void RenameWord(string word, string newWord)

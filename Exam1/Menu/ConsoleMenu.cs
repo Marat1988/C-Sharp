@@ -10,7 +10,7 @@ namespace Exam1.Menu
     {
         private string header; //заголовок
         private int cursor; //текущая позиция меню
-        private string cursorText; //курсор
+        private string cursorText; //текст курсора
         private List<MenuItem> menuItemList; //Список меню
         private bool ExitMenu; //флаг выхода из меню
         //Активная позиция курсора
