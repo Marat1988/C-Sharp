@@ -16,6 +16,10 @@ namespace Exam1
             ConsoleMenu mainMenu = new ConsoleMenu("Главное меню");
             ConsoleMenu infoMenu = new ConsoleMenu("Информация");
             ConsoleMenu exportMenu = new ConsoleMenu("Экспорт в текстовый файл");
+            ConsoleMenu editDictionatyMenu = new ConsoleMenu("Редактирование словаря");
+            //Меню редактирование словаря
+            editDictionatyMenu.AddMenuItem(0, "Добавить слово в словарь", InsertWordInDataBase);
+            editDictionatyMenu.AddMenuItem(1, "Назад", editDictionatyMenu.HideMenu);
             //Меню информация
             infoMenu.AddMenuItem(0, "Отобразить весь список", MyDataBase.ShowInfo);
             infoMenu.AddMenuItem(1, "Найти перевод слова", InfoTranslateWord);
@@ -27,10 +31,11 @@ namespace Exam1
             exportMenu.AddMenuItem(2, "Назад", exportMenu.HideMenu);
             //Формирование главного меню
             mainMenu.AddMenuItem(0, "Выбрать словарь", null);
-            mainMenu.AddMenuItem(1, "Редактирование словаря", null);
+            mainMenu.AddMenuItem(1, "Редактирование словаря", editDictionatyMenu.ShowMenu);
             mainMenu.AddMenuItem(2, "Информация", infoMenu.ShowMenu);
             mainMenu.AddMenuItem(3, "Экспорт", exportMenu.ShowMenu);
-            mainMenu.AddMenuItem(4, "Выход", Exit);
+            mainMenu.AddMenuItem(4, "Об авторе", InfoAuthor);
+            mainMenu.AddMenuItem(5, "Выход", Exit);
             mainMenu.ShowMenu();
             Console.ReadKey();  
         }
@@ -44,6 +49,19 @@ namespace Exam1
         {
             Console.Write("Введите слово: ");
             MyDataBase.ExportWordTranslateInFile(Console.ReadLine());
+        }
+        static void InfoAuthor() {
+            Console.WriteLine("Тухтаров Марат. Группа БВ112. Академия \"ТОП\"");
+            Console.ReadKey(true);
+        } 
+        static void InsertWordInDataBase()
+        {
+            Console.Write("Введите слово: ");
+            string word = Console.ReadLine();
+            Console.WriteLine();
+            Console.Write("Введите перевод слова: ");
+            string translateWord = Console.ReadLine();
+            MyDataBase.InsertData(word, translateWord);
         }
     }
 }

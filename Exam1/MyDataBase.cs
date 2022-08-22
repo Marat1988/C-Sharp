@@ -28,6 +28,7 @@ namespace MyDBHelper
                 Console.WriteLine(ex.Message);
             }
             connection.Close();
+            Console.ReadKey(true);
         }
         private static void SelectSQL(string strSQL)
         {
