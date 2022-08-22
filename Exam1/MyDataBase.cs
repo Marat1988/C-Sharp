@@ -30,8 +30,9 @@ namespace MyDBHelper
             connection.Close();
             Console.ReadKey(true);
         }
-        private static void SelectSQL(string strSQL)
+        private static void SelectSQL(string strSQL, int countRows=0)
         {
+            countRows = 0;
             try
             {
                 OpenConnection(strSQL);               
@@ -44,6 +45,7 @@ namespace MyDBHelper
                         Console.WriteLine("{0} \t\t{1}", reader["id"], reader["Word"]);
                         Console.SetCursorPosition(40, Console.CursorTop - 1);
                         Console.WriteLine(reader["Translate"]);
+                        countRows++;
                     }
                     Console.WriteLine("======================================================");
                 }
@@ -119,9 +121,11 @@ namespace MyDBHelper
             else
                 ExecuteSQL("UPDATE RusEng SET [Translate] ='" + ((newTranslate.Length == 0) ? null : newTranslate) + "' WHERE [Word] = '" + word + "' AND [id] = " + id);
         }
-        //Удаление слова по id
-        public static void DeleteWord(int id) => ExecuteSQL("DELETE FROM RusEng WHERE [id] = " + id);
         //Удаление слова
         public static void DeleteWord(string word) => ExecuteSQL("DELETE FROM RusEng WHERE [Word] ='" + word.Trim(' ') + "'");
+        //Удаление слова по id
+        public static void DeleteWord(int id) => ExecuteSQL("DELETE FROM RusEng WHERE [id] =" + id);
+        //Удаление перевода слова (кроме последнего)
+        public static void ClearTranslateWord(string word)=>ExecuteSQL("UPDATE RusEng SET [Translate] = null WHERE [Word] = '" + word + "' AND [id] NOT IN (SELECT Max(id) AS MaxId FROM RusEng WHERE [Word] = '" + word + "')");
     }
 }

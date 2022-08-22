@@ -16,9 +16,10 @@ namespace Exam1
             editDictionatyMenu.AddMenuItem(0, "Добавить слово в словарь", InsertWordInDataBase);
             editDictionatyMenu.AddMenuItem(1, "Заменить слово в словаре", RenameWord);
             editDictionatyMenu.AddMenuItem(2, "Изменить перевод слова в словаре", EditTranslateWord);
-            editDictionatyMenu.AddMenuItem(3, "Удаление слова по id из базы данных", DeleteWordId);
-            editDictionatyMenu.AddMenuItem(4, "Удаление слова из базы данных", DeleteWord);
-            editDictionatyMenu.AddMenuItem(5, "Назад", editDictionatyMenu.HideMenu);
+            editDictionatyMenu.AddMenuItem(3, "Удаление слова из базы данных", DeleteWord);
+            editDictionatyMenu.AddMenuItem(4, "Удаление слова из базы данных по id", DeleteWordId);
+            editDictionatyMenu.AddMenuItem(5, "Удалить переводы слова из базы данных (последний перевод не удаляется)", ClearTranslateWord);
+            editDictionatyMenu.AddMenuItem(6, "Назад", editDictionatyMenu.HideMenu);
             //Меню информация
             infoMenu.AddMenuItem(0, "Отобразить весь список", AllWords);
             infoMenu.AddMenuItem(1, "Найти перевод слова", InfoTranslateWord);
@@ -71,16 +72,24 @@ namespace Exam1
                 MyDataBase.NewTranslateWord(word, id, newTranslate);
             }
         }
+        static void DeleteWord()
+        {
+            Console.Write("Введите слово: ");
+            MyDataBase.DeleteWord(Console.ReadLine());
+            Console.ReadKey(true);
+        }
         static void DeleteWordId()
         {
             Console.Write("Введите id слова: ");
             if (int.TryParse(Console.ReadLine(), out int id))
                 MyDataBase.DeleteWord(id);
+            Console.ReadKey(true);
         }
-        static void DeleteWord()
+        static void ClearTranslateWord()
         {
-            Console.Write("Введите слово: ");
-            MyDataBase.DeleteWord(Console.ReadLine());
+            Console.Write("Введите id слова: ");
+            MyDataBase.ClearTranslateWord(Console.ReadLine());
+            Console.ReadKey(true);
         }
         //Меню информация
         static void AllWords()
@@ -107,7 +116,7 @@ namespace Exam1
         }
         //Меню об авторе
         static void InfoAuthor() {
-            Console.WriteLine("Тухтаров Марат. Группа БВ112. Академия \"ТОП\" г. Калининград 2022");
+            Console.WriteLine("Тухтаров Марат. Группа БВ112. Академия \"ТОП\" г. Калининград, 2022");
             Console.ReadKey(true);
         }
     }
