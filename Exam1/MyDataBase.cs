@@ -58,7 +58,7 @@ namespace MyDBHelper
         }
         private static void ExportInfoFile(string strSQL)
         {
-            Console.WriteLine("Начинаю перевод");
+            Console.WriteLine("Начинаю экспорт");
             try
             {
                 OpenConnection(strSQL);
@@ -75,7 +75,7 @@ namespace MyDBHelper
                         countWorld++;
                     }
                 }
-                Console.WriteLine("Перевод успешно выполнен");
+                Console.WriteLine("Экспорт успешно выполнен");
             }
             catch (Exception ex)
             {
