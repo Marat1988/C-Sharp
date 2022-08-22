@@ -19,7 +19,8 @@ namespace Exam1
             ConsoleMenu editDictionatyMenu = new ConsoleMenu("Редактирование словаря");
             //Меню редактирование словаря
             editDictionatyMenu.AddMenuItem(0, "Добавить слово в словарь", InsertWordInDataBase);
-            editDictionatyMenu.AddMenuItem(1, "Назад", editDictionatyMenu.HideMenu);
+            editDictionatyMenu.AddMenuItem(1, "Заменить слово в словаре", RenameWord);
+            editDictionatyMenu.AddMenuItem(2, "Назад", editDictionatyMenu.HideMenu);
             //Меню информация
             infoMenu.AddMenuItem(0, "Отобразить весь список", MyDataBase.ShowInfo);
             infoMenu.AddMenuItem(1, "Найти перевод слова", InfoTranslateWord);
@@ -51,18 +52,24 @@ namespace Exam1
             MyDataBase.ExportWordTranslateInFile(Console.ReadLine());
         }
         static void InfoAuthor() {
-            Console.WriteLine("Тухтаров Марат. Группа БВ112. Академия \"ТОП\"");
+            Console.WriteLine("Тухтаров Марат. Группа БВ112. Академия \"ТОП\" г. Калининград 2022");
             Console.ReadKey(true);
         } 
         static void InsertWordInDataBase()
         {
             Console.Write("Введите слово: ");
             string word = Console.ReadLine();
-            Console.WriteLine();
             Console.Write("Введите перевод слова: ");
             string translateWord = Console.ReadLine();
             MyDataBase.InsertData(word, translateWord);
         }
+        static void RenameWord()
+        {
+            Console.Write("Введите слово из словаря: ");
+            string word = Console.ReadLine();
+            Console.Write("Введите новое слово: ");
+            string newWord = Console.ReadLine();
+            MyDataBase.RenameWord(word, newWord);
+        }
     }
 }
-

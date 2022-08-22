@@ -92,7 +92,7 @@ namespace MyDBHelper
         //Поиск перевода слова из таблицы
         public static void ShowTranslateWord(string word) => SelectSQL("SELECT * FROM RusEng WHERE [Word] = '" + word + "'");
         //Посмотреть слова без перевода
-        public static void ShowWordNoTranslate()=> SelectSQL("SELECT * FROM RusEng WHERE Len([Word])=0 OR [Word] IS NULL");
+        public static void ShowWordNoTranslate()=> SelectSQL("SELECT * FROM RusEng WHERE Len([Translate])=0 OR [Translate] IS NULL");
         //Добавление слова и его перевода в базу данных
         public static void InsertData(string word, string translateWord)
         {
