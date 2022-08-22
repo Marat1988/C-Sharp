@@ -52,6 +52,7 @@ namespace MyDBHelper
                 Console.WriteLine(ex.Message);
             }
             connection.Close();
+            Console.ReadKey(true);
         }
         private static void ExportInfoFile(string strSQL)
         {
@@ -83,10 +84,14 @@ namespace MyDBHelper
         }
         //Экспорт информации в текстовый файл
         public static void ExportAllWordInFile() => ExportInfoFile("SELECT * FROM RusEng ORDER BY 2,3");
+        //Экспорт слова и его перевода в файл
+        public static void ExportWordTranslateInFile(string word) => ExportInfoFile("SELECT * FROM RusEng WHERE [Word] = '" + word + "'");
         //Отображение данных таблицы
         public static void ShowInfo() => SelectSQL("SELECT * FROM RusEng ORDER BY 2,3");
         //Поиск перевода слова из таблицы
         public static void ShowTranslateWord(string word) => SelectSQL("SELECT * FROM RusEng WHERE [Word] = '" + word + "'");
+        //Посмотреть слова без перевода
+        public static void ShowWordNoTranslate()=> SelectSQL("SELECT * FROM RusEng WHERE Len([Word])=0 OR [Word] IS NULL");
         //Добавление слова и его перевода в базу данных
         public static void InsertData(string word, string translateWord)
         {

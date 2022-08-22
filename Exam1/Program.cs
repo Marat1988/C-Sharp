@@ -17,12 +17,13 @@ namespace Exam1
             ConsoleMenu infoMenu = new ConsoleMenu("Информация");
             ConsoleMenu exportMenu = new ConsoleMenu("Экспорт в текстовый файл");
             //Меню информация
-            infoMenu.AddMenuItem(0, "Отобразить весь список", InfoWordDistionary);
+            infoMenu.AddMenuItem(0, "Отобразить весь список", MyDataBase.ShowInfo);
             infoMenu.AddMenuItem(1, "Найти перевод слова", InfoTranslateWord);
-            infoMenu.AddMenuItem(2, "Назад", infoMenu.HideMenu);
+            infoMenu.AddMenuItem(2, "Посмотреть слова без перевода", MyDataBase.ShowWordNoTranslate);
+            infoMenu.AddMenuItem(3, "Назад", infoMenu.HideMenu);
             //Меню Экспорт
             exportMenu.AddMenuItem(0, "Экспорт словаря в файл", MyDataBase.ExportAllWordInFile);
-            exportMenu.AddMenuItem(1, "Экспорт перевода слова в файл", null);
+            exportMenu.AddMenuItem(1, "Экспорт перевода слова в файл", ExportTranslateWord);
             exportMenu.AddMenuItem(2, "Назад", exportMenu.HideMenu);
             //Формирование главного меню
             mainMenu.AddMenuItem(0, "Выбрать словарь", null);
@@ -34,16 +35,15 @@ namespace Exam1
             Console.ReadKey();  
         }
         static void Exit() => Environment.Exit(0);
-        static void InfoWordDistionary()
-        {
-            MyDataBase.ShowInfo();
-            Console.ReadKey(true);
-        }
         static void InfoTranslateWord()
         {
             Console.Write("Введите слово: ");
             MyDataBase.ShowTranslateWord(Console.ReadLine());
-            Console.ReadKey(true);
+        }
+        static void ExportTranslateWord()
+        {
+            Console.Write("Введите слово: ");
+            MyDataBase.ExportWordTranslateInFile(Console.ReadLine());
         }
     }
 }

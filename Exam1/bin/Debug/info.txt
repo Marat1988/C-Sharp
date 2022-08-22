@@ -1,17 +1,3 @@
 id		Слово			Перевод
 ======================================================
-13		New Developer		New Address
-7		Город		City
-19		Девушка		Girl
-16		Девушка		Girls
-3		Книга		Book
-4		Компьютер		Computer
-10		Конструктор		Constructor
-26		Кот		Cat
-9		Мороженое		Ice
-11		Папка		Folder
-6		Привантый		Private
 1		Привет		Hello
-5		Публичный		Public
-8		Системная плата		Motherboard
-15		Собака		Dog
