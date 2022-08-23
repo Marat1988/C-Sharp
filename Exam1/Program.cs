@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Data.OleDb;
 using MyDBHelper;
 using Exam1.Menu;
 
@@ -6,19 +8,22 @@ namespace Exam1
 {
     class Program
     {
-        public struct settingDistionary //Настройка словаря для работы
+        public struct settingDistionary //Данные словаря
         {
-            public static int id;
-            public static string dictionary;
-            public static string tableName;
+            public static string dictionary = "Русско-английский словарь";
+            public static string tableName = "RusEng";
         }
         static void Main(string[] args)
         {
-            MyDataBase.SettingDictionary(ref settingDistionary.id, ref settingDistionary.dictionary, ref settingDistionary.tableName);
+            //Создание меню
             ConsoleMenu mainMenu = new ConsoleMenu(settingDistionary.dictionary, "Главное меню");
+            ConsoleMenu dictionaryMenu = new ConsoleMenu(settingDistionary.dictionary, "Выбор словаря");
             ConsoleMenu editDictionatyMenu = new ConsoleMenu(settingDistionary.dictionary, "Редактирование словаря");
             ConsoleMenu infoMenu = new ConsoleMenu(settingDistionary.dictionary, "Информация");
             ConsoleMenu exportMenu = new ConsoleMenu(settingDistionary.dictionary, "Экспорт в текстовый файл");
+            //Выбор словаря и формирование меню
+            MyDataBase.SettingDictionary(ref settingDistionary.dictionary, ref settingDistionary.tableName);
+            SetMenuDictionaries(ref dictionaryMenu);
             //Меню редактирование словаря
             editDictionatyMenu.AddMenuItem(0, "Добавить слово в словарь", InsertWordInDataBase);
             editDictionatyMenu.AddMenuItem(1, "Заменить слово в словаре", RenameWord);
@@ -125,6 +130,35 @@ namespace Exam1
         static void InfoAuthor() {
             Console.WriteLine("Тухтаров Марат. Группа БВ112. Академия \"ТОП\" г. Калининград, 2022");
             Console.ReadKey(true);
+        }
+        //Выбор словаря
+        static void ChooseDistionary()
+        {
+
+        }
+        static void SetMenuDictionaries(ref ConsoleMenu dictionaryMenu)
+        {
+            string strSQL = "SELECT * FROM ListDictionaries";  
+            using (OleDbConnection connection = new OleDbConnection(MyDataBase.connectionString))
+            {
+                OleDbCommand command = new OleDbCommand(strSQL, connection); 
+                try
+                {
+                    connection.Open();
+                    using (OleDbDataReader reader = command.ExecuteReader())
+                    {
+                        Console.WriteLine("------------Original data----------------");
+                        while (reader.Read())
+                        {
+                            dictionaryMenu.AddMenuItem((int)reader["id"], reader["Description"].ToString(), ChooseDistionary);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }  
+            }
         }
     }
 }
