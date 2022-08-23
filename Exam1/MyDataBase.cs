@@ -10,12 +10,14 @@ namespace MyDBHelper
         public const string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=dictionary.mdb";
         private static OleDbConnection connection;
         private static OleDbCommand command;
+        //Открытие соеднинения с базой данных
         private static void OpenConnection(string strSQL)
         {
             connection = new OleDbConnection(connectionString);
             command = new OleDbCommand(strSQL, connection);
             connection.Open();
         }
+        //Выполнение запросов INSERT, UDPATE, DELETE и прочее
         private static void ExecuteSQL(string strSQL)
         {
             try
@@ -30,6 +32,7 @@ namespace MyDBHelper
             }
             connection.Close();
         }
+        //Запрос на выборку
         private static void SelectSQL(string strSQL, bool showInfo, out int countRows)
         {
             countRows = 0;
@@ -56,6 +59,7 @@ namespace MyDBHelper
             }
             connection.Close();
         }
+        //Экспорт словаря в файл
         private static void ExportInfoFile(string strSQL)
         {
             Console.WriteLine("Начинаю экспорт");
@@ -155,6 +159,7 @@ namespace MyDBHelper
             }
             connection.Close();
         }
+        //Добавление нового словаря в базу данных
         public static void InsertDictionary(string nameDistionaty)
         {
             SelectSQL("SELECT * FROM ListDictionaries", false, out int countRows);

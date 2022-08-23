@@ -18,11 +18,12 @@ namespace Exam1
             //Выбор словаря по-умолчанию
             MyDataBase.SettingDictionary(ref settingDistionary.dictionary, ref settingDistionary.tableName);
             //Создание меню
-            ConsoleMenu mainMenu = new ConsoleMenu(settingDistionary.dictionary, "Главное меню");
-            dictionaryMenu = new ConsoleMenu(settingDistionary.dictionary, "Выбор словаря");
-            ConsoleMenu editDictionaryMenu = new ConsoleMenu(settingDistionary.dictionary, "Редактирование словаря");
-            ConsoleMenu infoMenu = new ConsoleMenu(settingDistionary.dictionary, "Информация");
-            ConsoleMenu exportMenu = new ConsoleMenu(settingDistionary.dictionary, "Экспорт в текстовый файл");
+            ConsoleMenu mainMenu = new ConsoleMenu("Главное меню");
+            dictionaryMenu = new ConsoleMenu("Выбор словаря");
+            ConsoleMenu editDictionaryMenu = new ConsoleMenu("Редактирование словаря");
+            ConsoleMenu infoMenu = new ConsoleMenu("Информация");
+            ConsoleMenu exportMenu = new ConsoleMenu("Экспорт в текстовый файл");
+            ConsoleMenu.header = settingDistionary.dictionary;
             //Форитрование меню словарей из полученных данных SQL-запроса
             SetMenuDictionaries(ref dictionaryMenu);
             //Меню редактирование словаря
@@ -171,6 +172,7 @@ namespace Exam1
             MyDataBase.SettingDictionary(ref dictionary, ref tableName, false);
             settingDistionary.dictionary = dictionary;
             settingDistionary.tableName = tableName;
+            ConsoleMenu.header = settingDistionary.dictionary;
         }
         //Добавить словарь
         static void AddDictionary()

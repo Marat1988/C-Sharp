@@ -6,7 +6,6 @@ namespace Exam1.Menu
 {
     public class ConsoleMenu
     {
-        private string header; //заголовок
         private string subheader; //подзаголовок
         private string cursorText; //текст курсора
         private int cursor; //текущая позиция меню
@@ -38,10 +37,10 @@ namespace Exam1.Menu
         //Взять текст текущего курсора
         public string GetCursorText() => menuItemList[cursor].text;
         public void ClearMenuItemList() => menuItemList.Clear();
+        public static string header = "Русско-английский словарь";
         //Конструктор
-        public ConsoleMenu(string header, string subheader, string cursorText = "=>")
+        public ConsoleMenu(string subheader, string cursorText = "=>")
         {
-            this.header = header;
             this.subheader = subheader;
             this.cursorText = cursorText;
             cursor = 0;
