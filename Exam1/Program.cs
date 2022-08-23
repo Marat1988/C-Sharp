@@ -32,7 +32,7 @@ namespace Exam1
             editDictionaryMenu.AddMenuItem(3, "Удаление слова из базы данных", DeleteWord);
             editDictionaryMenu.AddMenuItem(4, "Удаление слова из базы данных по id", DeleteWordId);
             editDictionaryMenu.AddMenuItem(5, "Удалить переводы слова из базы данных (последний перевод не удаляется)", ClearTranslateWord);
-            editDictionaryMenu.AddMenuItem(6, "Добавить новый словарь в базу данных", null);
+            editDictionaryMenu.AddMenuItem(6, "Добавить новый словарь в базу данных", AddDictionary);
             editDictionaryMenu.AddMenuItem(7, "Назад", editDictionaryMenu.HideMenu);
             //Меню информация
             infoMenu.AddMenuItem(0, "Отобразить весь список", AllWords);
@@ -63,6 +63,7 @@ namespace Exam1
             Console.Write("Введите перевод слова: ");
             string translateWord = Console.ReadLine();
             MyDataBase.InsertData(word, translateWord);
+            Console.ReadKey(true);
         }
         static void RenameWord()
         {
@@ -71,6 +72,7 @@ namespace Exam1
             Console.Write("Введите новое слово: ");
             string newWord = Console.ReadLine();
             MyDataBase.RenameWord(word, newWord);
+            Console.ReadKey(true);
         }
         static void EditTranslateWord()
         {
@@ -85,6 +87,7 @@ namespace Exam1
                 string newTranslate = Console.ReadLine();
                 MyDataBase.NewTranslateWord(word, id, newTranslate);
             }
+            Console.ReadKey(true);
         }
         static void DeleteWord()
         {
@@ -163,11 +166,20 @@ namespace Exam1
         //Выбор словаря
         static void ChooseDistionary()
         {
-            string dictionary = dictionaryMenu.getCursorText();
+            string dictionary = dictionaryMenu.GetCursorText();
             string tableName = settingDistionary.tableName;
             MyDataBase.SettingDictionary(ref dictionary, ref tableName, false);
             settingDistionary.dictionary = dictionary;
             settingDistionary.tableName = tableName;
+        }
+        //Добавить словарь
+        static void AddDictionary()
+        {
+            Console.Write("Введите описание словаря (например, англо-русский словарь): ");
+            MyDataBase.InsertDictionary(Console.ReadLine());
+            dictionaryMenu.ClearMenuItemList();
+            SetMenuDictionaries(ref dictionaryMenu);
+            Console.ReadKey(true);
         }
     }
 }

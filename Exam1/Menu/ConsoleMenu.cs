@@ -35,7 +35,9 @@ namespace Exam1.Menu
             Console.SetCursorPosition(menuItemList[cursor].CursorPosition.Item1, menuItemList[cursor].CursorPosition.Item2);
             ActiveCursorPozition(cursor);
         }
-        public string getCursorText() => menuItemList[cursor].text;
+        //Взять текст текущего курсора
+        public string GetCursorText() => menuItemList[cursor].text;
+        public void ClearMenuItemList() => menuItemList.Clear();
         //Конструктор
         public ConsoleMenu(string header, string subheader, string cursorText = "=>")
         {

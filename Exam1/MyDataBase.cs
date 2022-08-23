@@ -29,9 +29,8 @@ namespace MyDBHelper
                 Console.WriteLine(ex.Message);
             }
             connection.Close();
-            Console.ReadKey(true);
         }
-        private static void SelectSQL(string strSQL, int countRows=0)
+        private static void SelectSQL(string strSQL, bool showInfo, out int countRows)
         {
             countRows = 0;
             try
@@ -39,16 +38,16 @@ namespace MyDBHelper
                 OpenConnection(strSQL);               
                 using (OleDbDataReader reader = command.ExecuteReader())
                 {
-                    Console.WriteLine("id\t\tСлово\t\t\tПеревод");
-                    Console.WriteLine("======================================================");
+                    if (showInfo) Console.WriteLine("id\t\tСлово\t\t\tПеревод");
+                    if (showInfo) Console.WriteLine("======================================================");
                     while (reader.Read())
                     {
-                        Console.WriteLine("{0} \t\t{1}", reader["id"], reader["Word"]);
-                        Console.SetCursorPosition(40, Console.CursorTop - 1);
-                        Console.WriteLine(reader["Translate"]);
+                        if (showInfo) Console.WriteLine("{0} \t\t{1}", reader[0], reader[1]);
+                        if (showInfo) Console.SetCursorPosition(40, Console.CursorTop - 1);
+                        if (showInfo) Console.WriteLine(reader[2]);
                         countRows++;
                     }
-                    Console.WriteLine("======================================================");
+                    if (showInfo) Console.WriteLine("======================================================");
                 }
             }
             catch (Exception ex)
@@ -94,11 +93,11 @@ namespace MyDBHelper
         //Экспорт слова и его перевода в файл
         public static void ExportWordTranslateInFile(string word) => ExportInfoFile("SELECT * FROM " + getTableName() + " WHERE [Word] = '" + word + "'");
         //Отображение данных таблицы
-        public static void ShowInfo() => SelectSQL("SELECT * FROM " + getTableName() + " ORDER BY 2,3");
+        public static void ShowInfo() => SelectSQL("SELECT * FROM " + getTableName() + " ORDER BY 2,3", true, out _);
         //Поиск перевода слова из таблицы
-        public static void ShowTranslateWord(string word) => SelectSQL("SELECT * FROM " + getTableName() + " WHERE [Word] = '" + word + "'");
+        public static void ShowTranslateWord(string word) => SelectSQL("SELECT * FROM " + getTableName() + " WHERE [Word] = '" + word + "'", true, out _);
         //Посмотреть слова без перевода
-        public static void ShowWordNoTranslate() => SelectSQL("SELECT * FROM " + getTableName() + " WHERE Len([Translate])=0 OR [Translate] IS NULL");
+        public static void ShowWordNoTranslate() => SelectSQL("SELECT * FROM " + getTableName() + " WHERE Len([Translate])=0 OR [Translate] IS NULL", true, out _);
         //Добавление слова и его перевода в базу данных
         public static void InsertData(string word, string translateWord)
         {
@@ -155,6 +154,21 @@ namespace MyDBHelper
                 Console.WriteLine(ex.Message);
             }
             connection.Close();
+        }
+        public static void InsertDictionary(string nameDistionaty)
+        {
+            SelectSQL("SELECT * FROM ListDictionaries", false, out int countRows);
+            if (countRows > 0)
+            {
+                countRows++;               
+                string tableName = "Table" + countRows;
+                Console.WriteLine("Добавляем запись в базу данных");
+                ExecuteSQL("INSERT INTO ListDictionaries ([Description], [TableName]) VALUES ('" + nameDistionaty + "','" + tableName + "')");
+                Console.WriteLine("Создаю таблицу");
+                ExecuteSQL("CREATE TABLE "+ tableName + " (id COUNTER CONSTRAINT PK_"+ tableName+ " PRIMARY KEY, [Word] VARCHAR(50) NOT NULL, [Translate] VARCHAR(200))");
+                Console.WriteLine("Создаем индексы");
+                ExecuteSQL("CREATE UNIQUE INDEX IX_WordTranslate ON " + tableName + " ([Word], [Translate])");
+            }
         }
     }
 }
