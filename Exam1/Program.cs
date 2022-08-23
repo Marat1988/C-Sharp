@@ -6,12 +6,19 @@ namespace Exam1
 {
     class Program
     {
+        public struct settingDistionary //Настройка словаря для работы
+        {
+            public static int id;
+            public static string dictionary;
+            public static string tableName;
+        }
         static void Main(string[] args)
         {
-            ConsoleMenu mainMenu = new ConsoleMenu("Главное меню");
-            ConsoleMenu infoMenu = new ConsoleMenu("Информация");
-            ConsoleMenu exportMenu = new ConsoleMenu("Экспорт в текстовый файл");
-            ConsoleMenu editDictionatyMenu = new ConsoleMenu("Редактирование словаря");
+            MyDataBase.SettingDictionary(ref settingDistionary.id, ref settingDistionary.dictionary, ref settingDistionary.tableName);
+            ConsoleMenu mainMenu = new ConsoleMenu(settingDistionary.dictionary, "Главное меню");
+            ConsoleMenu editDictionatyMenu = new ConsoleMenu(settingDistionary.dictionary, "Редактирование словаря");
+            ConsoleMenu infoMenu = new ConsoleMenu(settingDistionary.dictionary, "Информация");
+            ConsoleMenu exportMenu = new ConsoleMenu(settingDistionary.dictionary, "Экспорт в текстовый файл");
             //Меню редактирование словаря
             editDictionatyMenu.AddMenuItem(0, "Добавить слово в словарь", InsertWordInDataBase);
             editDictionatyMenu.AddMenuItem(1, "Заменить слово в словаре", RenameWord);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Data.OleDb;
+using static Exam1.Program;
 
 namespace MyDBHelper
 {
@@ -127,5 +128,27 @@ namespace MyDBHelper
         public static void DeleteWord(int id) => ExecuteSQL("DELETE FROM RusEng WHERE [id] =" + id);
         //Удаление перевода слова (кроме последнего)
         public static void ClearTranslateWord(string word)=>ExecuteSQL("UPDATE RusEng SET [Translate] = null WHERE [Word] = '" + word + "' AND [id] NOT IN (SELECT Max(id) AS MaxId FROM RusEng WHERE [Word] = '" + word + "')");
+        //Для выбора словаря при запуске
+       public static void SettingDictionary(ref int id, ref string dictionary, ref string tableName)
+       {
+            try
+            {
+                OpenConnection("SELECT Description, TableName, MIN(id) AS MinId FROM ListDictionaries GROUP BY Description, TableName");
+                using (OleDbDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        id = (int)reader["MinId"];
+                        dictionary = reader["Description"].ToString();
+                        tableName = reader["TableName"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            connection.Close();
+        }
     }
 }

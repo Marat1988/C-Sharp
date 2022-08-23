@@ -9,6 +9,7 @@ namespace Exam1.Menu
     public class ConsoleMenu
     {
         private string header; //заголовок
+        private string subheader; //подзаголовок
         private int cursor; //текущая позиция меню
         private string cursorText; //текст курсора
         private List<MenuItem> menuItemList; //Список меню
@@ -37,9 +38,10 @@ namespace Exam1.Menu
             ActiveCursorPozition(cursor);
         }
         //Конструктор
-        public ConsoleMenu(string header, string cursorText = "=>")
+        public ConsoleMenu(string header, string subheader, string cursorText = "=>")
         {
             this.header = header;
+            this.subheader = subheader;
             this.cursorText = cursorText;
             cursor = 0;
             menuItemList = new List<MenuItem>();
@@ -48,8 +50,10 @@ namespace Exam1.Menu
         public void DrawMenu()
         {
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine(header + "\n");
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\t" + header + "\n");
+            Console.WriteLine("\t" + subheader + "\n");
             Console.ResetColor();
             for (int i = 0; i < menuItemList.Count; i++)
             {
