@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exam1.Menu
 {
@@ -10,8 +8,8 @@ namespace Exam1.Menu
     {
         private string header; //заголовок
         private string subheader; //подзаголовок
-        private int cursor; //текущая позиция меню
         private string cursorText; //текст курсора
+        private int cursor; //текущая позиция меню
         private List<MenuItem> menuItemList; //Список меню
         private bool ExitMenu; //флаг выхода из меню
         //Активная позиция курсора
@@ -37,6 +35,7 @@ namespace Exam1.Menu
             Console.SetCursorPosition(menuItemList[cursor].CursorPosition.Item1, menuItemList[cursor].CursorPosition.Item2);
             ActiveCursorPozition(cursor);
         }
+        public string getCursorText() => menuItemList[cursor].text;
         //Конструктор
         public ConsoleMenu(string header, string subheader, string cursorText = "=>")
         {

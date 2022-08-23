@@ -2,7 +2,6 @@
 using System.IO;
 using System.Data.OleDb;
 using static Exam1.Program;
-using Exam1.Menu;
 
 namespace MyDBHelper
 {
@@ -86,8 +85,9 @@ namespace MyDBHelper
             connection.Close();
             Console.ReadKey(true);
         }
+        //Получить название таблицы
         public static string getTableName() {
-            return settingDistionary.dictionary;
+            return settingDistionary.tableName;
         }
         //Экспорт информации в текстовый файл
         public static void ExportAllWordInFile() => ExportInfoFile("SELECT * FROM " + getTableName() + " ORDER BY 2,3");
@@ -132,12 +132,15 @@ namespace MyDBHelper
         public static void DeleteWord(int id) => ExecuteSQL("DELETE FROM " + getTableName() + " WHERE [id] =" + id);
         //Удаление перевода слова (кроме последнего)
         public static void ClearTranslateWord(string word) => ExecuteSQL("UPDATE " + getTableName() + " SET [Translate] = null WHERE [Word] = '" + word + "' AND [id] NOT IN (SELECT Max(id) AS MaxId FROM " + getTableName() + " WHERE [Word] = '" + word + "')");
-        //Для выбора словаря при запуске
-       public static void SettingDictionary(ref string dictionary, ref string tableName)
+        //Для выбора словаря
+       public static void SettingDictionary(ref string dictionary, ref string tableName, bool defaultSelect = true)
        {
             try
             {
-                OpenConnection("SELECT Description, TableName FROM ListDictionaries WHERE id=(SELECT MIN(id) FROM ListDictionaries)");
+                if (defaultSelect)
+                    OpenConnection("SELECT Description, TableName FROM [ListDictionaries] WHERE [id] = (SELECT MIN([id]) FROM [ListDictionaries])");
+                else
+                    OpenConnection("SELECT Description, TableName FROM [ListDictionaries] WHERE [Description] = '" + dictionary + "'");
                 using (OleDbDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -153,6 +156,5 @@ namespace MyDBHelper
             }
             connection.Close();
         }
-        
     }
 }
