@@ -90,7 +90,7 @@ namespace MyDBHelper
         }
         //Получить название таблицы
         public static string getTableName() {
-            return settingDistionary.tableName;
+            return SettingDistionary.tableName;
         }
         //Экспорт информации в текстовый файл
         public static void ExportAllWordInFile() => ExportInfoFile("SELECT * FROM " + getTableName() + " ORDER BY 2,3");

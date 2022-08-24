@@ -6,24 +6,24 @@ namespace Exam1.Menu
 {
     public class ConsoleMenu
     {
-        private string subheader; //подзаголовок
-        private string cursorText; //текст курсора
+        private readonly string subheader; //подзаголовок
+        private readonly string cursorText; //текст курсора
         private int cursor; //текущая позиция меню
-        private List<MenuItem> menuItemList; //Список меню
-        private bool ExitMenu; //флаг выхода из меню
+        private readonly List<MenuItem> menuItemList; //Список меню
+        private bool exitMenu; //флаг выхода из меню
         //Активная позиция курсора
         private void ActiveCursorPozition(int cursorPozition)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write(cursorText + " ");
-            Console.WriteLine(menuItemList[cursorPozition].text);
+            Console.WriteLine(menuItemList[cursorPozition].Text);
             Console.ResetColor();
         }
         //Позиция курсора
         private void CursorPozition(int cursorPozition)
         {
             Console.Write(new string(' ', cursorText.Length + 1));
-            Console.WriteLine(menuItemList[cursorPozition].text);
+            Console.WriteLine(menuItemList[cursorPozition].Text);
         }
         //Навигация по меню
         private void NavigationCursorPozition(ConsoleKey key)
@@ -35,7 +35,7 @@ namespace Exam1.Menu
             ActiveCursorPozition(cursor);
         }
         //Взять текст текущего курсора
-        public string GetCursorText() => menuItemList[cursor].text;
+        public string GetCursorText() => menuItemList[cursor].Text;
         public void ClearMenuItemList() => menuItemList.Clear();
         public static string header = "Русско-английский словарь";
         //Конструктор
@@ -86,7 +86,7 @@ namespace Exam1.Menu
                     {
                         Console.Clear();
                         Console.CursorVisible = true;
-                        menuItemList[cursor]._delegate?.Invoke();
+                        menuItemList[cursor].Delegate?.Invoke();
                         DrawMenu();
                         Console.CursorVisible = false;
                     }
@@ -96,17 +96,17 @@ namespace Exam1.Menu
         //Добавление пункта меню
         public void AddMenuItem(int id, string text, Action del)
         {
-            if (!menuItemList.Any(item => item.id == id))
+            if (!menuItemList.Any(item => item.Id == id))
                 menuItemList.Add(new MenuItem(id, text, del));
         }
         //Выход из меню
-        public void HideMenu() => ExitMenu = true;
+        public void HideMenu() => exitMenu = true;
         //Отображение меню
         public void ShowMenu()
         {
             DrawMenu();
-            ExitMenu = false;
-            while (!ExitMenu)
+            exitMenu = false;
+            while (!exitMenu)
             {
                 NavigationMenu();
             }
