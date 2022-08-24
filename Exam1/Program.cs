@@ -15,6 +15,7 @@ namespace Exam1
         }
         static void Main(string[] args)
         {
+            Console.Title = "Словари. Учебный проект";
             //Выбор словаря по-умолчанию
             MyDataBase.SettingDictionary(ref SettingDistionary.dictionary, ref SettingDistionary.tableName);
             //Создание меню
