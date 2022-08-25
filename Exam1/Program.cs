@@ -170,7 +170,7 @@ namespace Exam1
             Console.ReadKey(true);
         }
         /****Меню Экспорт****/
-        static void ExportTranslateWord() //Экспортировать переводы слова в базу данных
+        static void ExportTranslateWord() //Экспортировать переводы слова в файл
         {
             Console.Write("Введите слово: ");
             MyDataBase.ExportWordTranslateInFile(Console.ReadLine());

@@ -92,16 +92,30 @@ namespace MyDBHelper
         public static string getTableName() {
             return SettingDistionary.tableName;
         }
-        //Экспорт информации в текстовый файл
-        public static void ExportAllWordInFile() => ExportInfoFile("SELECT * FROM " + getTableName() + " ORDER BY 2,3");
-        //Экспорт слова и его перевода в файл
-        public static void ExportWordTranslateInFile(string word) => ExportInfoFile("SELECT * FROM " + getTableName() + " WHERE [Word] = '" + word + "'");
-        //Отображение данных таблицы
-        public static void ShowInfo() => SelectSQL("SELECT * FROM " + getTableName() + " ORDER BY 2,3", true, out _);
-        //Поиск перевода слова из таблицы
-        public static void ShowTranslateWord(string word) => SelectSQL("SELECT * FROM " + getTableName() + " WHERE [Word] = '" + word + "'", true, out _);
-        //Посмотреть слова без перевода
-        public static void ShowWordNoTranslate() => SelectSQL("SELECT * FROM " + getTableName() + " WHERE Len([Translate])=0 OR [Translate] IS NULL", true, out _);
+        //Для выбора словаря
+        public static void SettingDictionary(ref string dictionary, ref string tableName, bool defaultSelect = true)
+        {
+            try
+            {
+                if (defaultSelect)
+                    OpenConnection("SELECT Description, TableName FROM [ListDictionaries] WHERE [id] = (SELECT MIN([id]) FROM [ListDictionaries])");
+                else
+                    OpenConnection("SELECT Description, TableName FROM [ListDictionaries] WHERE [Description] = '" + dictionary + "'");
+                using (OleDbDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        tableName = reader["TableName"].ToString();
+                        dictionary = reader["Description"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            connection.Close();
+        }
         //Добавление слова и его перевода в базу данных
         public static void InsertData(string word, string translateWord)
         {
@@ -110,7 +124,7 @@ namespace MyDBHelper
                 Console.WriteLine("Слово не может быть пустым");
             else
                 ExecuteSQL("INSERT INTO " + getTableName() + " ([Word], [Translate]) VALUES('" + word + "','" + ((translateWord.Length == 0) ? null : translateWord) + "')");
-        } 
+        }
         //Заменить слово
         public static void RenameWord(string word, string newWord)
         {
@@ -135,45 +149,31 @@ namespace MyDBHelper
         public static void DeleteWord(int id) => ExecuteSQL("DELETE FROM " + getTableName() + " WHERE [id] =" + id);
         //Удаление перевода слова (кроме последнего)
         public static void ClearTranslateWord(string word) => ExecuteSQL("UPDATE " + getTableName() + " SET [Translate] = null WHERE [Word] = '" + word + "' AND [id] NOT IN (SELECT Max(id) AS MaxId FROM " + getTableName() + " WHERE [Word] = '" + word + "')");
-        //Для выбора словаря
-       public static void SettingDictionary(ref string dictionary, ref string tableName, bool defaultSelect = true)
-       {
-            try
-            {
-                if (defaultSelect)
-                    OpenConnection("SELECT Description, TableName FROM [ListDictionaries] WHERE [id] = (SELECT MIN([id]) FROM [ListDictionaries])");
-                else
-                    OpenConnection("SELECT Description, TableName FROM [ListDictionaries] WHERE [Description] = '" + dictionary + "'");
-                using (OleDbDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        tableName = reader["TableName"].ToString();
-                        dictionary = reader["Description"].ToString();
-                    }                    
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            connection.Close();
-        }
         //Добавление нового словаря в базу данных
         public static void InsertDictionary(string nameDistionaty)
         {
             SelectSQL("SELECT * FROM ListDictionaries", false, out int countRows);
             if (countRows > 0)
             {
-                countRows++;               
+                countRows++;
                 string tableName = "Table" + countRows;
                 Console.WriteLine("Добавляем запись в базу данных");
                 ExecuteSQL("INSERT INTO ListDictionaries ([Description], [TableName]) VALUES ('" + nameDistionaty + "','" + tableName + "')");
                 Console.WriteLine("Создаю таблицу");
-                ExecuteSQL("CREATE TABLE "+ tableName + " (id COUNTER CONSTRAINT PK_"+ tableName+ " PRIMARY KEY, [Word] VARCHAR(50) NOT NULL, [Translate] VARCHAR(200))");
+                ExecuteSQL("CREATE TABLE " + tableName + " (id COUNTER CONSTRAINT PK_" + tableName + " PRIMARY KEY, [Word] VARCHAR(50) NOT NULL, [Translate] VARCHAR(200))");
                 Console.WriteLine("Создаем индексы");
                 ExecuteSQL("CREATE UNIQUE INDEX IX_WordTranslate ON " + tableName + " ([Word], [Translate])");
             }
         }
+        //Отображение данных таблицы
+        public static void ShowInfo() => SelectSQL("SELECT * FROM " + getTableName() + " ORDER BY 2,3", true, out _);
+        //Поиск перевода слова из таблицы
+        public static void ShowTranslateWord(string word) => SelectSQL("SELECT * FROM " + getTableName() + " WHERE [Word] = '" + word + "'", true, out _);
+        //Посмотреть слова без перевода
+        public static void ShowWordNoTranslate() => SelectSQL("SELECT * FROM " + getTableName() + " WHERE Len([Translate])=0 OR [Translate] IS NULL", true, out _);
+        //Экспорт информации в текстовый файл
+        public static void ExportAllWordInFile() => ExportInfoFile("SELECT * FROM " + getTableName() + " ORDER BY 2,3");
+        //Экспорт слова и его перевода в файл
+        public static void ExportWordTranslateInFile(string word) => ExportInfoFile("SELECT * FROM " + getTableName() + " WHERE [Word] = '" + word + "'");
     }
 }
