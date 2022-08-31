@@ -89,9 +89,7 @@ namespace MyDBHelper
             Console.ReadKey(true);
         }
         //Получить название таблицы
-        public static string getTableName() {
-            return SettingDistionary.tableName;
-        }
+        public static string GetTableName() => SettingDistionary.tableName;
         //Для выбора словаря
         public static void SettingDictionary(ref string dictionary, ref string tableName, bool defaultSelect = true)
         {
@@ -123,7 +121,7 @@ namespace MyDBHelper
             if (word.Length <= 0)
                 Console.WriteLine("Слово не может быть пустым");
             else
-                ExecuteSQL("INSERT INTO " + getTableName() + " ([Word], [Translate]) VALUES('" + word + "','" + ((translateWord.Length == 0) ? null : translateWord) + "')");
+                ExecuteSQL("INSERT INTO " + GetTableName() + " ([Word], [Translate]) VALUES('" + word + "','" + ((translateWord.Length == 0) ? null : translateWord) + "')");
         }
         //Заменить слово
         public static void RenameWord(string word, string newWord)
@@ -132,7 +130,7 @@ namespace MyDBHelper
             if (word.Length <= 0)
                 Console.WriteLine("Слово не может быть пустым");
             else
-                ExecuteSQL("UPDATE " + getTableName() + " SET [Word] ='" + newWord + "' WHERE [Word] = '" + word + "'");
+                ExecuteSQL("UPDATE " + GetTableName() + " SET [Word] ='" + newWord + "' WHERE [Word] = '" + word + "'");
         }
         //Заменить перевод слова
         public static void NewTranslateWord(string word, int id, string newTranslate)
@@ -141,14 +139,14 @@ namespace MyDBHelper
             if (word.Length == 0)
                 Console.WriteLine("Слово не может быть пустым");
             else
-                ExecuteSQL("UPDATE " + getTableName() + " SET [Translate] ='" + ((newTranslate.Length == 0) ? null : newTranslate) + "' WHERE [Word] = '" + word + "' AND [id] = " + id);
+                ExecuteSQL("UPDATE " + GetTableName() + " SET [Translate] ='" + ((newTranslate.Length == 0) ? null : newTranslate) + "' WHERE [Word] = '" + word + "' AND [id] = " + id);
         }
         //Удаление слова
-        public static void DeleteWord(string word) => ExecuteSQL("DELETE FROM " + getTableName() + " WHERE [Word] ='" + word.Trim(' ') + "'");
+        public static void DeleteWord(string word) => ExecuteSQL("DELETE FROM " + GetTableName() + " WHERE [Word] ='" + word.Trim(' ') + "'");
         //Удаление слова по id
-        public static void DeleteWord(int id) => ExecuteSQL("DELETE FROM " + getTableName() + " WHERE [id] =" + id);
+        public static void DeleteWord(int id) => ExecuteSQL("DELETE FROM " + GetTableName() + " WHERE [id] =" + id);
         //Удаление перевода слова (кроме последнего)
-        public static void ClearTranslateWord(string word) => ExecuteSQL("UPDATE " + getTableName() + " SET [Translate] = null WHERE [Word] = '" + word + "' AND [id] NOT IN (SELECT Max(id) AS MaxId FROM " + getTableName() + " WHERE [Word] = '" + word + "')");
+        public static void ClearTranslateWord(string word) => ExecuteSQL("UPDATE " + GetTableName() + " SET [Translate] = null WHERE [Word] = '" + word + "' AND [id] NOT IN (SELECT Max(id) AS MaxId FROM " + GetTableName() + " WHERE [Word] = '" + word + "')");
         //Добавление нового словаря в базу данных
         public static void InsertDictionary(string nameDistionaty)
         {
@@ -166,14 +164,14 @@ namespace MyDBHelper
             }
         }
         //Отображение данных таблицы
-        public static void ShowInfo() => SelectSQL("SELECT * FROM " + getTableName() + " ORDER BY 2,3", true, out _);
+        public static void ShowInfo() => SelectSQL("SELECT * FROM " + GetTableName() + " ORDER BY 2,3", true, out _);
         //Поиск перевода слова из таблицы
-        public static void ShowTranslateWord(string word) => SelectSQL("SELECT * FROM " + getTableName() + " WHERE [Word] = '" + word + "'", true, out _);
+        public static void ShowTranslateWord(string word) => SelectSQL("SELECT * FROM " + GetTableName() + " WHERE [Word] = '" + word + "'", true, out _);
         //Посмотреть слова без перевода
-        public static void ShowWordNoTranslate() => SelectSQL("SELECT * FROM " + getTableName() + " WHERE Len([Translate])=0 OR [Translate] IS NULL", true, out _);
+        public static void ShowWordNoTranslate() => SelectSQL("SELECT * FROM " + GetTableName() + " WHERE Len([Translate])=0 OR [Translate] IS NULL", true, out _);
         //Экспорт информации в текстовый файл
-        public static void ExportAllWordInFile() => ExportInfoFile("SELECT * FROM " + getTableName() + " ORDER BY 2,3");
+        public static void ExportAllWordInFile() => ExportInfoFile("SELECT * FROM " + GetTableName() + " ORDER BY 2,3");
         //Экспорт слова и его перевода в файл
-        public static void ExportWordTranslateInFile(string word) => ExportInfoFile("SELECT * FROM " + getTableName() + " WHERE [Word] = '" + word + "'");
+        public static void ExportWordTranslateInFile(string word) => ExportInfoFile("SELECT * FROM " + GetTableName() + " WHERE [Word] = '" + word + "'");
     }
 }

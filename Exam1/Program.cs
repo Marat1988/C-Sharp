@@ -5,7 +5,7 @@ using Exam1.Menu;
 
 namespace Exam1
 {
-    class Program
+    internal class Program
     {
         private static ConsoleMenu dictionaryMenu; //Меню выбора словаря
         public struct SettingDistionary //Данные выбранного текущего словаря
@@ -13,8 +13,9 @@ namespace Exam1
             public static string dictionary = "Текущий словарь: ";
             public static string tableName = "RusEng";
         }
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            if (args is null) throw new ArgumentNullException(nameof(args));
             Console.Title = "Словари. Учебный проект";
             //Выбор словаря по-умолчанию
             MyDataBase.SettingDictionary(ref SettingDistionary.dictionary, ref SettingDistionary.tableName);
@@ -54,9 +55,9 @@ namespace Exam1
             mainMenu.AddMenuItem(5, "Выход", Exit);
             mainMenu.ShowMenu();
         }
-        static void Exit() => Environment.Exit(0);
+        private static void Exit() => Environment.Exit(0);
         /****Меню выбора словаря****/
-        static void SetMenuDictionaries() //Формирование выбора меню словаря
+        private static void SetMenuDictionaries() //Формирование выбора меню словаря
         {
             string strSQL = "SELECT * FROM ListDictionaries";
             using (OleDbConnection connection = new OleDbConnection(MyDataBase.connectionString))
@@ -82,7 +83,7 @@ namespace Exam1
                 }
             }
         }
-        static void ChooseDistionary() //Выбор словаря
+        private static void ChooseDistionary() //Выбор словаря
         {
             string dictionary = dictionaryMenu.GetCursorText();
             string tableName = SettingDistionary.tableName;
@@ -92,7 +93,7 @@ namespace Exam1
             ConsoleMenu.header = SettingDistionary.dictionary;
         }
         /****Меню редактирования словаря****/
-        static void InsertWordInDataBase() //Добавление слова с словарь
+        private static void InsertWordInDataBase() //Добавление слова с словарь
         {
             Console.Write("Введите слово: ");
             string word = Console.ReadLine();
@@ -101,7 +102,7 @@ namespace Exam1
             MyDataBase.InsertData(word, translateWord);
             Console.ReadKey(true);
         }
-        static void RenameWord() //Изменить слово в словаре
+        private static void RenameWord() //Изменить слово в словаре
         {
             Console.Write("Введите слово из словаря: ");
             string word = Console.ReadLine();
@@ -110,7 +111,7 @@ namespace Exam1
             MyDataBase.RenameWord(word, newWord);
             Console.ReadKey(true);
         }
-        static void EditTranslateWord() //Изменить перевод стола
+        private static void EditTranslateWord() //Изменить перевод стола
         {
             Console.Write("Введите слово из словаря: ");
             string word = Console.ReadLine();
@@ -125,26 +126,26 @@ namespace Exam1
             }
             Console.ReadKey(true);
         }
-        static void DeleteWord() //Удалить слово
+        private static void DeleteWord() //Удалить слово
         {
             Console.Write("Введите слово: ");
             MyDataBase.DeleteWord(Console.ReadLine());
             Console.ReadKey(true);
         }
-        static void DeleteWordId() //Удалить слово по Id
+        private static void DeleteWordId() //Удалить слово по Id
         {
             Console.Write("Введите id слова: ");
             if (int.TryParse(Console.ReadLine(), out int id))
                 MyDataBase.DeleteWord(id);
             Console.ReadKey(true);
         }
-        static void ClearTranslateWord() //Удалить перевод слова
+        private static void ClearTranslateWord() //Удалить перевод слова
         {
             Console.Write("Введите id слова: ");
             MyDataBase.ClearTranslateWord(Console.ReadLine());
             Console.ReadKey(true);
         }
-        static void AddDictionary() //Добавление словаря
+        private static void AddDictionary() //Добавление словаря
         {
             Console.Write("Введите описание словаря (например, англо-русский словарь): ");
             MyDataBase.InsertDictionary(Console.ReadLine());
@@ -153,30 +154,30 @@ namespace Exam1
             Console.ReadKey(true);
         }
         /****Меню Информация****/
-        static void AllWords() //Показать список слов
+        private static void AllWords() //Показать список слов
         {
             MyDataBase.ShowInfo();
             Console.ReadKey(true);
         }
-        static void InfoTranslateWord() //Показать переводы слова
+        private static void InfoTranslateWord() //Показать переводы слова
         {
             Console.Write("Введите слово: ");
             MyDataBase.ShowTranslateWord(Console.ReadLine());
             Console.ReadKey(true);
         }
-        static void NoTranslate() //Показать слово без перевода
+        private static void NoTranslate() //Показать слово без перевода
         {
             MyDataBase.ShowWordNoTranslate();
             Console.ReadKey(true);
         }
         /****Меню Экспорт****/
-        static void ExportTranslateWord() //Экспортировать переводы слова в файл
+        private static void ExportTranslateWord() //Экспортировать переводы слова в файл
         {
             Console.Write("Введите слово: ");
             MyDataBase.ExportWordTranslateInFile(Console.ReadLine());
         }
         /****Меню Об авторе****/
-        static void InfoAuthor() {
+        private static void InfoAuthor() {
             Console.WriteLine("Тухтаров Марат. Группа БВ112. Академия \"ТОП\" г. Калининград, 2022");
             Console.ReadKey(true);
         }
