@@ -32,11 +32,11 @@ namespace WinFormsApp1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettingUser));
             this.ButtonSeeNotSeePassword = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.labelBirthday = new System.Windows.Forms.Label();
             this.dateTimePickerBirthday = new System.Windows.Forms.DateTimePicker();
             this.TextBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ButtonSaveSettings = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -47,9 +47,17 @@ namespace WinFormsApp1
             this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(485, 32);
             this.ButtonSeeNotSeePassword.Name = "ButtonSeeNotSeePassword";
             this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(44, 34);
-            this.ButtonSeeNotSeePassword.TabIndex = 12;
+            this.ButtonSeeNotSeePassword.TabIndex = 3;
             this.ButtonSeeNotSeePassword.UseVisualStyleBackColor = true;
             this.ButtonSeeNotSeePassword.Click += new System.EventHandler(this.ButtonSeeNotSeePassword_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8-closed-eye-80.png");
+            this.imageList1.Images.SetKeyName(1, "icons8-eye-80.png");
             // 
             // labelBirthday
             // 
@@ -67,7 +75,7 @@ namespace WinFormsApp1
             this.dateTimePickerBirthday.Location = new System.Drawing.Point(216, 89);
             this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
             this.dateTimePickerBirthday.Size = new System.Drawing.Size(263, 34);
-            this.dateTimePickerBirthday.TabIndex = 10;
+            this.dateTimePickerBirthday.TabIndex = 1;
             this.dateTimePickerBirthday.Value = new System.DateTime(2022, 9, 14, 0, 0, 0, 0);
             // 
             // TextBoxPassword
@@ -78,7 +86,7 @@ namespace WinFormsApp1
             this.TextBoxPassword.PasswordChar = '*';
             this.TextBoxPassword.PlaceholderText = "Введите пароль";
             this.TextBoxPassword.Size = new System.Drawing.Size(263, 34);
-            this.TextBoxPassword.TabIndex = 9;
+            this.TextBoxPassword.TabIndex = 0;
             this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             this.TextBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPassword_KeyPress);
             // 
@@ -92,14 +100,6 @@ namespace WinFormsApp1
             this.labelPassword.TabIndex = 8;
             this.labelPassword.Text = "Пароль:";
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8-closed-eye-80.png");
-            this.imageList1.Images.SetKeyName(1, "icons8-eye-80.png");
-            // 
             // ButtonSaveSettings
             // 
             this.ButtonSaveSettings.Enabled = false;
@@ -107,7 +107,7 @@ namespace WinFormsApp1
             this.ButtonSaveSettings.Location = new System.Drawing.Point(28, 147);
             this.ButtonSaveSettings.Name = "ButtonSaveSettings";
             this.ButtonSaveSettings.Size = new System.Drawing.Size(451, 99);
-            this.ButtonSaveSettings.TabIndex = 13;
+            this.ButtonSaveSettings.TabIndex = 2;
             this.ButtonSaveSettings.Text = "Сохранить настройки";
             this.ButtonSaveSettings.UseVisualStyleBackColor = true;
             this.ButtonSaveSettings.Click += new System.EventHandler(this.ButtonSaveSettings_Click);
@@ -123,6 +123,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.dateTimePickerBirthday);
             this.Controls.Add(this.TextBoxPassword);
             this.Controls.Add(this.labelPassword);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSettingUser";

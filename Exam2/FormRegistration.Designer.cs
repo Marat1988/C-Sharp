@@ -60,7 +60,7 @@ namespace WinFormsApp1
             this.TextBoxLogin.Name = "TextBoxLogin";
             this.TextBoxLogin.PlaceholderText = "Введите имя пользователя";
             this.TextBoxLogin.Size = new System.Drawing.Size(263, 34);
-            this.TextBoxLogin.TabIndex = 1;
+            this.TextBoxLogin.TabIndex = 0;
             this.TextBoxLogin.TextChanged += new System.EventHandler(this.TextBoxLogin_TextChanged);
             this.TextBoxLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxLogin_KeyPress);
             // 
@@ -72,7 +72,7 @@ namespace WinFormsApp1
             this.TextBoxPassword.PasswordChar = '*';
             this.TextBoxPassword.PlaceholderText = "Введите пароль";
             this.TextBoxPassword.Size = new System.Drawing.Size(263, 34);
-            this.TextBoxPassword.TabIndex = 3;
+            this.TextBoxPassword.TabIndex = 1;
             this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             this.TextBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPassword_KeyPress);
             // 
@@ -92,7 +92,7 @@ namespace WinFormsApp1
             this.dateTimePickerBirthday.Location = new System.Drawing.Point(220, 138);
             this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
             this.dateTimePickerBirthday.Size = new System.Drawing.Size(263, 34);
-            this.dateTimePickerBirthday.TabIndex = 4;
+            this.dateTimePickerBirthday.TabIndex = 2;
             this.dateTimePickerBirthday.Value = new System.DateTime(2022, 9, 14, 0, 0, 0, 0);
             // 
             // labelBirthday
@@ -112,7 +112,7 @@ namespace WinFormsApp1
             this.ButtonUserRegistration.Location = new System.Drawing.Point(32, 205);
             this.ButtonUserRegistration.Name = "ButtonUserRegistration";
             this.ButtonUserRegistration.Size = new System.Drawing.Size(451, 85);
-            this.ButtonUserRegistration.TabIndex = 6;
+            this.ButtonUserRegistration.TabIndex = 3;
             this.ButtonUserRegistration.Text = "Зарегистрироваться";
             this.ButtonUserRegistration.UseVisualStyleBackColor = true;
             this.ButtonUserRegistration.Click += new System.EventHandler(this.ButtonUserRegistration_Click);
@@ -124,7 +124,7 @@ namespace WinFormsApp1
             this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(489, 81);
             this.ButtonSeeNotSeePassword.Name = "ButtonSeeNotSeePassword";
             this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(44, 34);
-            this.ButtonSeeNotSeePassword.TabIndex = 7;
+            this.ButtonSeeNotSeePassword.TabIndex = 4;
             this.ButtonSeeNotSeePassword.UseVisualStyleBackColor = true;
             this.ButtonSeeNotSeePassword.Click += new System.EventHandler(this.ButtonSeeNotSeePassword_Click);
             // 

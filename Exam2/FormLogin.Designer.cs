@@ -83,7 +83,7 @@ namespace WinFormsApp1
             this.TextBoxPassword.PasswordChar = '*';
             this.TextBoxPassword.PlaceholderText = "Введите пароль";
             this.TextBoxPassword.Size = new System.Drawing.Size(270, 30);
-            this.TextBoxPassword.TabIndex = 3;
+            this.TextBoxPassword.TabIndex = 1;
             this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             this.TextBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPassword_KeyPress);
             // 
@@ -94,7 +94,7 @@ namespace WinFormsApp1
             this.ButtonInputSystem.Location = new System.Drawing.Point(32, 118);
             this.ButtonInputSystem.Name = "ButtonInputSystem";
             this.ButtonInputSystem.Size = new System.Drawing.Size(384, 63);
-            this.ButtonInputSystem.TabIndex = 4;
+            this.ButtonInputSystem.TabIndex = 2;
             this.ButtonInputSystem.Text = "Войти";
             this.ButtonInputSystem.UseVisualStyleBackColor = true;
             this.ButtonInputSystem.Click += new System.EventHandler(this.ButtonInputSystem_Click);
@@ -106,7 +106,7 @@ namespace WinFormsApp1
             this.LinkLabelAuthorization.Location = new System.Drawing.Point(127, 204);
             this.LinkLabelAuthorization.Name = "LinkLabelAuthorization";
             this.LinkLabelAuthorization.Size = new System.Drawing.Size(190, 25);
-            this.LinkLabelAuthorization.TabIndex = 6;
+            this.LinkLabelAuthorization.TabIndex = 3;
             this.LinkLabelAuthorization.TabStop = true;
             this.LinkLabelAuthorization.Text = "Еще нет аккаунта?";
             this.LinkLabelAuthorization.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelAuthorization_LinkClicked);
@@ -118,7 +118,7 @@ namespace WinFormsApp1
             this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(422, 72);
             this.ButtonSeeNotSeePassword.Name = "ButtonSeeNotSeePassword";
             this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(37, 30);
-            this.ButtonSeeNotSeePassword.TabIndex = 8;
+            this.ButtonSeeNotSeePassword.TabIndex = 4;
             this.ButtonSeeNotSeePassword.UseVisualStyleBackColor = true;
             this.ButtonSeeNotSeePassword.Click += new System.EventHandler(this.ButtonSeeNotSeePassword_Click);
             // 

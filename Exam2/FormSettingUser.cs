@@ -22,7 +22,7 @@ namespace WinFormsApp1
             TextBoxPassword.PasswordChar = (ButtonSeeNotSeePassword.ImageIndex == 1) ? '\0' : '*';
         }
 
-        private void TextBoxPassword_TextChanged(object sender, EventArgs e) => ButtonSeeNotSeePassword.Enabled = CheckEnableButton();
+        private void TextBoxPassword_TextChanged(object sender, EventArgs e) => ButtonSaveSettings.Enabled = CheckEnableButton();
 
         private void TextBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
