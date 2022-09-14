@@ -33,5 +33,11 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void ButtonSettingUser_Click(object sender, EventArgs e)
+        {
+            FormSettingUser formSettingUser = new FormSettingUser();
+            formSettingUser.ShowDialog();
+        }
     }
 }

@@ -47,6 +47,7 @@ namespace WinFormsApp1
             this.ButtonSettingUser.TabIndex = 4;
             this.ButtonSettingUser.Text = "Настройки";
             this.ButtonSettingUser.UseVisualStyleBackColor = true;
+            this.ButtonSettingUser.Click += new System.EventHandler(this.ButtonSettingUser_Click);
             // 
             // ButtonStart
             // 

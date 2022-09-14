@@ -48,7 +48,7 @@ namespace WinFormsApp1
                     msg = "В пароле должна быть хотя бы одна цифра";
                     return false;
                 }
-                if (digitalCount == 0)
+                if (specialSymbol == 0)
                 {
                     msg = "В пароле должен присутствовать хотя бы один из символов ! , . ";
                     return false;
