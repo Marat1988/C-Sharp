@@ -40,10 +40,11 @@ namespace WinFormsApp1
             // 
             // ButtonSettingUser
             // 
-            this.ButtonSettingUser.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ButtonSettingUser.Location = new System.Drawing.Point(62, 364);
+            this.ButtonSettingUser.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.ButtonSettingUser.Location = new System.Drawing.Point(62, 281);
+            this.ButtonSettingUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonSettingUser.Name = "ButtonSettingUser";
-            this.ButtonSettingUser.Size = new System.Drawing.Size(377, 96);
+            this.ButtonSettingUser.Size = new System.Drawing.Size(377, 77);
             this.ButtonSettingUser.TabIndex = 4;
             this.ButtonSettingUser.Text = "Настройки";
             this.ButtonSettingUser.UseVisualStyleBackColor = true;
@@ -51,30 +52,33 @@ namespace WinFormsApp1
             // 
             // ButtonStart
             // 
-            this.ButtonStart.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ButtonStart.Location = new System.Drawing.Point(62, 24);
+            this.ButtonStart.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.ButtonStart.Location = new System.Drawing.Point(62, 19);
+            this.ButtonStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonStart.Name = "ButtonStart";
-            this.ButtonStart.Size = new System.Drawing.Size(377, 96);
+            this.ButtonStart.Size = new System.Drawing.Size(377, 77);
             this.ButtonStart.TabIndex = 1;
             this.ButtonStart.Text = "Начать викторину";
             this.ButtonStart.UseVisualStyleBackColor = true;
             // 
             // ButtonShowResult
             // 
-            this.ButtonShowResult.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ButtonShowResult.Location = new System.Drawing.Point(62, 138);
+            this.ButtonShowResult.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.ButtonShowResult.Location = new System.Drawing.Point(62, 100);
+            this.ButtonShowResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonShowResult.Name = "ButtonShowResult";
-            this.ButtonShowResult.Size = new System.Drawing.Size(377, 96);
+            this.ButtonShowResult.Size = new System.Drawing.Size(377, 87);
             this.ButtonShowResult.TabIndex = 2;
             this.ButtonShowResult.Text = "Посмотреть результаты прошлых викторин";
             this.ButtonShowResult.UseVisualStyleBackColor = true;
             // 
             // ButtonShowTop20
             // 
-            this.ButtonShowTop20.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ButtonShowTop20.Location = new System.Drawing.Point(62, 251);
+            this.ButtonShowTop20.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.ButtonShowTop20.Location = new System.Drawing.Point(62, 191);
+            this.ButtonShowTop20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonShowTop20.Name = "ButtonShowTop20";
-            this.ButtonShowTop20.Size = new System.Drawing.Size(377, 96);
+            this.ButtonShowTop20.Size = new System.Drawing.Size(377, 86);
             this.ButtonShowTop20.TabIndex = 3;
             this.ButtonShowTop20.Text = "Посмотреть ТОП 20 по викторине";
             this.ButtonShowTop20.UseVisualStyleBackColor = true;
@@ -82,10 +86,11 @@ namespace WinFormsApp1
             // ButtonExit
             // 
             this.ButtonExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonExit.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ButtonExit.Location = new System.Drawing.Point(62, 479);
+            this.ButtonExit.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.ButtonExit.Location = new System.Drawing.Point(62, 362);
+            this.ButtonExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonExit.Name = "ButtonExit";
-            this.ButtonExit.Size = new System.Drawing.Size(377, 96);
+            this.ButtonExit.Size = new System.Drawing.Size(377, 77);
             this.ButtonExit.TabIndex = 5;
             this.ButtonExit.Text = "Выход";
             this.ButtonExit.UseVisualStyleBackColor = true;
@@ -97,17 +102,18 @@ namespace WinFormsApp1
             this.ComboBoxChooseQuiz.FormattingEnabled = true;
             this.ComboBoxChooseQuiz.Items.AddRange(new object[] {
             "Смешанная"});
-            this.ComboBoxChooseQuiz.Location = new System.Drawing.Point(500, 65);
+            this.ComboBoxChooseQuiz.Location = new System.Drawing.Point(500, 52);
+            this.ComboBoxChooseQuiz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComboBoxChooseQuiz.Name = "ComboBoxChooseQuiz";
-            this.ComboBoxChooseQuiz.Size = new System.Drawing.Size(284, 28);
+            this.ComboBoxChooseQuiz.Size = new System.Drawing.Size(284, 24);
             this.ComboBoxChooseQuiz.TabIndex = 0;
             this.ComboBoxChooseQuiz.SelectedIndexChanged += new System.EventHandler(this.ComboBoxChooseQuiz_SelectedIndexChanged);
             // 
             // LabelChooseQuiz
             // 
             this.LabelChooseQuiz.AutoSize = true;
-            this.LabelChooseQuiz.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LabelChooseQuiz.Location = new System.Drawing.Point(500, 33);
+            this.LabelChooseQuiz.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.LabelChooseQuiz.Location = new System.Drawing.Point(500, 26);
             this.LabelChooseQuiz.Name = "LabelChooseQuiz";
             this.LabelChooseQuiz.Size = new System.Drawing.Size(273, 23);
             this.LabelChooseQuiz.TabIndex = 6;
@@ -115,9 +121,9 @@ namespace WinFormsApp1
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 587);
+            this.ClientSize = new System.Drawing.Size(807, 470);
             this.Controls.Add(this.LabelChooseQuiz);
             this.Controls.Add(this.ComboBoxChooseQuiz);
             this.Controls.Add(this.ButtonExit);
@@ -125,6 +131,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.ButtonShowResult);
             this.Controls.Add(this.ButtonStart);
             this.Controls.Add(this.ButtonSettingUser);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главное меню";

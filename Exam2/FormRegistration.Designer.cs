@@ -45,8 +45,8 @@ namespace WinFormsApp1
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelLogin.Location = new System.Drawing.Point(32, 25);
+            this.labelLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.labelLogin.Location = new System.Drawing.Point(32, 20);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(77, 28);
             this.labelLogin.TabIndex = 0;
@@ -54,11 +54,11 @@ namespace WinFormsApp1
             // 
             // TextBoxLogin
             // 
-            this.TextBoxLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TextBoxLogin.Location = new System.Drawing.Point(220, 25);
+            this.TextBoxLogin.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.TextBoxLogin.Location = new System.Drawing.Point(220, 20);
+            this.TextBoxLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextBoxLogin.MaxLength = 15;
             this.TextBoxLogin.Name = "TextBoxLogin";
-            this.TextBoxLogin.PlaceholderText = "Введите имя пользователя";
             this.TextBoxLogin.Size = new System.Drawing.Size(263, 34);
             this.TextBoxLogin.TabIndex = 0;
             this.TextBoxLogin.TextChanged += new System.EventHandler(this.TextBoxLogin_TextChanged);
@@ -66,11 +66,11 @@ namespace WinFormsApp1
             // 
             // TextBoxPassword
             // 
-            this.TextBoxPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TextBoxPassword.Location = new System.Drawing.Point(220, 81);
+            this.TextBoxPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.TextBoxPassword.Location = new System.Drawing.Point(220, 65);
+            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
-            this.TextBoxPassword.PlaceholderText = "Введите пароль";
             this.TextBoxPassword.Size = new System.Drawing.Size(263, 34);
             this.TextBoxPassword.TabIndex = 1;
             this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
@@ -79,8 +79,8 @@ namespace WinFormsApp1
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPassword.Location = new System.Drawing.Point(32, 81);
+            this.labelPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.labelPassword.Location = new System.Drawing.Point(32, 65);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(90, 28);
             this.labelPassword.TabIndex = 2;
@@ -88,8 +88,9 @@ namespace WinFormsApp1
             // 
             // dateTimePickerBirthday
             // 
-            this.dateTimePickerBirthday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePickerBirthday.Location = new System.Drawing.Point(220, 138);
+            this.dateTimePickerBirthday.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dateTimePickerBirthday.Location = new System.Drawing.Point(220, 110);
+            this.dateTimePickerBirthday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
             this.dateTimePickerBirthday.Size = new System.Drawing.Size(263, 34);
             this.dateTimePickerBirthday.TabIndex = 2;
@@ -98,8 +99,8 @@ namespace WinFormsApp1
             // labelBirthday
             // 
             this.labelBirthday.AutoSize = true;
-            this.labelBirthday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelBirthday.Location = new System.Drawing.Point(32, 138);
+            this.labelBirthday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.labelBirthday.Location = new System.Drawing.Point(32, 110);
             this.labelBirthday.Name = "labelBirthday";
             this.labelBirthday.Size = new System.Drawing.Size(170, 28);
             this.labelBirthday.TabIndex = 5;
@@ -108,10 +109,11 @@ namespace WinFormsApp1
             // ButtonUserRegistration
             // 
             this.ButtonUserRegistration.Enabled = false;
-            this.ButtonUserRegistration.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ButtonUserRegistration.Location = new System.Drawing.Point(32, 205);
+            this.ButtonUserRegistration.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.ButtonUserRegistration.Location = new System.Drawing.Point(32, 164);
+            this.ButtonUserRegistration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonUserRegistration.Name = "ButtonUserRegistration";
-            this.ButtonUserRegistration.Size = new System.Drawing.Size(451, 85);
+            this.ButtonUserRegistration.Size = new System.Drawing.Size(451, 68);
             this.ButtonUserRegistration.TabIndex = 3;
             this.ButtonUserRegistration.Text = "Зарегистрироваться";
             this.ButtonUserRegistration.UseVisualStyleBackColor = true;
@@ -121,16 +123,16 @@ namespace WinFormsApp1
             // 
             this.ButtonSeeNotSeePassword.ImageIndex = 0;
             this.ButtonSeeNotSeePassword.ImageList = this.imageList1;
-            this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(489, 81);
+            this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(489, 65);
+            this.ButtonSeeNotSeePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonSeeNotSeePassword.Name = "ButtonSeeNotSeePassword";
-            this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(44, 34);
+            this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(46, 34);
             this.ButtonSeeNotSeePassword.TabIndex = 4;
             this.ButtonSeeNotSeePassword.UseVisualStyleBackColor = true;
             this.ButtonSeeNotSeePassword.Click += new System.EventHandler(this.ButtonSeeNotSeePassword_Click);
             // 
             // imageList1
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "icons8-closed-eye-80.png");
@@ -138,9 +140,9 @@ namespace WinFormsApp1
             // 
             // FormRegistration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 334);
+            this.ClientSize = new System.Drawing.Size(561, 267);
             this.Controls.Add(this.ButtonSeeNotSeePassword);
             this.Controls.Add(this.ButtonUserRegistration);
             this.Controls.Add(this.labelBirthday);
@@ -150,6 +152,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.TextBoxLogin);
             this.Controls.Add(this.labelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormRegistration";

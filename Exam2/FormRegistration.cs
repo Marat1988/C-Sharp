@@ -20,6 +20,8 @@ namespace WinFormsApp1
             ToolTip toolTip1 = new ToolTip();
             toolTip1.SetToolTip(ButtonUserRegistration, "Регистрация в системе");
             toolTip1.SetToolTip(ButtonSeeNotSeePassword, "Всевидящее око");
+            toolTip1.SetToolTip(TextBoxLogin, "Введите логин");
+            toolTip1.SetToolTip(TextBoxPassword, "Введите пароль");
         }
         private void ButtonUserRegistration_Click(object sender, EventArgs e)
         {

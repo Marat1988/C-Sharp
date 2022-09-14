@@ -37,6 +37,7 @@ namespace WinFormsApp1
             ToolTip toolTip1 = new ToolTip();
             toolTip1.SetToolTip(ButtonSaveSettings, "Соханение настроек пользователя");
             toolTip1.SetToolTip(ButtonSeeNotSeePassword, "Всевидящее око");
+            toolTip1.SetToolTip(TextBoxPassword, "Введите пароль");
         }
         private void ButtonSaveSettings_Click(object sender, EventArgs e)
         {

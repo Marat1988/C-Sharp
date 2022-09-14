@@ -48,6 +48,11 @@ namespace WinFormsApp1
             ToolTip toolTip1 = new ToolTip();
             toolTip1.SetToolTip(ButtonInputSystem, "Вход в систему");
             toolTip1.SetToolTip(ButtonSeeNotSeePassword, "Всевидящее око");
+            toolTip1.SetToolTip(TextBoxUser, "Введите имя пользователя");
+            toolTip1.SetToolTip(TextBoxPassword, "Введите пароль");
+
+
+
         }
         private void TextBoxUser_TextChanged(object sender, EventArgs e) => ButtonInputSystem.Enabled = CheckEnableButton();
         private void TextBoxPassword_TextChanged(object sender, EventArgs e) => ButtonInputSystem.Enabled = CheckEnableButton();

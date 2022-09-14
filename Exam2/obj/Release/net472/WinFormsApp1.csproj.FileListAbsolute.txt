@@ -1,0 +1,15 @@
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\bin\Release\net472\Quiz.exe.config
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\bin\Release\net472\Quiz.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\bin\Release\net472\Quiz.pdb
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\WinFormsApp1.FormLogin.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\WinFormsApp1.FormMain.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\WinFormsApp1.FormRegistration.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\WinFormsApp1.FormSettingUser.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\WinFormsApp1.Properties.Resources.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\WinFormsApp1.csproj.GenerateResource.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\WinFormsApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\WinFormsApp1.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\WinFormsApp1.AssemblyInfo.cs
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\WinFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\Quiz.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\net472\Quiz.pdb
