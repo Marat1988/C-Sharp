@@ -87,6 +87,7 @@ namespace WinFormsApp1
             this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
             this.dateTimePickerBirthday.Size = new System.Drawing.Size(263, 34);
             this.dateTimePickerBirthday.TabIndex = 4;
+            this.dateTimePickerBirthday.Value = new System.DateTime(2022, 9, 14, 0, 0, 0, 0);
             // 
             // labelBirthday
             // 

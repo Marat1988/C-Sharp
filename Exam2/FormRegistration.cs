@@ -14,19 +14,16 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
-
         private bool CheckEnableButton() => TextBoxLogin.TextLength > 0 && TextBoxPassword.TextLength > 0;
-
         private void FormRegistration_Load(object sender, EventArgs e)
         {
             
         }
-
         private void ButtonUserRegistration_Click(object sender, EventArgs e)
         {
-
+            DateTime d = dateTimePickerBirthday.Value.Date;
+           // MessageBox.Show(dateTimePickerBirthday.Value.ToString());
         }
-
         private void TextBoxLogin_TextChanged(object sender, EventArgs e)=>ButtonUserRegistration.Enabled = CheckEnableButton();
         private void TextBoxPassword_TextChanged(object sender, EventArgs e) => ButtonUserRegistration.Enabled = CheckEnableButton();
     }
