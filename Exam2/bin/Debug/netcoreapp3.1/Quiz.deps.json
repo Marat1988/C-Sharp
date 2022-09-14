@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "WinFormsApp1/1.0.0": {
+      "Quiz/1.0.0": {
         "runtime": {
-          "WinFormsApp1.dll": {}
+          "Quiz.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "WinFormsApp1/1.0.0": {
+    "Quiz/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

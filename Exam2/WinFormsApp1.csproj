@@ -6,6 +6,12 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>question.ico</ApplicationIcon>
     <Win32Resource />
+    <AssemblyName>Quiz</AssemblyName>
+    <Description>Очумелые ручки</Description>
+    <Company>Академия ТОП г. Калининград</Company>
+    <Authors>Тухтаров М.Р.</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Product>Викторина</Product>
   </PropertyGroup>
 
   <ItemGroup>
