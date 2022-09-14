@@ -29,6 +29,8 @@ namespace WinFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistration));
             this.labelLogin = new System.Windows.Forms.Label();
             this.TextBoxLogin = new System.Windows.Forms.TextBox();
             this.TextBoxPassword = new System.Windows.Forms.TextBox();
@@ -36,6 +38,8 @@ namespace WinFormsApp1
             this.dateTimePickerBirthday = new System.Windows.Forms.DateTimePicker();
             this.labelBirthday = new System.Windows.Forms.Label();
             this.ButtonUserRegistration = new System.Windows.Forms.Button();
+            this.ButtonSeeNotSeePassword = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // labelLogin
@@ -58,6 +62,7 @@ namespace WinFormsApp1
             this.TextBoxLogin.Size = new System.Drawing.Size(263, 34);
             this.TextBoxLogin.TabIndex = 1;
             this.TextBoxLogin.TextChanged += new System.EventHandler(this.TextBoxLogin_TextChanged);
+            this.TextBoxLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxLogin_KeyPress);
             // 
             // TextBoxPassword
             // 
@@ -69,6 +74,7 @@ namespace WinFormsApp1
             this.TextBoxPassword.Size = new System.Drawing.Size(263, 34);
             this.TextBoxPassword.TabIndex = 3;
             this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
+            this.TextBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPassword_KeyPress);
             // 
             // labelPassword
             // 
@@ -111,11 +117,31 @@ namespace WinFormsApp1
             this.ButtonUserRegistration.UseVisualStyleBackColor = true;
             this.ButtonUserRegistration.Click += new System.EventHandler(this.ButtonUserRegistration_Click);
             // 
+            // ButtonSeeNotSeePassword
+            // 
+            this.ButtonSeeNotSeePassword.ImageIndex = 0;
+            this.ButtonSeeNotSeePassword.ImageList = this.imageList1;
+            this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(489, 81);
+            this.ButtonSeeNotSeePassword.Name = "ButtonSeeNotSeePassword";
+            this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(44, 34);
+            this.ButtonSeeNotSeePassword.TabIndex = 7;
+            this.ButtonSeeNotSeePassword.UseVisualStyleBackColor = true;
+            this.ButtonSeeNotSeePassword.Click += new System.EventHandler(this.ButtonSeeNotSeePassword_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8-closed-eye-80.png");
+            this.imageList1.Images.SetKeyName(1, "icons8-eye-80.png");
+            // 
             // FormRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 334);
+            this.ClientSize = new System.Drawing.Size(561, 334);
+            this.Controls.Add(this.ButtonSeeNotSeePassword);
             this.Controls.Add(this.ButtonUserRegistration);
             this.Controls.Add(this.labelBirthday);
             this.Controls.Add(this.dateTimePickerBirthday);
@@ -144,5 +170,7 @@ namespace WinFormsApp1
         private System.Windows.Forms.DateTimePicker dateTimePickerBirthday;
         private System.Windows.Forms.Label labelBirthday;
         private System.Windows.Forms.Button ButtonUserRegistration;
+        private System.Windows.Forms.Button ButtonSeeNotSeePassword;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

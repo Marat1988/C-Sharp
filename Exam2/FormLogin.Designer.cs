@@ -29,12 +29,16 @@ namespace WinFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.TextBoxUser = new System.Windows.Forms.TextBox();
             this.labelUser = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.TextBoxPassword = new System.Windows.Forms.TextBox();
             this.ButtonInputSystem = new System.Windows.Forms.Button();
             this.LinkLabelAuthorization = new System.Windows.Forms.LinkLabel();
+            this.ButtonSeeNotSeePassword = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // TextBoxUser
@@ -48,6 +52,7 @@ namespace WinFormsApp1
             this.TextBoxUser.Size = new System.Drawing.Size(270, 30);
             this.TextBoxUser.TabIndex = 0;
             this.TextBoxUser.TextChanged += new System.EventHandler(this.TextBoxUser_TextChanged);
+            this.TextBoxUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxUser_KeyPress);
             // 
             // labelUser
             // 
@@ -80,6 +85,7 @@ namespace WinFormsApp1
             this.TextBoxPassword.Size = new System.Drawing.Size(270, 30);
             this.TextBoxPassword.TabIndex = 3;
             this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
+            this.TextBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPassword_KeyPress);
             // 
             // ButtonInputSystem
             // 
@@ -105,12 +111,32 @@ namespace WinFormsApp1
             this.LinkLabelAuthorization.Text = "Еще нет аккаунта?";
             this.LinkLabelAuthorization.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelAuthorization_LinkClicked);
             // 
+            // ButtonSeeNotSeePassword
+            // 
+            this.ButtonSeeNotSeePassword.ImageIndex = 0;
+            this.ButtonSeeNotSeePassword.ImageList = this.imageList1;
+            this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(422, 72);
+            this.ButtonSeeNotSeePassword.Name = "ButtonSeeNotSeePassword";
+            this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(37, 30);
+            this.ButtonSeeNotSeePassword.TabIndex = 8;
+            this.ButtonSeeNotSeePassword.UseVisualStyleBackColor = true;
+            this.ButtonSeeNotSeePassword.Click += new System.EventHandler(this.ButtonSeeNotSeePassword_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8-closed-eye-80.png");
+            this.imageList1.Images.SetKeyName(1, "icons8-eye-80.png");
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(453, 254);
+            this.ClientSize = new System.Drawing.Size(483, 254);
+            this.Controls.Add(this.ButtonSeeNotSeePassword);
             this.Controls.Add(this.LinkLabelAuthorization);
             this.Controls.Add(this.ButtonInputSystem);
             this.Controls.Add(this.TextBoxPassword);
@@ -137,6 +163,8 @@ namespace WinFormsApp1
         private System.Windows.Forms.TextBox TextBoxPassword;
         private System.Windows.Forms.Button ButtonInputSystem;
         private System.Windows.Forms.LinkLabel LinkLabelAuthorization;
+        private System.Windows.Forms.Button ButtonSeeNotSeePassword;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

@@ -16,14 +16,27 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
-
         private bool CheckEnableButton() => TextBoxUser.TextLength > 0 && TextBoxPassword.TextLength > 0;
         private void ButtonInputSystem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormMain formMain = new FormMain();
-            formMain.Closed += (s, args) => this.Close();
-            formMain.Show();
+            if (Setting.CheckLogin(TextBoxUser.Text, out string messageLogin) == false)
+            {
+                MessageBox.Show(messageLogin, "Ошибка в логине", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (Setting.CheckPassword(TextBoxPassword.Text, out string messagePassword) == false)
+                {
+                    MessageBox.Show(messagePassword, "Ошибка в пароле", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    this.Hide();
+                    FormMain formMain = new FormMain();
+                    formMain.Closed += (s, args) => this.Close();
+                    formMain.Show();
+                }
+            }
         }
         private void LinkLabelAuthorization_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -34,9 +47,30 @@ namespace WinFormsApp1
         {
             ToolTip toolTip1 = new ToolTip();
             toolTip1.SetToolTip(ButtonInputSystem, "Вход в систему");
+            toolTip1.SetToolTip(ButtonSeeNotSeePassword, "Всевидящее око");
         }
         private void TextBoxUser_TextChanged(object sender, EventArgs e) => ButtonInputSystem.Enabled = CheckEnableButton();
         private void TextBoxPassword_TextChanged(object sender, EventArgs e) => ButtonInputSystem.Enabled = CheckEnableButton();
-    
+
+        private void ButtonSeeNotSeePassword_Click(object sender, EventArgs e)
+        {
+            ButtonSeeNotSeePassword.ImageIndex = (ButtonSeeNotSeePassword.ImageIndex == 0) ? 1 : 0;
+            TextBoxPassword.PasswordChar = (ButtonSeeNotSeePassword.ImageIndex == 1) ? '\0' : '*';
+        }
+        private void TextBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ((e.KeyChar >= 'A' && e.KeyChar <= 'Z') ||
+                         (e.KeyChar >= 'a' && e.KeyChar <= 'z') ||
+                         (e.KeyChar >= '0' && e.KeyChar <= '9') ||
+                         e.KeyChar == '!' || e.KeyChar == '.' ||
+                         e.KeyChar == ',' || e.KeyChar == (char)Keys.Back) ? false : true;
+        }
+        private void TextBoxUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ((e.KeyChar >= 'A' && e.KeyChar <= 'Z') ||
+             (e.KeyChar >= 'a' && e.KeyChar <= 'z') ||
+             (e.KeyChar >= '0' && e.KeyChar <= '9') ||
+             e.KeyChar == (char)Keys.Back) ? false : true;
+        }
     }
 }

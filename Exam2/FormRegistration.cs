@@ -17,14 +17,46 @@ namespace WinFormsApp1
         private bool CheckEnableButton() => TextBoxLogin.TextLength > 0 && TextBoxPassword.TextLength > 0;
         private void FormRegistration_Load(object sender, EventArgs e)
         {
-            
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(ButtonUserRegistration, "Регистрация в системе");
+            toolTip1.SetToolTip(ButtonSeeNotSeePassword, "Всевидящее око");
         }
         private void ButtonUserRegistration_Click(object sender, EventArgs e)
         {
-            DateTime d = dateTimePickerBirthday.Value.Date;
-           // MessageBox.Show(dateTimePickerBirthday.Value.ToString());
+            if (Setting.CheckLogin(TextBoxLogin.Text, out string messageLogin) == false) 
+            {
+                MessageBox.Show(messageLogin, "Ошибка в логине", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (Setting.CheckPassword(TextBoxPassword.Text, out string message) == false)
+                {
+                    MessageBox.Show(message, "Ошибка в пароле", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                DateTime d = dateTimePickerBirthday.Value.Date;
+            }
         }
         private void TextBoxLogin_TextChanged(object sender, EventArgs e)=>ButtonUserRegistration.Enabled = CheckEnableButton();
         private void TextBoxPassword_TextChanged(object sender, EventArgs e) => ButtonUserRegistration.Enabled = CheckEnableButton();
+        private void ButtonSeeNotSeePassword_Click(object sender, EventArgs e)
+        {
+            ButtonSeeNotSeePassword.ImageIndex = (ButtonSeeNotSeePassword.ImageIndex == 0) ? 1 : 0;
+            TextBoxPassword.PasswordChar = (ButtonSeeNotSeePassword.ImageIndex == 1) ? '\0' : '*';
+        }
+        private void TextBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ((e.KeyChar >= 'A' && e.KeyChar <= 'Z') ||
+                         (e.KeyChar >= 'a' && e.KeyChar <= 'z') ||
+                         (e.KeyChar >= '0' && e.KeyChar <= '9') ||
+                         e.KeyChar == '!' || e.KeyChar == '.' ||
+                         e.KeyChar == ',' || e.KeyChar == (char)Keys.Back) ? false : true;
+        }
+        private void TextBoxLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ((e.KeyChar >= 'A' && e.KeyChar <= 'Z') ||
+                         (e.KeyChar >= 'a' && e.KeyChar <= 'z') ||
+                         (e.KeyChar >= '0' && e.KeyChar <= '9') ||
+                         e.KeyChar == (char)Keys.Back) ? false : true;
+        }
     }
 }
