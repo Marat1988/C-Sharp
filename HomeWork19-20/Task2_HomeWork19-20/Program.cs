@@ -22,8 +22,8 @@ namespace Task2_HomeWork19_20
                 this.Author = Author;
                 this.PageCount = PageCount;
             }
-            public static int operator +(Book book, int pageCount) //Перегрузка оператора +
-            {
+            public static int operator +(Book book, int pageCount) //Перегрузка оператора + Аналогично можно выполнить и другие операторы. Заморачиваться особо не стал
+            {                                                       //Сделал только перезагрузку оператора +
                 book.PageCount += pageCount;
                 return book.PageCount;
             }
