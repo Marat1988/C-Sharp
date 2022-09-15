@@ -11,10 +11,8 @@ using System.Threading.Tasks;
 
 namespace Task2_HomeWork19_20
 {
-
     class Program
     {
-
         public class Book //Книга
         {
             public string Author { get;  set; } //Название автора
@@ -24,12 +22,17 @@ namespace Task2_HomeWork19_20
                 this.Author = Author;
                 this.PageCount = PageCount;
             }
+            public static int operator +(Book book, int pageCount) //Перегрузка оператора +
+            {
+                book.PageCount += pageCount;
+                return book.PageCount;
+            }
             public override string ToString() => $"{Author}\t {PageCount} страниц";
         }
 
         public class Library //Библиотека
         {
-            private List<Book> books;
+            private readonly List<Book> books;
             private int FindAuthor(string author) //Проверка, есть ли книга с указанным автором в списке
             {
                 for (int i = 0; i < books.Count; i++)
@@ -53,7 +56,7 @@ namespace Task2_HomeWork19_20
             {
                 get
                 {
-                    if (index>=0 && index < books.Count)
+                    if (index >= 0 && index < books.Count)
                     {
                         return books[index];
                     }
@@ -68,14 +71,14 @@ namespace Task2_HomeWork19_20
             {
                 get
                 {
-                    if (FindAuthor(author)>=0)
+                    if (FindAuthor(author) >= 0)
                         return this[FindAuthor(author)];
                     throw new Exception("Автора в списке нет");
                 }
             }
             public void AddNewBook(Book newBook) //Добавление новой книги в список
             {
-                if (FindAuthor(newBook.Author)>=0)
+                if (FindAuthor(newBook.Author) >= 0)
                     Console.WriteLine("Автор уже есть в списке");
                 else
                     books.Add(newBook);
@@ -87,6 +90,7 @@ namespace Task2_HomeWork19_20
                 else
                     Console.WriteLine("Указанного автора в списке нет");
             }
+
         }
         static void Main(string[] args)
         {
@@ -112,6 +116,13 @@ namespace Task2_HomeWork19_20
             Console.WriteLine("Обновленная библиотека");
             for (int i = 0; i < library.CountBooks; i++)
                 Console.WriteLine(library[i]);
+            Console.WriteLine("===============================================================");
+            Console.WriteLine("Увеличим количество страниц у автора книги Пушкин А.С. на 5000");
+            Console.WriteLine($"Итоговое количество у данной книги будет  {library["Пушкин А.С."] + 5000}"); 
+            Console.WriteLine("Обновленная библиотека");
+            for (int i = 0; i < library.CountBooks; i++)
+                Console.WriteLine(library[i]);
+            Console.ReadKey();
         }
     }
 }
