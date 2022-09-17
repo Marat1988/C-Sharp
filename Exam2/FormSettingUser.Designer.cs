@@ -84,6 +84,7 @@ namespace WinFormsApp1
             this.TextBoxPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.TextBoxPassword.Location = new System.Drawing.Point(216, 26);
             this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TextBoxPassword.MaxLength = 50;
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
             this.TextBoxPassword.Size = new System.Drawing.Size(263, 34);

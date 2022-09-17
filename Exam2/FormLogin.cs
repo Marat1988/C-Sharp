@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.OleDb;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyDBHelper;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
@@ -31,10 +33,16 @@ namespace WinFormsApp1
                 }
                 else
                 {
-                    this.Hide();
-                    FormMain formMain = new FormMain();
-                    formMain.Closed += (s, args) => this.Close();
-                    formMain.Show();
+                    if (MyDataBase.CheckLogin(TextBoxUser.Text, TextBoxPassword.Text) == false)
+                        MessageBox.Show("Не корректный ввод логина или пароля", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else
+                    {
+                        MyDataBase.Login = TextBoxUser.Text;
+                        this.Hide();
+                        FormMain formMain = new FormMain();
+                        formMain.Closed += (s, args) => this.Close();
+                        formMain.Show();
+                    }
                 }
             }
         }
@@ -50,9 +58,6 @@ namespace WinFormsApp1
             toolTip1.SetToolTip(ButtonSeeNotSeePassword, "Всевидящее око");
             toolTip1.SetToolTip(TextBoxUser, "Введите имя пользователя");
             toolTip1.SetToolTip(TextBoxPassword, "Введите пароль");
-
-
-
         }
         private void TextBoxUser_TextChanged(object sender, EventArgs e) => ButtonInputSystem.Enabled = CheckEnableButton();
         private void TextBoxPassword_TextChanged(object sender, EventArgs e) => ButtonInputSystem.Enabled = CheckEnableButton();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyDBHelper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,6 @@ namespace WinFormsApp1
         public FormMain()
         {
             InitializeComponent();
-
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -26,6 +26,7 @@ namespace WinFormsApp1
             toolTip1.SetToolTip(ButtonShowTop20, "Посмотреть ТОП 20 лучших пользователей по выбранной викторине");
             toolTip1.SetToolTip(ButtonSettingUser, "Изменить настройки пользователя");
             toolTip1.SetToolTip(ButtonExit, "Выход из системы");
+            LabelHelloUser.Text = "Привет " + MyDataBase.Login + "\n" + "Добро пожаловать на игру \"Викторина\"";
         }
         private void ButtonExit_Click(object sender, EventArgs e) => this.Close();
 
@@ -38,6 +39,11 @@ namespace WinFormsApp1
         {
             FormSettingUser formSettingUser = new FormSettingUser();
             formSettingUser.ShowDialog();
+        }
+
+        private void LabelHelloUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
