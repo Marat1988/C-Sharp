@@ -71,7 +71,7 @@ namespace WinFormsApp1
         {
             if (e.KeyChar == (char)13)
             {
-                ButtonInputSystem_Click(sender, e);
+                ButtonInputSystem_Click(sender, null);
             }
             else
             {

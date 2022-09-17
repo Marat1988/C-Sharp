@@ -72,6 +72,7 @@ namespace WinFormsApp1
             this.ButtonShowResult.TabIndex = 2;
             this.ButtonShowResult.Text = "Посмотреть результаты прошлых викторин";
             this.ButtonShowResult.UseVisualStyleBackColor = true;
+            this.ButtonShowResult.Click += new System.EventHandler(this.ButtonShowResult_Click);
             // 
             // ButtonShowTop20
             // 

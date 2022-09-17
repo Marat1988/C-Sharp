@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Data.OleDb;
 
@@ -96,6 +97,26 @@ namespace MyDBHelper
         public static void UpdateSettingUser(string password, DateTime birthDay)
         {
             ExecuteSQL("UPDATE USERS SET [Password] ='" + password + "', [BirthDay] ='" + birthDay + "' WHERE [Login] = '" + login + "'");
+        }
+
+        public static void LoadThemes(ref List<string> themes)
+        {
+            try
+            {
+                OpenConnection("SELECT [Name], IIF(ThemesId=1, 1,2) AS OrderThemes  FROM THEMES ORDER BY 2,1");
+                using (OleDbDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        themes.Add(reader["Name"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            connection.Close();
         }
 
     }
