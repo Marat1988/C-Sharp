@@ -18,8 +18,8 @@ namespace WinFormsApp1
 
         private void FormMain_Load(object sender, EventArgs e)
         {         
-            ComboBoxChooseQuiz.Select();
-            ComboBoxChooseQuiz.SelectedIndex = 0;
+            //ComboBoxChooseQuiz.Select();
+           // ComboBoxChooseQuiz.SelectedIndex = 0;
             ToolTip toolTip1 = new ToolTip();
             toolTip1.SetToolTip(ButtonStart, "Старт выбранной викторины");
             toolTip1.SetToolTip(ButtonShowResult, "Просмотреть прошлые результаты по выбранной викторине");

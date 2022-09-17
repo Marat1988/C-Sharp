@@ -101,8 +101,6 @@ namespace WinFormsApp1
             // 
             this.ComboBoxChooseQuiz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxChooseQuiz.FormattingEnabled = true;
-            this.ComboBoxChooseQuiz.Items.AddRange(new object[] {
-            "Смешанная"});
             this.ComboBoxChooseQuiz.Location = new System.Drawing.Point(437, 52);
             this.ComboBoxChooseQuiz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComboBoxChooseQuiz.Name = "ComboBoxChooseQuiz";

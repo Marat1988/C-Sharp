@@ -69,11 +69,18 @@ namespace WinFormsApp1
         }
         private void TextBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = ((e.KeyChar >= 'A' && e.KeyChar <= 'Z') ||
-                         (e.KeyChar >= 'a' && e.KeyChar <= 'z') ||
-                         (e.KeyChar >= '0' && e.KeyChar <= '9') ||
-                         e.KeyChar == '!' || e.KeyChar == '.' ||
-                         e.KeyChar == ',' || e.KeyChar == (char)Keys.Back) ? false : true;
+            if (e.KeyChar == (char)13)
+            {
+                ButtonInputSystem_Click(sender, e);
+            }
+            else
+            {
+                e.Handled = ((e.KeyChar >= 'A' && e.KeyChar <= 'Z') ||
+                    (e.KeyChar >= 'a' && e.KeyChar <= 'z') ||
+                    (e.KeyChar >= '0' && e.KeyChar <= '9') ||
+                    e.KeyChar == '!' || e.KeyChar == '.' ||
+                    e.KeyChar == ',' || e.KeyChar == (char)Keys.Back) ? false : true;
+            }
         }
         private void TextBoxUser_KeyPress(object sender, KeyPressEventArgs e)
         {
