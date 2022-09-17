@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyDBHelper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,7 +36,18 @@ namespace WinFormsApp1
                 {
                     MessageBox.Show(message, "Ошибка в пароле", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                DateTime d = dateTimePickerBirthday.Value.Date;
+                else
+                {
+                    if (MyDataBase.CheckLogin(TextBoxLogin.Text) == true)
+                    {
+                        MessageBox.Show("Такой логин уже существует", "Логин занят", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MyDataBase.InsertUser(TextBoxLogin.Text, TextBoxPassword.Text, dateTimePickerBirthday.Value.Date);
+                        this.Close();
+                    }
+                }
             }
         }
         private void TextBoxLogin_TextChanged(object sender, EventArgs e)=>ButtonUserRegistration.Enabled = CheckEnableButton();

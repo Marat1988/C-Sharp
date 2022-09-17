@@ -64,6 +64,11 @@ namespace MyDBHelper
             SelectSQL("SELECT * FROM USERS WHERE [Login] = '" + login + "' AND [Password] = '" + password + "'", out int countRows);
             return (countRows > 0);
         }
+        //Ввод нового пользователя в базу данных
+        public static void InsertUser(string login, string password, DateTime birthDay)
+        {
+            ExecuteSQL("INSERT INTO USERS ([Login], [Password], [BirthDay]) VALUES ('" + login + "','" + password + "','" + birthDay + "')");
+        }
 
     }
 }
