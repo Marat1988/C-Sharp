@@ -1,0 +1,7 @@
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork23-24\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork23-24\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork23-24\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork23-24\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork23-24\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork23-24\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\HomeWork23-24\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
