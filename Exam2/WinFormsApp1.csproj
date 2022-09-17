@@ -12,6 +12,7 @@
     <Authors>Тухтаров М.Р.</Authors>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Product>Викторина</Product>
+    <Copyright>Академия ТОП г. Калининград</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

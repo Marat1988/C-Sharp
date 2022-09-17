@@ -34,10 +34,10 @@ namespace WinFormsApp1
                 else
                 {
                     if (MyDataBase.CheckLogin(TextBoxUser.Text, TextBoxPassword.Text) == false)
-                        MessageBox.Show("Не корректный ввод логина или пароля", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Не правильный логин или пароль", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     else
                     {
-                        MyDataBase.Login = TextBoxUser.Text;
+                        MyDataBase.login = TextBoxUser.Text;
                         this.Hide();
                         FormMain formMain = new FormMain();
                         formMain.Closed += (s, args) => this.Close();

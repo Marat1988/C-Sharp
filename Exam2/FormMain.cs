@@ -26,7 +26,7 @@ namespace WinFormsApp1
             toolTip1.SetToolTip(ButtonShowTop20, "Посмотреть ТОП 20 лучших пользователей по выбранной викторине");
             toolTip1.SetToolTip(ButtonSettingUser, "Изменить настройки пользователя");
             toolTip1.SetToolTip(ButtonExit, "Выход из системы");
-            LabelHelloUser.Text = "Привет " + MyDataBase.Login + "\n" + "Добро пожаловать на игру \"Викторина\"";
+            LabelHelloUser.Text = "Привет " + MyDataBase.login + "\n" + "Добро пожаловать на игру \"Викторина\"";
         }
         private void ButtonExit_Click(object sender, EventArgs e) => this.Close();
 

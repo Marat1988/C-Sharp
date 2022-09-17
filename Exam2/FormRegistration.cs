@@ -44,7 +44,14 @@ namespace WinFormsApp1
                     }
                     else
                     {
-                        MyDataBase.InsertUser(TextBoxLogin.Text, TextBoxPassword.Text, dateTimePickerBirthday.Value.Date);
+                        try
+                        {
+                            MyDataBase.InsertUser(TextBoxLogin.Text, TextBoxPassword.Text, dateTimePickerBirthday.Value.Date);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                         this.Close();
                     }
                 }

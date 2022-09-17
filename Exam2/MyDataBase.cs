@@ -7,7 +7,7 @@ namespace MyDBHelper
     public static class MyDataBase
     {
         public const string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Base.mdb";
-        public static string Login = "";
+        public static string login = "";
         private static OleDbConnection connection;
         private static OleDbCommand command;
         //Открытие соеднинения с базой данных
@@ -68,6 +68,34 @@ namespace MyDBHelper
         public static void InsertUser(string login, string password, DateTime birthDay)
         {
             ExecuteSQL("INSERT INTO USERS ([Login], [Password], [BirthDay]) VALUES ('" + login + "','" + password + "','" + birthDay + "')");
+        }
+        //Отображение логина и пароля
+        public static void ShowInfoUser(out string password, out DateTime birthDay)
+        {
+            password = "";
+            birthDay = DateTime.Now.Date;
+            try
+            {
+                OpenConnection("SELECT Password, BirthDay FROM USERS WHERE [Login] = '" + login + "'");
+                using (OleDbDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        password = reader["Password"].ToString();
+                        birthDay = DateTime.Parse(reader["BirthDay"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            connection.Close();
+        }
+        //Обновление пароля и дня рождения у пользователя
+        public static void UpdateSettingUser(string password, DateTime birthDay)
+        {
+            ExecuteSQL("UPDATE USERS SET [Password] ='" + password + "', [BirthDay] ='" + birthDay + "' WHERE [Login] = '" + login + "'");
         }
 
     }

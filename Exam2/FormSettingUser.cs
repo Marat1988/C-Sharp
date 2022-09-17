@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyDBHelper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,12 +39,34 @@ namespace WinFormsApp1
             toolTip1.SetToolTip(ButtonSaveSettings, "Соханение настроек пользователя");
             toolTip1.SetToolTip(ButtonSeeNotSeePassword, "Всевидящее око");
             toolTip1.SetToolTip(TextBoxPassword, "Введите пароль");
+            try
+            {
+                MyDataBase.ShowInfoUser(out string password, out DateTime birthDay);
+                TextBoxPassword.Text = password;
+                dateTimePickerBirthday.Value = birthDay;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void ButtonSaveSettings_Click(object sender, EventArgs e)
         {
             if (Setting.CheckPassword(TextBoxPassword.Text, out string messagePassword) == false)
             {
                 MessageBox.Show(messagePassword, "Ошибка в пароле", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    MyDataBase.UpdateSettingUser(TextBoxPassword.Text, dateTimePickerBirthday.Value.Date);
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                        MessageBox.Show(ex.Message, "Ошибка при обновлении данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }                
             }
         }
     }
