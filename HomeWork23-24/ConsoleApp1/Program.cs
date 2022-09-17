@@ -63,10 +63,10 @@ namespace ConsoleApp1
                             Console.WriteLine(number1 >= number2);
                             break;
                         case "==":
-                            Console.WriteLine(number1 >= number2);
+                            Console.WriteLine(number1 == number2);
                             break;
                         case "!=":
-                            Console.WriteLine(number1 >= number2);
+                            Console.WriteLine(number1 != number2);
                             break;
                         default: throw new MyStringException();
                     }
