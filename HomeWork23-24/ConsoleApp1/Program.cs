@@ -11,7 +11,7 @@ namespace ConsoleApp1
          * введенного выражения и дать результат true или false. В строке могут быть 
          * только целые числа и операторы: <, >, <=, >=, ==, !=. Для обработки 
          * ошибок ввода используйте механизм исключений.*/
-        public class MyStringException : ApplicationException
+        public class MyStringException : ApplicationException //Мое собственное исключение
         {
             public DateTime TimeException { get; private set; }
             public MyStringException() : base("Не корректный ввод строки")
@@ -24,13 +24,13 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Введите строку, например 3>2. В строке могут быть только целые числа и операторы: <, >, <=, >=, ==, != ");
             string str = Console.ReadLine();
-            string operand = string.Empty;
+            string strOperator = string.Empty;
             int indexOperator = -1;
             for (int i = 0; i < str.Length; i++)
             {
-                if (str[i] == '>' || str[i] == '<' || str[i] == '!' || str[i] == '=')
+                if (str[i] == '>' || str[i] == '<' || str[i] == '!' || str[i] == '=') //Ищу один из символов в строке
                 {
-                    indexOperator = i;
+                    indexOperator = i; //И получаю его индекс
                     break;
                 }
             }
@@ -41,14 +41,14 @@ namespace ConsoleApp1
                 try
                 {
                     int number1 = int.Parse(str.Substring(0, indexOperator));
-                    operand += str[indexOperator];
-                    if (str[indexOperator + 1] == '>' || str[indexOperator + 1] == '<' || str[indexOperator + 1] == '!' || str[indexOperator + 1] == '=')
+                    strOperator += str[indexOperator];
+                    if (str[indexOperator + 1] == '=') //Проверяю следующий символ с строке (для того, чтобы понять, есть ли в строке операторы >= <= == != )
                     {
-                        operand += str[indexOperator + 1];
+                        strOperator += str[indexOperator + 1];
                         indexOperator += 1;
                     }
                     int number2 = int.Parse(str.Substring(indexOperator + 1, str.Length - 1 - indexOperator));
-                    switch (operand)
+                    switch (strOperator)
                     {
                         case ">":
                             Console.WriteLine(number1 > number2);

@@ -16,19 +16,17 @@ namespace ConsoleApp2
         {
             private string lastName; //ФИО владельца
             private int number; //номер паспорта
-            public DateTime DateIssue { get; set; } //дата выдачи
+            private DateTime dateIssue; //дата выдачи
 
             public ForeignPassport (string lastName, int number, DateTime dateIssue)
             {
                 if (lastName.ToCharArray().Where(symbol => char.IsDigit(symbol)).Count() > 0)
                     throw new Exception("В фамилии не могу содержаться цифры");
-                if (lastName == null)
-                    throw new ArgumentNullException(nameof(LastName));
                 if (number <= 0)
                     throw new Exception("Значение номера паспорта не может быть меньше нуля");
-                this.lastName = lastName;
+                this.lastName = lastName ?? throw new ArgumentNullException(nameof(LastName));
                 this.number = number;
-                DateIssue = dateIssue;
+                this.dateIssue = dateIssue;
             }
 
             public string LastName
@@ -60,6 +58,24 @@ namespace ConsoleApp2
                         number = value;
                 }
             }
+            public DateTime DateIssue
+            {
+                get
+                {
+                    return dateIssue;
+                }
+                set
+                {
+                    try
+                    {
+                        dateIssue = value;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
 
             public override string ToString()
             {
@@ -67,13 +83,9 @@ namespace ConsoleApp2
                     $"Дата выдачи: { DateIssue.ToShortDateString()}\n" +
                     $"ФИО Владельца: {lastName}";
             }
-
         }
-
-
         static void Main(string[] args)
         {
-
             try
             {
                 ForeignPassport foreignPassport = new ForeignPassport("Иванов", 435, new DateTime(2001, 1, 1));
@@ -81,6 +93,9 @@ namespace ConsoleApp2
                 Console.WriteLine();
                 ForeignPassport foreignPassport1 = new ForeignPassport("Петров", 56, new DateTime(2022, 1, 1));
                 Console.WriteLine(foreignPassport1.ToString());
+                foreignPassport1.LastName = "Петров11"; //Исключение (в фамилии не могут быть цифры)
+                foreignPassport1.Number = -45; //Исключение (не может быть отрицательного значения в номере паспорта)
+                foreignPassport1.DateIssue = new DateTime(2022,32,32); //Исключение (не корректная дата)
             }
             catch (Exception ex)
             {
