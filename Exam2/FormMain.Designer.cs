@@ -61,6 +61,7 @@ namespace WinFormsApp1
             this.ButtonStart.TabIndex = 1;
             this.ButtonStart.Text = "Начать викторину";
             this.ButtonStart.UseVisualStyleBackColor = true;
+            this.ButtonStart.Click += new System.EventHandler(this.ButtonStart_Click);
             // 
             // ButtonShowResult
             // 

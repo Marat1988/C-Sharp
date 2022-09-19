@@ -63,5 +63,12 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void ButtonStart_Click(object sender, EventArgs e)
+        {
+            FormStartQuiz formStartQuiz = new FormStartQuiz();
+            formStartQuiz.Text = "Викторина. Вопрос 1 из 20";
+            formStartQuiz.ShowDialog();
+        }
     }
 }
