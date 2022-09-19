@@ -23,6 +23,7 @@ namespace WinFormsApp1
             public string Description { get; set; }
             public List<(string, bool)> OptionQuestion { get; set; }
         }
+
         private List<QuestionGames> games = new List<QuestionGames>();
         private void LoadQuestion()
         {
@@ -93,14 +94,12 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
-
         private void StartQuiz_Load(object sender, EventArgs e)
         {
             LoadQuestion();
             AddOption(numberAnswer);
             this.Text = $"Викторина. Вопрос {numberAnswer} из {games.Count}";
         }
-
         private void ButtonNextQuestion_Click(object sender, EventArgs e)
         {
             foreach (var item in rdbtn)
