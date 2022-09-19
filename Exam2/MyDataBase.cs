@@ -98,7 +98,7 @@ namespace MyDBHelper
         {
             ExecuteSQL("UPDATE USERS SET [Password] ='" + password + "', [BirthDay] ='" + birthDay + "' WHERE [Login] = '" + login + "'");
         }
-
+        //Загрука тем
         public static void LoadThemes(ref List<string> themes)
         {
             try
@@ -118,6 +118,5 @@ namespace MyDBHelper
             }
             connection.Close();
         }
-
     }
 }

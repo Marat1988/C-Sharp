@@ -68,6 +68,7 @@ namespace WinFormsApp1
         {
             FormStartQuiz formStartQuiz = new FormStartQuiz();
             formStartQuiz.Text = "Викторина. Вопрос 1 из 20";
+            formStartQuiz.themesName = ComboBoxChooseQuiz.Text;
             formStartQuiz.ShowDialog();
         }
     }
