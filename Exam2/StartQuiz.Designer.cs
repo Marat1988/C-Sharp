@@ -36,7 +36,7 @@ namespace WinFormsApp1
             // labelQuestion
             // 
             this.labelQuestion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelQuestion.Location = new System.Drawing.Point(12, 9);
             this.labelQuestion.Name = "labelQuestion";
             this.labelQuestion.Size = new System.Drawing.Size(1021, 333);
@@ -59,6 +59,7 @@ namespace WinFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1047, 529);
             this.Controls.Add(this.ButtonNextQuestion);
             this.Controls.Add(this.labelQuestion);
