@@ -31,6 +31,7 @@ namespace WinFormsApp1
         {
             this.labelQuestion = new System.Windows.Forms.Label();
             this.ButtonNextQuestion = new System.Windows.Forms.Button();
+            this.ButtonPreviousQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelQuestion
@@ -54,6 +55,18 @@ namespace WinFormsApp1
             this.ButtonNextQuestion.UseVisualStyleBackColor = true;
             this.ButtonNextQuestion.Click += new System.EventHandler(this.ButtonNextQuestion_Click);
             // 
+            // ButtonPreviousQuestion
+            // 
+            this.ButtonPreviousQuestion.Enabled = false;
+            this.ButtonPreviousQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonPreviousQuestion.Location = new System.Drawing.Point(598, 374);
+            this.ButtonPreviousQuestion.Name = "ButtonPreviousQuestion";
+            this.ButtonPreviousQuestion.Size = new System.Drawing.Size(229, 70);
+            this.ButtonPreviousQuestion.TabIndex = 2;
+            this.ButtonPreviousQuestion.Text = "Предыдущий вопрос";
+            this.ButtonPreviousQuestion.UseVisualStyleBackColor = true;
+            this.ButtonPreviousQuestion.Click += new System.EventHandler(this.ButtonPreviousQuestion_Click);
+            // 
             // FormStartQuiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -61,12 +74,14 @@ namespace WinFormsApp1
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1047, 529);
+            this.Controls.Add(this.ButtonPreviousQuestion);
             this.Controls.Add(this.ButtonNextQuestion);
             this.Controls.Add(this.labelQuestion);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormStartQuiz";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Викторина";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormStartQuiz_FormClosing);
             this.Load += new System.EventHandler(this.StartQuiz_Load);
             this.ResumeLayout(false);
 
@@ -76,5 +91,6 @@ namespace WinFormsApp1
 
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.Button ButtonNextQuestion;
+        private System.Windows.Forms.Button ButtonPreviousQuestion;
     }
 }

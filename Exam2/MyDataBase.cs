@@ -118,5 +118,10 @@ namespace MyDBHelper
             }
             connection.Close();
         }
+
+        public static void FinishGame(DateTime dateBegin, string themesName, DateTime dateEnd, int countQuestion, int countCorrectQuestion)
+        {
+            ExecuteSQL("INSERT INTO GAMES ([DateBegin], [UserId], [ThemesId], [DateEnd], [CountQuestion], [CountCorrectQuestion]) SELECT '" + dateBegin + "' AS DateBegin, (SELECT UserId FROM USERS WHERE [Login] = '" + login + "') AS UserId, ThemesId, '" + dateEnd + "' AS DateEnd, '" + countQuestion + "' AS CountQuestion, '" + countCorrectQuestion + "' AS CountCorrectQuestion FROM THEMES WHERE [Name] = '" + themesName + "'");
+        }
     }
 }

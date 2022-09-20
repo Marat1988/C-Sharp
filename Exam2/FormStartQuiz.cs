@@ -17,7 +17,7 @@ namespace WinFormsApp1
         public string themesName = "Смешанная";
         public int numberAnswer = 1; //Текущая позиция вопроса
         private List<RadioButton> rdbtn = new List<RadioButton>(); //Для загрузки ответов
-        private DateTime DateTimeStartGame = DateTime.Now; //Начало игры
+        private DateTime dateTimeStartGame = DateTime.Now; //Начало игры
         private int CountCorrectQuestion = 0; //Количество правильных ответов (для записи в базу данных)
         private class QuestionGames
         {
@@ -31,7 +31,9 @@ namespace WinFormsApp1
         private void LoadQuestion()
         {
             //Загружаю вопросы
-            string strSQL = "SELECT TOP 20 q.QuestionId, q.Desctiption FROM THEMES t INNER JOIN QUESTION q ON t.ThemesId = q.ThemesId WHERE t.Name = '" + themesName + "' ORDER BY Rnd(-(100000*q.QuestionId)*Time())";
+            string strSQL = "SELECT TOP 20 q.QuestionId, q.Description FROM THEMES t INNER JOIN QUESTION q ON t.ThemesId = q.ThemesId WHERE t.Name = '" + themesName + "' ORDER BY Rnd(-(100000*q.QuestionId)*Time())";
+            if (themesName == "Смешанная")
+                strSQL = "SELECT TOP 20 q.QuestionId, q.Description FROM THEMES t INNER JOIN QUESTION q ON t.ThemesId = q.ThemesId ORDER BY Rnd(-(100000*q.QuestionId)*Time())";
             using (OleDbConnection connection = new OleDbConnection(MyDataBase.connectionString))
             {
                 OleDbCommand command = new OleDbCommand(strSQL, connection);
@@ -42,7 +44,7 @@ namespace WinFormsApp1
                     {
                         while (reader.Read())
                         {
-                            games.Add(new QuestionGames { IdQuestion = Convert.ToInt32(reader["QuestionId"].ToString()), Description = reader["Desctiption"].ToString() });
+                            games.Add(new QuestionGames { IdQuestion = Convert.ToInt32(reader["QuestionId"].ToString()), Description = reader["Description"].ToString() });
                         }
                     }
                 }
@@ -77,6 +79,9 @@ namespace WinFormsApp1
                 }
             }
         }
+        //Проверка, на все ли вопросы ответил пользователь
+        private int CheckNotAnswerQuestion() => games.Where(QuestionGames => ((QuestionGames.PlayerAnswer?.Count == 0) || (QuestionGames.PlayerAnswer == null))).Count();
+
         private void AddOption(int numberAnswer)
         {
             int x2 = 10;
@@ -91,7 +96,9 @@ namespace WinFormsApp1
                 this.Controls.Add(rdbtn[j]);
                 y2 += 40;
             }
-            ButtonNextQuestion.Location = new Point(x2, rdbtn[rdbtn.Count - 1].Top + rdbtn[rdbtn.Count - 1].Height + 10);
+            ButtonPreviousQuestion.Location = new Point(x2, rdbtn[rdbtn.Count - 1].Top + rdbtn[rdbtn.Count - 1].Height + 10);
+            ButtonNextQuestion.Location = new Point(x2 + ButtonPreviousQuestion.Width + 10, rdbtn[rdbtn.Count - 1].Top + rdbtn[rdbtn.Count - 1].Height + 10);
+
         }
         public FormStartQuiz()
         {
@@ -103,9 +110,11 @@ namespace WinFormsApp1
             AddOption(numberAnswer);
             this.Text = $"Викторина. Вопрос {numberAnswer} из {games.Count}";
         }
+
         private void ButtonNextQuestion_Click(object sender, EventArgs e)
         {
-            games[numberAnswer - 1].PlayerAnswer = new List<string>();
+            if (games[numberAnswer - 1].PlayerAnswer == null)
+                games[numberAnswer - 1].PlayerAnswer = new List<string>();
             foreach (var item in rdbtn)
             {
                 if (item.Checked)
@@ -126,16 +135,36 @@ namespace WinFormsApp1
             if (rightAnswer == games[numberAnswer - 1].PlayerAnswer.Count)
                 CountCorrectQuestion++;
             numberAnswer++;
+            ButtonPreviousQuestion.Enabled = (numberAnswer > 1);
             if (numberAnswer > games.Count)
             {
-                MessageBox.Show($"Тест окончен. Всего вопросов: {games.Count}.\nПравильных ответов: {CountCorrectQuestion}.\n Ну ты заходи если че!!", "Статистика", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                this.Close();
+                ButtonNextQuestion.Enabled = false;
+                if (CheckNotAnswerQuestion() > 0)
+                    MessageBox.Show($"Вы ответили не на все вопросы", "Тестирование", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                else
+                {
+                    MyDataBase.FinishGame(dateTimeStartGame, themesName, DateTime.Now, games.Count, CountCorrectQuestion);
+                    MessageBox.Show($"Тест окончен. Всего вопросов: {games.Count}.\nПравильных ответов: {CountCorrectQuestion}.\n Ну ты заходи если че!!", "Статистика", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    this.Close();
+                }
             }
             else
             {
                 AddOption(numberAnswer);
                 this.Text = $"Викторина. Вопрос {numberAnswer} из {games.Count}";
-           }
+                if (numberAnswer == games.Count) ButtonNextQuestion.Text = "ФИНИШ";
+            }
+        }
+
+
+        private void ButtonPreviousQuestion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormStartQuiz_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }
