@@ -1,0 +1,6 @@
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork25-56\bin\Debug\HomeWork25-56.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork25-56\bin\Debug\HomeWork25-56.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork25-56\bin\Debug\HomeWork25-56.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork25-56\obj\Debug\HomeWork25-56.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork25-56\obj\Debug\HomeWork25-56.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork25-56\obj\Debug\HomeWork25-56.pdb
