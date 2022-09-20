@@ -65,7 +65,7 @@ namespace WinFormsApp1
                 }
                 catch (Exception ex)
                 {
-                        MessageBox.Show(ex.Message, "Ошибка при обновлении данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Ошибка при обновлении данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }                
             }
         }

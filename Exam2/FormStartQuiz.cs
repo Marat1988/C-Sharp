@@ -17,11 +17,14 @@ namespace WinFormsApp1
         public string themesName = "Смешанная";
         public int numberAnswer = 1; //Текущая позиция вопроса
         private List<RadioButton> rdbtn = new List<RadioButton>(); //Для загрузки ответов
+        private DateTime DateTimeStartGame = DateTime.Now; //Начало игры
+        private int CountCorrectQuestion = 0; //Количество правильных ответов (для записи в базу данных)
         private class QuestionGames
         {
-            public int IdQuestion { get; set; }
-            public string Description { get; set; }
-            public List<(string, bool)> OptionQuestion { get; set; }
+            public int IdQuestion { get; set; } //id вопроса из базы данных
+            public string Description { get; set; } //Описание вопроса
+            public List<(string, bool)> OptionQuestion { get; set; }  //Варианты вопроса
+            public List<string> PlayerAnswer { get; set; } //Ответы игрока
         }
 
         private List<QuestionGames> games = new List<QuestionGames>();
@@ -88,7 +91,7 @@ namespace WinFormsApp1
                 this.Controls.Add(rdbtn[j]);
                 y2 += 40;
             }
-            ButtonNextQuestion.Location = new Point(x2, rdbtn[rdbtn.Count - 1].Top + 35);
+            ButtonNextQuestion.Location = new Point(x2, rdbtn[rdbtn.Count - 1].Top + rdbtn[rdbtn.Count - 1].Height + 10);
         }
         public FormStartQuiz()
         {
@@ -102,14 +105,37 @@ namespace WinFormsApp1
         }
         private void ButtonNextQuestion_Click(object sender, EventArgs e)
         {
+            games[numberAnswer - 1].PlayerAnswer = new List<string>();
             foreach (var item in rdbtn)
             {
+                if (item.Checked)
+                    games[numberAnswer - 1].PlayerAnswer.Add(item.Text);
                 this.Controls.Remove(item);
             }
             rdbtn.Clear();
+            int rightAnswer = 0;
+            //Проверка, правильно ли ответил пользователь на вопрос
+            for (int i = 0; i < games[numberAnswer - 1].PlayerAnswer.Count; i++)
+            {
+                for (int j = 0; j < games[numberAnswer - 1].OptionQuestion.Count; j++)
+                {
+                    if ((games[numberAnswer - 1].PlayerAnswer[i] == games[numberAnswer - 1].OptionQuestion[j].Item1) && games[numberAnswer - 1].OptionQuestion[j].Item2 == true)
+                        rightAnswer++;
+                }
+            }
+            if (rightAnswer == games[numberAnswer - 1].PlayerAnswer.Count)
+                CountCorrectQuestion++;
             numberAnswer++;
-            AddOption(numberAnswer);
-            this.Text = $"Викторина. Вопрос {numberAnswer} из {games.Count}";
+            if (numberAnswer > games.Count)
+            {
+                MessageBox.Show($"Тест окончен. Всего вопросов: {games.Count}.\nПравильных ответов: {CountCorrectQuestion}.\n Ну ты заходи если че!!", "Статистика", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                this.Close();
+            }
+            else
+            {
+                AddOption(numberAnswer);
+                this.Text = $"Викторина. Вопрос {numberAnswer} из {games.Count}";
+           }
         }
     }
 }
