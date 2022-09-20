@@ -15,7 +15,7 @@ namespace WinFormsApp1
     public partial class FormStartQuiz : Form
     {
         public string themesName = "Смешанная";
-        public int numberAnswer = 1; //Текущая позиция вопроса
+        public int numberQuestion = 1; //Текущая позиция вопроса
         private List<RadioButton> rdbtn = new List<RadioButton>(); //Для загрузки ответов
         private DateTime dateTimeStartGame = DateTime.Now; //Начало игры
         private int CountCorrectQuestion = 0; //Количество правильных ответов (для записи в базу данных)
@@ -107,36 +107,38 @@ namespace WinFormsApp1
         private void StartQuiz_Load(object sender, EventArgs e)
         {
             LoadQuestion();
-            AddOption(numberAnswer);
-            this.Text = $"Викторина. Вопрос {numberAnswer} из {games.Count}";
+            AddOption(numberQuestion);
+            this.Text = $"Викторина. Вопрос {numberQuestion} из {games.Count}";
         }
 
         private void ButtonNextQuestion_Click(object sender, EventArgs e)
         {
-            if (games[numberAnswer - 1].PlayerAnswer == null)
-                games[numberAnswer - 1].PlayerAnswer = new List<string>();
+            if (games[numberQuestion - 1].PlayerAnswer == null)
+                games[numberQuestion - 1].PlayerAnswer = new List<string>();
             foreach (var item in rdbtn)
             {
                 if (item.Checked)
-                    games[numberAnswer - 1].PlayerAnswer.Add(item.Text);
-                this.Controls.Remove(item);
+                    games[numberQuestion - 1].PlayerAnswer.Add(item.Text);
+                if (numberQuestion != games.Count)
+                    this.Controls.Remove(item);
             }
-            rdbtn.Clear();
+            if (numberQuestion != games.Count) 
+                rdbtn.Clear();
             int rightAnswer = 0;
             //Проверка, правильно ли ответил пользователь на вопрос
-            for (int i = 0; i < games[numberAnswer - 1].PlayerAnswer.Count; i++)
+            for (int i = 0; i < games[numberQuestion - 1].PlayerAnswer.Count; i++)
             {
-                for (int j = 0; j < games[numberAnswer - 1].OptionQuestion.Count; j++)
+                for (int j = 0; j < games[numberQuestion - 1].OptionQuestion.Count; j++)
                 {
-                    if ((games[numberAnswer - 1].PlayerAnswer[i] == games[numberAnswer - 1].OptionQuestion[j].Item1) && games[numberAnswer - 1].OptionQuestion[j].Item2 == true)
+                    if ((games[numberQuestion - 1].PlayerAnswer[i] == games[numberQuestion - 1].OptionQuestion[j].Item1) && games[numberQuestion - 1].OptionQuestion[j].Item2 == true)
                         rightAnswer++;
                 }
             }
-            if (rightAnswer == games[numberAnswer - 1].PlayerAnswer.Count)
+            if (rightAnswer == games[numberQuestion - 1].PlayerAnswer.Count)
                 CountCorrectQuestion++;
-            numberAnswer++;
-            ButtonPreviousQuestion.Enabled = (numberAnswer > 1);
-            if (numberAnswer > games.Count)
+            numberQuestion++;
+            ButtonPreviousQuestion.Enabled = (numberQuestion > 1);
+            if (numberQuestion > games.Count)
             {
                 ButtonNextQuestion.Enabled = false;
                 if (CheckNotAnswerQuestion() > 0)
@@ -150,21 +152,33 @@ namespace WinFormsApp1
             }
             else
             {
-                AddOption(numberAnswer);
-                this.Text = $"Викторина. Вопрос {numberAnswer} из {games.Count}";
-                if (numberAnswer == games.Count) ButtonNextQuestion.Text = "ФИНИШ";
+                AddOption(numberQuestion);
+                this.Text = $"Викторина. Вопрос {numberQuestion} из {games.Count}";
+                if (numberQuestion == games.Count) ButtonNextQuestion.Text = "ФИНИШ";
             }
         }
 
 
         private void ButtonPreviousQuestion_Click(object sender, EventArgs e)
         {
+            if (numberQuestion > games.Count)
+                numberQuestion--;
+            ButtonNextQuestion.Enabled = true;
+            foreach (var item in rdbtn)
+            {
+                this.Controls.Remove(item);
+            }
+            rdbtn.Clear();
+            numberQuestion--;
+            AddOption(numberQuestion);
 
+            if (numberQuestion == 1)
+                ButtonPreviousQuestion.Enabled = false;
+            this.Text = $"Викторина. Вопрос {numberQuestion} из {games.Count}";
         }
 
         private void FormStartQuiz_FormClosing(object sender, FormClosingEventArgs e)
         {
-
         }
     }
 }
