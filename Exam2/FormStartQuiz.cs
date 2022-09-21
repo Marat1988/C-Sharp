@@ -90,6 +90,7 @@ namespace WinFormsApp1
             for (int j = 0; j < games[numberAnswer - 1].OptionQuestion.Count; j++)
             {
                 rdbtn.Add(new RadioButton());
+                rdbtn[j].Font = new Font("Segoe UI", 14);
                 rdbtn[j].AutoSize = true;
                 rdbtn[j].Text = games[numberAnswer - 1].OptionQuestion[j].Item1;
                 if (games[numberAnswer - 1].PlayerAnswer?.Count > 0)

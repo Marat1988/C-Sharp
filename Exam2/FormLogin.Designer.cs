@@ -43,13 +43,13 @@ namespace WinFormsApp1
             // 
             // TextBoxUser
             // 
-            this.TextBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.TextBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBoxUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TextBoxUser.Location = new System.Drawing.Point(146, 22);
-            this.TextBoxUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TextBoxUser.Location = new System.Drawing.Point(128, 18);
+            this.TextBoxUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TextBoxUser.MaxLength = 15;
             this.TextBoxUser.Name = "TextBoxUser";
-            this.TextBoxUser.Size = new System.Drawing.Size(270, 30);
+            this.TextBoxUser.Size = new System.Drawing.Size(204, 31);
             this.TextBoxUser.TabIndex = 0;
             this.TextBoxUser.TextChanged += new System.EventHandler(this.TextBoxUser_TextChanged);
             this.TextBoxUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxUser_KeyPress);
@@ -57,32 +57,34 @@ namespace WinFormsApp1
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelUser.Location = new System.Drawing.Point(32, 22);
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelUser.Location = new System.Drawing.Point(14, 21);
+            this.labelUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(74, 25);
+            this.labelUser.Size = new System.Drawing.Size(83, 25);
             this.labelUser.TabIndex = 1;
             this.labelUser.Text = "Логин:";
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelPassword.Location = new System.Drawing.Point(32, 60);
+            this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPassword.Location = new System.Drawing.Point(14, 71);
+            this.labelPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(86, 25);
+            this.labelPassword.Size = new System.Drawing.Size(99, 25);
             this.labelPassword.TabIndex = 2;
             this.labelPassword.Text = "Пароль:";
             // 
             // TextBoxPassword
             // 
-            this.TextBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.TextBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBoxPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TextBoxPassword.Location = new System.Drawing.Point(146, 58);
-            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TextBoxPassword.Location = new System.Drawing.Point(128, 68);
+            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
-            this.TextBoxPassword.Size = new System.Drawing.Size(270, 30);
+            this.TextBoxPassword.Size = new System.Drawing.Size(204, 31);
             this.TextBoxPassword.TabIndex = 1;
             this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             this.TextBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPassword_KeyPress);
@@ -90,11 +92,11 @@ namespace WinFormsApp1
             // ButtonInputSystem
             // 
             this.ButtonInputSystem.Enabled = false;
-            this.ButtonInputSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ButtonInputSystem.Location = new System.Drawing.Point(32, 94);
-            this.ButtonInputSystem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonInputSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonInputSystem.Location = new System.Drawing.Point(19, 115);
+            this.ButtonInputSystem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonInputSystem.Name = "ButtonInputSystem";
-            this.ButtonInputSystem.Size = new System.Drawing.Size(384, 53);
+            this.ButtonInputSystem.Size = new System.Drawing.Size(313, 55);
             this.ButtonInputSystem.TabIndex = 2;
             this.ButtonInputSystem.Text = "Войти";
             this.ButtonInputSystem.UseVisualStyleBackColor = true;
@@ -103,10 +105,11 @@ namespace WinFormsApp1
             // LinkLabelAuthorization
             // 
             this.LinkLabelAuthorization.AutoSize = true;
-            this.LinkLabelAuthorization.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.LinkLabelAuthorization.Location = new System.Drawing.Point(127, 163);
+            this.LinkLabelAuthorization.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LinkLabelAuthorization.Location = new System.Drawing.Point(81, 190);
+            this.LinkLabelAuthorization.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LinkLabelAuthorization.Name = "LinkLabelAuthorization";
-            this.LinkLabelAuthorization.Size = new System.Drawing.Size(190, 25);
+            this.LinkLabelAuthorization.Size = new System.Drawing.Size(204, 25);
             this.LinkLabelAuthorization.TabIndex = 3;
             this.LinkLabelAuthorization.TabStop = true;
             this.LinkLabelAuthorization.Text = "Еще нет аккаунта?";
@@ -116,10 +119,10 @@ namespace WinFormsApp1
             // 
             this.ButtonSeeNotSeePassword.ImageIndex = 0;
             this.ButtonSeeNotSeePassword.ImageList = this.imageList1;
-            this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(422, 58);
-            this.ButtonSeeNotSeePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(345, 68);
+            this.ButtonSeeNotSeePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonSeeNotSeePassword.Name = "ButtonSeeNotSeePassword";
-            this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(37, 30);
+            this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(37, 31);
             this.ButtonSeeNotSeePassword.TabIndex = 4;
             this.ButtonSeeNotSeePassword.UseVisualStyleBackColor = true;
             this.ButtonSeeNotSeePassword.Click += new System.EventHandler(this.ButtonSeeNotSeePassword_Click);
@@ -133,10 +136,10 @@ namespace WinFormsApp1
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(472, 203);
+            this.ClientSize = new System.Drawing.Size(412, 249);
             this.Controls.Add(this.ButtonSeeNotSeePassword);
             this.Controls.Add(this.LinkLabelAuthorization);
             this.Controls.Add(this.ButtonInputSystem);
@@ -145,7 +148,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.labelUser);
             this.Controls.Add(this.TextBoxUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";
