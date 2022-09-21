@@ -61,7 +61,8 @@ namespace WinFormsApp1
 
         private void ButtonShowResult_Click(object sender, EventArgs e)
         {
-
+            MyDataBase.ResultThemesQuiz(ComboBoxChooseQuiz.Text, out int countRows, out string msg);
+            MessageBox.Show(msg, "Результаты прошлых тестов");
         }
 
         private void ButtonStart_Click(object sender, EventArgs e)

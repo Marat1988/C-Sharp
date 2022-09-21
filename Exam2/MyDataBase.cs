@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Data.OleDb;
+using System.Text;
 
 namespace MyDBHelper
 {
@@ -118,10 +119,40 @@ namespace MyDBHelper
             }
             connection.Close();
         }
-
+        //Запись результата в таблицу
         public static void FinishGame(DateTime dateBegin, string themesName, DateTime dateEnd, int countQuestion, int countCorrectQuestion)
         {
             ExecuteSQL("INSERT INTO GAMES ([DateBegin], [UserId], [ThemesId], [DateEnd], [CountQuestion], [CountCorrectQuestion]) SELECT '" + dateBegin + "' AS DateBegin, (SELECT UserId FROM USERS WHERE [Login] = '" + login + "') AS UserId, ThemesId, '" + dateEnd + "' AS DateEnd, '" + countQuestion + "' AS CountQuestion, '" + countCorrectQuestion + "' AS CountCorrectQuestion FROM THEMES WHERE [Name] = '" + themesName + "'");
+        }
+
+        public static void ResultThemesQuiz(string nameThemes, out int countRows, out string msg)
+        {
+            countRows = 0;
+            msg = "Нет данных";
+            StringBuilder sb = new StringBuilder();
+            try
+            {
+                OpenConnection("SELECT g.DateBegin, g.DateEnd, g.CountQuestion, g.CountCorrectQuestion FROM ((GAMES g INNER JOIN THEMES t ON g.ThemesId=t.ThemesId) INNER JOIN USERS u ON g.UserId=u.UserId) WHERE u.Login = '" + login + "' AND t.Name = '" + nameThemes + "'");
+                using (OleDbDataReader reader = command.ExecuteReader())
+                {
+                    sb.Append("Дата начало\tДата конца\tВсего\tВерно\n");
+                    sb.Append("======================================\n");
+                    while (reader.Read())
+                    {
+                        sb.Append(reader["DateBegin"]);
+                        sb.Append("\t" + reader["DateEnd"]);
+                        sb.Append("\t   " + reader["CountQuestion"]);
+                        sb.Append("\t   " + reader["CountCorrectQuestion"] + "\n");
+                        countRows++;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            if (countRows > 0) msg = sb.ToString();
+            connection.Close();
         }
     }
 }

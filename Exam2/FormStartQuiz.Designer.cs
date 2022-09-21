@@ -81,7 +81,6 @@ namespace WinFormsApp1
             this.Name = "FormStartQuiz";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Викторина";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormStartQuiz_FormClosing);
             this.Load += new System.EventHandler(this.StartQuiz_Load);
             this.ResumeLayout(false);
 
