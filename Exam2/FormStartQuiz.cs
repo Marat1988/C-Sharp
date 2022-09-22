@@ -16,7 +16,8 @@ namespace WinFormsApp1
     {
         public string themesName = "Смешанная";
         public int numberQuestion = 1; //Текущая позиция вопроса
-        private List<RadioButton> rdbtn = new List<RadioButton>(); //Для загрузки ответов
+        private List<RadioButton> rdbtn = new List<RadioButton>(); //Для загрузки ответов (для одного варианта)
+        private List<CheckBox> chkbox = new List<CheckBox>(); //Для нескольких вариантов
         private DateTime dateTimeStartGame = DateTime.Now; //Начало игры
         private int CountCorrectQuestion = 0; //Количество правильных ответов (для записи в базу данных)
         private class QuestionGames
@@ -87,24 +88,46 @@ namespace WinFormsApp1
             int x2 = 10;
             int y2 = labelQuestion.Height + 20;
             labelQuestion.Text = games[numberAnswer - 1].Description;
-            for (int j = 0; j < games[numberAnswer - 1].OptionQuestion.Count; j++)
+            if (games[numberAnswer - 1].OptionQuestion.Where(i => (i.Item2 == true)).Count() > 1)
             {
-                rdbtn.Add(new RadioButton());
-                rdbtn[j].Font = new Font("Segoe UI", 14);
-                rdbtn[j].AutoSize = true;
-                rdbtn[j].Text = games[numberAnswer - 1].OptionQuestion[j].Item1;
-                if (games[numberAnswer - 1].PlayerAnswer?.Count > 0)
+                for (int j = 0; j < games[numberAnswer - 1].OptionQuestion.Count; j++)
                 {
-                    if (games[numberAnswer - 1].PlayerAnswer.Where(i => i == games[numberAnswer - 1].OptionQuestion[j].Item1).Count() > 0)
-                        rdbtn[j].Checked = true;
+                    chkbox.Add(new CheckBox());
+                    chkbox[j].Font = new Font("Segoe UI", 14);
+                    chkbox[j].AutoSize = true;
+                    chkbox[j].Text = games[numberAnswer - 1].OptionQuestion[j].Item1;
+                    if (games[numberAnswer - 1].PlayerAnswer?.Count > 0)
+                    {
+                        if (games[numberAnswer - 1].PlayerAnswer.Where(i => i == games[numberAnswer - 1].OptionQuestion[j].Item1).Count() > 0)
+                            chkbox[j].Checked = true;
+                    }
+                    chkbox[j].Location = new Point(x2, y2);
+                    this.Controls.Add(chkbox[j]);
+                    y2 += 40;
                 }
-                rdbtn[j].Location = new Point(x2, y2);
-                this.Controls.Add(rdbtn[j]);
-                y2 += 40;
+                ButtonPreviousQuestion.Location = new Point(x2, chkbox[chkbox.Count - 1].Top + chkbox[chkbox.Count - 1].Height + 10);
+                ButtonNextQuestion.Location = new Point(x2 + ButtonPreviousQuestion.Width + 10, chkbox[chkbox.Count - 1].Top + chkbox[chkbox.Count - 1].Height + 10);
             }
-            ButtonPreviousQuestion.Location = new Point(x2, rdbtn[rdbtn.Count - 1].Top + rdbtn[rdbtn.Count - 1].Height + 10);
-            ButtonNextQuestion.Location = new Point(x2 + ButtonPreviousQuestion.Width + 10, rdbtn[rdbtn.Count - 1].Top + rdbtn[rdbtn.Count - 1].Height + 10);
-
+            else
+            {
+                for (int j = 0; j < games[numberAnswer - 1].OptionQuestion.Count; j++)
+                {
+                    rdbtn.Add(new RadioButton());
+                    rdbtn[j].Font = new Font("Segoe UI", 14);
+                    rdbtn[j].AutoSize = true;
+                    rdbtn[j].Text = games[numberAnswer - 1].OptionQuestion[j].Item1;
+                    if (games[numberAnswer - 1].PlayerAnswer?.Count > 0)
+                    {
+                        if (games[numberAnswer - 1].PlayerAnswer.Where(i => i == games[numberAnswer - 1].OptionQuestion[j].Item1).Count() > 0)
+                            rdbtn[j].Checked = true;
+                    }
+                    rdbtn[j].Location = new Point(x2, y2);
+                    this.Controls.Add(rdbtn[j]);
+                    y2 += 40;
+                }
+                ButtonPreviousQuestion.Location = new Point(x2, rdbtn[rdbtn.Count - 1].Top + rdbtn[rdbtn.Count - 1].Height + 10);
+                ButtonNextQuestion.Location = new Point(x2 + ButtonPreviousQuestion.Width + 10, rdbtn[rdbtn.Count - 1].Top + rdbtn[rdbtn.Count - 1].Height + 10);
+            }
         }
         public FormStartQuiz()
         {
@@ -121,20 +144,35 @@ namespace WinFormsApp1
         {
             if (games[numberQuestion - 1].PlayerAnswer?.Count > 0)
                 games[numberQuestion - 1].PlayerAnswer.Clear();
-            foreach (var item in rdbtn)
+            if (chkbox.Count() > 0)
             {
-                if (item.Checked)
-                    games[numberQuestion - 1].PlayerAnswer.Add(item.Text);
+                foreach (var item in chkbox)
+                {
+                    if (item.Checked)
+                        games[numberQuestion - 1].PlayerAnswer.Add(item.Text);
+                    if (numberQuestion != games.Count)
+                        this.Controls.Remove(item);
+                }
                 if (numberQuestion != games.Count)
-                    this.Controls.Remove(item);
+                    chkbox.Clear();
             }
-            if (numberQuestion != games.Count) 
-                rdbtn.Clear();
+            else
+            {
+                foreach (var item in rdbtn)
+                {
+                    if (item.Checked)
+                        games[numberQuestion - 1].PlayerAnswer.Add(item.Text);
+                    if (numberQuestion != games.Count)
+                        this.Controls.Remove(item);
+                }
+                if (numberQuestion != games.Count)
+                    rdbtn.Clear();
+            }
             numberQuestion++;
             ButtonPreviousQuestion.Enabled = (numberQuestion > 1);
             if (numberQuestion > games.Count)
             {
-                ButtonNextQuestion.Enabled = false;
+                //ButtonNextQuestion.Enabled = false;
                 if (CheckNotAnswerQuestion() > 0)
                     MessageBox.Show($"Вы ответили не на все вопросы", "Тестирование", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 else
@@ -150,12 +188,10 @@ namespace WinFormsApp1
                                 if ((games[i].PlayerAnswer[j] == games[i].OptionQuestion[k].Item1) && games[i].OptionQuestion[k].Item2 == true)
                                     rightAnswer++;
                             }
-                            if (rightAnswer == games[i].PlayerAnswer.Count)
-                            {
-                                CountCorrectQuestion++;
-                                rightAnswer = 0;
-                            }
                         }
+                        if (rightAnswer == games[i].PlayerAnswer.Count)
+                            CountCorrectQuestion++;
+                        rightAnswer = 0;
                     }
                     MyDataBase.FinishGame(dateTimeStartGame, themesName, DateTime.Now, games.Count, CountCorrectQuestion);
                     MessageBox.Show($"Тест окончен. Всего вопросов: {games.Count}.\nПравильных ответов: {CountCorrectQuestion}.\n Ну ты заходи если че!!", "Статистика", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -176,11 +212,18 @@ namespace WinFormsApp1
             if (numberQuestion > games.Count)
                 numberQuestion--;
             ButtonNextQuestion.Enabled = true;
-            foreach (var item in rdbtn)
+            if (rdbtn.Count() > 0)
             {
-                this.Controls.Remove(item);
+                foreach (var item in rdbtn)
+                    this.Controls.Remove(item);
+                rdbtn.Clear();
             }
-            rdbtn.Clear();
+            else
+            {
+                foreach (var item in chkbox)
+                    this.Controls.Remove(item);
+                chkbox.Clear();
+            }
             numberQuestion--;
             AddOption(numberQuestion);
             if (numberQuestion == 1)
