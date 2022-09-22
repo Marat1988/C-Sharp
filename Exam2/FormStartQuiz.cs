@@ -172,7 +172,6 @@ namespace WinFormsApp1
             ButtonPreviousQuestion.Enabled = (numberQuestion > 1);
             if (numberQuestion > games.Count)
             {
-                //ButtonNextQuestion.Enabled = false;
                 if (CheckNotAnswerQuestion() > 0)
                     MessageBox.Show($"Вы ответили не на все вопросы", "Тестирование", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 else
