@@ -192,9 +192,7 @@ namespace MyDBHelper
                 using (OleDbDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
-                    {
                         msg = reader["rank"].ToString();
-                    }
                 }
             }
             catch (Exception ex)
