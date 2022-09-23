@@ -18,14 +18,13 @@ namespace WinFormsApp1
 
         private void FormMain_Load(object sender, EventArgs e)
         {         
-            //ComboBoxChooseQuiz.Select();
-           // ComboBoxChooseQuiz.SelectedIndex = 0;
             ToolTip toolTip1 = new ToolTip();
             toolTip1.SetToolTip(ButtonStart, "Старт выбранной викторины");
             toolTip1.SetToolTip(ButtonShowResult, "Просмотреть прошлые результаты по выбранной викторине");
             toolTip1.SetToolTip(ButtonShowTop20, "Посмотреть ТОП 20 лучших пользователей по выбранной викторине");
             toolTip1.SetToolTip(ButtonSettingUser, "Изменить настройки пользователя");
             toolTip1.SetToolTip(ButtonExit, "Выход из системы");
+            toolTip1.SetToolTip(ButtonAddEditDeleteQuestion, "Добавить, изменить или удалить вопросы из баз данных");
             LabelHelloUser.Text = "Привет " + MyDataBase.login + ".\n" + "Добро пожаловать на игру \"Викторина\"";
             List<string> themes = new List<string>();
             MyDataBase.LoadThemes(ref themes);
@@ -38,25 +37,15 @@ namespace WinFormsApp1
                 ComboBoxChooseQuiz.Select();
                 ComboBoxChooseQuiz.SelectedIndex = 0;
             }
-
-
+            ButtonAddEditDeleteQuestion.Visible = MyDataBase.isAdmin;
         }
         private void ButtonExit_Click(object sender, EventArgs e) => this.Close();
 
-        private void ComboBoxChooseQuiz_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void ButtonSettingUser_Click(object sender, EventArgs e)
         {
             FormSettingUser formSettingUser = new FormSettingUser();
             formSettingUser.ShowDialog();
-        }
-
-        private void LabelHelloUser_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void ButtonShowResult_Click(object sender, EventArgs e)
@@ -73,20 +62,16 @@ namespace WinFormsApp1
             formStartQuiz.ShowDialog();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonShowTop20_Click(object sender, EventArgs e)
         {
             MyDataBase.ResultThemesQuizTOP20(ComboBoxChooseQuiz.Text, out int countRows, out string msg);
             MessageBox.Show(msg, $"TOP 20 по теме {ComboBoxChooseQuiz.Text}");
+        }
+
+        private void ButtonAddEditDeleteQuestion_Click(object sender, EventArgs e)
+        {
+            FormAddEditDeleteQuestion formAddEditDeleteQuestion = new FormAddEditDeleteQuestion();
+            formAddEditDeleteQuestion.Show();
         }
     }
 }

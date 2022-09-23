@@ -10,6 +10,7 @@ namespace MyDBHelper
     {
         public const string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Base.mdb";
         public static string login = "";
+        public static bool isAdmin = false;
         private static OleDbConnection connection;
         private static OleDbCommand command;
         //Открытие соеднинения с базой данных
@@ -54,6 +55,23 @@ namespace MyDBHelper
             }
             connection.Close();
         }
+        private static void CheckAdmin(string strSQL)
+        {
+            try
+            {
+                OpenConnection(strSQL);
+                using (OleDbDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                        isAdmin = (bool)reader[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            connection.Close();
+        }
         //Проверка существования логина
         public static bool CheckLogin(string login)
         {
@@ -64,6 +82,8 @@ namespace MyDBHelper
         public static bool CheckLogin(string login, string password)
         {
             SelectSQL("SELECT * FROM USERS WHERE [Login] = '" + login + "' AND [Password] = '" + password + "'", out int countRows);
+            if (countRows > 0)
+                CheckAdmin("SELECT IsAdmin FROM USERS WHERE [Login] = '" + login + "'");
             return (countRows > 0);
         }
         //Ввод нового пользователя в базу данных

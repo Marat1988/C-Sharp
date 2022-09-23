@@ -37,6 +37,7 @@ namespace WinFormsApp1
             this.ComboBoxChooseQuiz = new System.Windows.Forms.ComboBox();
             this.LabelChooseQuiz = new System.Windows.Forms.Label();
             this.LabelHelloUser = new System.Windows.Forms.Label();
+            this.ButtonAddEditDeleteQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ButtonSettingUser
@@ -110,7 +111,6 @@ namespace WinFormsApp1
             this.ComboBoxChooseQuiz.Name = "ComboBoxChooseQuiz";
             this.ComboBoxChooseQuiz.Size = new System.Drawing.Size(443, 38);
             this.ComboBoxChooseQuiz.TabIndex = 0;
-            this.ComboBoxChooseQuiz.SelectedIndexChanged += new System.EventHandler(this.ComboBoxChooseQuiz_SelectedIndexChanged);
             // 
             // LabelChooseQuiz
             // 
@@ -133,7 +133,20 @@ namespace WinFormsApp1
             this.LabelHelloUser.TabIndex = 7;
             this.LabelHelloUser.Text = "label1";
             this.LabelHelloUser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.LabelHelloUser.Click += new System.EventHandler(this.LabelHelloUser_Click);
+            // 
+            // ButtonAddEditDeleteQuestion
+            // 
+            this.ButtonAddEditDeleteQuestion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.ButtonAddEditDeleteQuestion.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.ButtonAddEditDeleteQuestion.Location = new System.Drawing.Point(27, 558);
+            this.ButtonAddEditDeleteQuestion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonAddEditDeleteQuestion.Name = "ButtonAddEditDeleteQuestion";
+            this.ButtonAddEditDeleteQuestion.Size = new System.Drawing.Size(377, 90);
+            this.ButtonAddEditDeleteQuestion.TabIndex = 8;
+            this.ButtonAddEditDeleteQuestion.Text = "Добавить, изменить, удалить вопросы";
+            this.ButtonAddEditDeleteQuestion.UseVisualStyleBackColor = true;
+            this.ButtonAddEditDeleteQuestion.Visible = false;
+            this.ButtonAddEditDeleteQuestion.Click += new System.EventHandler(this.ButtonAddEditDeleteQuestion_Click);
             // 
             // FormMain
             // 
@@ -141,7 +154,8 @@ namespace WinFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(965, 609);
+            this.ClientSize = new System.Drawing.Size(965, 720);
+            this.Controls.Add(this.ButtonAddEditDeleteQuestion);
             this.Controls.Add(this.LabelHelloUser);
             this.Controls.Add(this.LabelChooseQuiz);
             this.Controls.Add(this.ComboBoxChooseQuiz);
@@ -170,5 +184,6 @@ namespace WinFormsApp1
         private System.Windows.Forms.ComboBox ComboBoxChooseQuiz;
         private System.Windows.Forms.Label LabelChooseQuiz;
         private System.Windows.Forms.Label LabelHelloUser;
+        private System.Windows.Forms.Button ButtonAddEditDeleteQuestion;
     }
 }
