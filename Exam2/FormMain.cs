@@ -82,5 +82,11 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void ButtonShowTop20_Click(object sender, EventArgs e)
+        {
+            MyDataBase.ResultThemesQuizTOP20(ComboBoxChooseQuiz.Text, out int countRows, out string msg);
+            MessageBox.Show(msg, $"TOP 20 по теме {ComboBoxChooseQuiz.Text}");
+        }
     }
 }

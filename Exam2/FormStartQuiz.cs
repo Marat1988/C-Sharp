@@ -193,7 +193,8 @@ namespace WinFormsApp1
                         rightAnswer = 0;
                     }
                     MyDataBase.FinishGame(dateTimeStartGame, themesName, DateTime.Now, games.Count, CountCorrectQuestion);
-                    MessageBox.Show($"Тест окончен. Всего вопросов: {games.Count}.\nПравильных ответов: {CountCorrectQuestion}.\n Ну ты заходи если че!!", "Статистика", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MyDataBase.RankUser(themesName, out string msg);
+                    MessageBox.Show($"Тест окончен. Всего вопросов: {games.Count}. Правильных ответов: {CountCorrectQuestion}.\nВаше текущее место по этой теме: " + msg +"\nНу ты это, заходи если что!!", "Статистика", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Close();
                 }
             }

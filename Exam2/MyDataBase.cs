@@ -124,7 +124,7 @@ namespace MyDBHelper
         {
             ExecuteSQL("INSERT INTO GAMES ([DateBegin], [UserId], [ThemesId], [DateEnd], [CountQuestion], [CountCorrectQuestion]) SELECT '" + dateBegin + "' AS DateBegin, (SELECT UserId FROM USERS WHERE [Login] = '" + login + "') AS UserId, ThemesId, '" + dateEnd + "' AS DateEnd, '" + countQuestion + "' AS CountQuestion, '" + countCorrectQuestion + "' AS CountCorrectQuestion FROM THEMES WHERE [Name] = '" + themesName + "'");
         }
-
+        //Результаты прошлых викторин
         public static void ResultThemesQuiz(string nameThemes, out int countRows, out string msg)
         {
             countRows = 0;
@@ -152,6 +152,55 @@ namespace MyDBHelper
                 throw new Exception(ex.Message);
             }
             if (countRows > 0) msg = sb.ToString();
+            connection.Close();
+        }
+        //ТОП 20
+        public static void ResultThemesQuizTOP20(string nameThemes, out int countRows, out string msg)
+        {
+            countRows = 0;
+            msg = "Нет данных";
+            StringBuilder sb = new StringBuilder();
+            try
+            {
+                OpenConnection("SELECT TOP 20 Login, CountCorrectQuestion FROM TotalPoints WHERE Name = '" + nameThemes + "' ORDER BY CountCorrectQuestion DESC");
+                using (OleDbDataReader reader = command.ExecuteReader())
+                {
+                    sb.Append("Логин\t\tВсего");
+                    sb.Append("\n==================\n");
+                    while (reader.Read())
+                    {
+                        sb.Append(reader["Login"]);
+                        sb.Append("\t   " + reader["CountCorrectQuestion"] + "\n");
+                        countRows++;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            if (countRows > 0) msg = sb.ToString();
+            connection.Close();
+        }
+        //Ранг пользователя
+        public static void RankUser(string nameThemes,  out string msg)
+        {
+            msg = "Нет данных";
+            try
+            {
+                OpenConnection("SELECT rank FROM (SELECT Login, CountCorrectQuestion, (SELECT COUNT(*) FROM TotalPoints AS tbl2 WHERE TotalPoints.CountCorrectQuestion < tbl2.CountCorrectQuestion AND TotalPoints.Name = tbl2.Name) + 1 as rank FROM TotalPoints WHERE Name = '" + nameThemes + "') result WHERE result.Login = '" + login + "'");
+                using (OleDbDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        msg = reader["rank"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
             connection.Close();
         }
     }
