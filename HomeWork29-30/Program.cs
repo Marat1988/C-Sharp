@@ -234,6 +234,7 @@ namespace HomeWork29_30
                 Console.WriteLine($"Город: {city.Name}\tСредняя стоимость: (Price): {city.AverageCity}");
             }
             Console.WriteLine("==========================================================================================");
+            Console.ReadKey();
         }
     }
 }
