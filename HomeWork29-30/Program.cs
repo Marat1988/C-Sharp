@@ -23,7 +23,6 @@ namespace HomeWork29_30
 {
     class Program
     {
-
         public class Order
         {
             public int NumberInvoice { get; set; }
