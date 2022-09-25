@@ -26,8 +26,7 @@ namespace WindowsFormsApp1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\HP\\Documents\\Шаг\\C-Sharp\\Ex" +
-            "am2_2\\bin\\Debug\\Base.mdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Base.mdb")]
         public string BaseConnectionString {
             get {
                 return ((string)(this["BaseConnectionString"]));
