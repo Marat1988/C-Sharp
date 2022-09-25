@@ -20,7 +20,8 @@ namespace WinFormsApp1
         }
 
         private void UpdateIdQuestion(int rowIndex)
-        {        
+        {
+            this.AnswersTableAdapter.Adapter.Update(baseDataSetAnswers);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "baseDataSet1.ANSWERS". При необходимости она может быть перемещена или удалена.
             this.AnswersTableAdapter.Fill(this.baseDataSetAnswers.ANSWERS);
             if (DataGridViewQuestion.Rows[rowIndex].Cells["DataGridViewquestionId"].Value?.ToString() == null)
@@ -68,5 +69,6 @@ namespace WinFormsApp1
             this.AnswersTableAdapter.Adapter.Update(baseDataSetAnswers);
             this.AnswersTableAdapter.Fill(this.baseDataSetAnswers.ANSWERS);
         }
+
     }
 }

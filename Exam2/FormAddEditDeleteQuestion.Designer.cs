@@ -80,6 +80,7 @@ namespace WinFormsApp1
             this.DataGridViewquestionId.DataPropertyName = "QuestionId";
             this.DataGridViewquestionId.HeaderText = "QuestionId";
             this.DataGridViewquestionId.Name = "DataGridViewquestionId";
+            this.DataGridViewquestionId.Visible = false;
             this.DataGridViewquestionId.Width = 112;
             // 
             // DataGridViewTextBoxColumnQuestion
@@ -211,7 +212,6 @@ namespace WinFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1741, 646);
             this.Controls.Add(this.ButtonUpdateSynchronizationAnswerQuestion);
             this.Controls.Add(this.ButtonUpdateSynchronizeQuestion);
@@ -249,9 +249,9 @@ namespace WinFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn answerIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn answerTextDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn correctAnswerDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewquestionId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumnQuestion;
         private System.Windows.Forms.Button ButtonUpdateSynchronizeQuestion;
         private System.Windows.Forms.Button ButtonUpdateSynchronizationAnswerQuestion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewquestionId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumnQuestion;
     }
 }
