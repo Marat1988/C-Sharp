@@ -16,16 +16,9 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
-        {         
-            ToolTip toolTip1 = new ToolTip();
-            toolTip1.SetToolTip(ButtonStart, "Старт выбранной викторины");
-            toolTip1.SetToolTip(ButtonShowResult, "Просмотреть прошлые результаты по выбранной викторине");
-            toolTip1.SetToolTip(ButtonShowTop20, "Посмотреть ТОП 20 лучших пользователей по выбранной викторине");
-            toolTip1.SetToolTip(ButtonSettingUser, "Изменить настройки пользователя");
-            toolTip1.SetToolTip(ButtonExit, "Выход из системы");
-            toolTip1.SetToolTip(ButtonAddEditDeleteQuestion, "Добавить, изменить или удалить вопросы из баз данных");
-            LabelHelloUser.Text = "Привет " + MyDataBase.login + ".\n" + "Добро пожаловать на игру \"Викторина\"";
+        private void RefreshThemes()
+        {
+            ComboBoxChooseQuiz.Items.Clear();
             List<string> themes = new List<string>();
             MyDataBase.LoadThemes(ref themes);
             if (themes.Count > 0)
@@ -37,6 +30,19 @@ namespace WinFormsApp1
                 ComboBoxChooseQuiz.Select();
                 ComboBoxChooseQuiz.SelectedIndex = 0;
             }
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {         
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(ButtonStart, "Старт выбранной викторины");
+            toolTip1.SetToolTip(ButtonShowResult, "Просмотреть прошлые результаты по выбранной викторине");
+            toolTip1.SetToolTip(ButtonShowTop20, "Посмотреть ТОП 20 лучших пользователей по выбранной викторине");
+            toolTip1.SetToolTip(ButtonSettingUser, "Изменить настройки пользователя");
+            toolTip1.SetToolTip(ButtonExit, "Выход из системы");
+            toolTip1.SetToolTip(ButtonAddEditDeleteQuestion, "Добавить, изменить или удалить вопросы из баз данных");
+            LabelHelloUser.Text = "Привет " + MyDataBase.login + ".\n" + "Добро пожаловать на игру \"Викторина\"";
+            RefreshThemes();
             ButtonAddEditDeleteQuestion.Visible = MyDataBase.isAdmin;
         }
         private void ButtonExit_Click(object sender, EventArgs e) => this.Close();
@@ -73,6 +79,7 @@ namespace WinFormsApp1
             FormAddEditDeleteQuestion formAddEditDeleteQuestion = new FormAddEditDeleteQuestion();
             formAddEditDeleteQuestion.themesName = ComboBoxChooseQuiz.Text;
             formAddEditDeleteQuestion.Show();
+            formAddEditDeleteQuestion.Closed += (s, args) => RefreshThemes();
         }
     }
 }
