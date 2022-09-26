@@ -13,9 +13,6 @@ C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\WindowsFormsApp1.csproj.G
 C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\WindowsFormsApp1.exe
 C:\Users\HP\Documents\Шаг\C-Sharp\Exam2\obj\Release\WindowsFormsApp1.pdb
-C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\bin\Release\WindowsFormsApp1.exe.config
-C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\bin\Release\WindowsFormsApp1.exe
-C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\bin\Release\WindowsFormsApp1.pdb
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\WindowsFormsApp1.csproj.AssemblyReference.cache
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\WinFormsApp1.FormAddEditDeleteQuestion.resources
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\WinFormsApp1.FormLogin.resources
@@ -26,5 +23,9 @@ C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\WinFormsApp1.Fo
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\WindowsFormsApp1.Properties.Resources.resources
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\WindowsFormsApp1.csproj.GenerateResource.cache
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\WindowsFormsApp1.csproj.CoreCompileInputs.cache
-C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\WindowsFormsApp1.exe
-C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\WindowsFormsApp1.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\WindowsFormsApp1.FormAddEditDeleteThemes.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\bin\Release\Quiz.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\bin\Release\Quiz.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\bin\Release\Quiz.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\Quiz.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam2\obj\Release\Quiz.pdb
