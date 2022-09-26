@@ -43,11 +43,10 @@ namespace WinFormsApp1
             UpdateIdQuestion(0);
         }
 
-        private void DataGridViewQuestion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewQuestion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             UpdateIdQuestion(DataGridViewQuestion.CurrentCell.RowIndex);
         }
-
         private void ButtonUpdateSynchronizeQuestion_Click(object sender, EventArgs e)
         {
             this.QuestionTableAdapter.Update(baseDataSetQuestion);
@@ -69,6 +68,7 @@ namespace WinFormsApp1
             this.AnswersTableAdapter.Adapter.Update(baseDataSetAnswers);
             this.AnswersTableAdapter.Fill(this.baseDataSetAnswers.ANSWERS);
         }
+
 
     }
 }
