@@ -135,9 +135,17 @@ namespace WinFormsApp1
         }
         private void StartQuiz_Load(object sender, EventArgs e)
         {
-            LoadQuestion();
-            AddOption(numberQuestion);
-            this.Text = $"Викторина. Вопрос {numberQuestion} из {games.Count}";
+            try
+            {
+                LoadQuestion();
+                AddOption(numberQuestion);
+                this.Text = $"Викторина. Вопрос {numberQuestion} из {games.Count}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void ButtonNextQuestion_Click(object sender, EventArgs e)

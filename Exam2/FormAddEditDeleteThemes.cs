@@ -25,8 +25,16 @@ namespace WindowsFormsApp1
 
         private void ButtonUpdateSynchronizationThemes_Click(object sender, EventArgs e)
         {
-            this.ThemesTableAdapter.Adapter.Update(baseDataSetThemes);
-            this.ThemesTableAdapter.Fill(this.baseDataSetThemes.THEMES);
+            try
+            {
+                this.ThemesTableAdapter.Adapter.Update(baseDataSetThemes);
+                this.ThemesTableAdapter.Fill(this.baseDataSetThemes.THEMES);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

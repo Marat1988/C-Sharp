@@ -49,9 +49,16 @@ namespace WinFormsApp1
         }
         private void ButtonUpdateSynchronizeQuestion_Click(object sender, EventArgs e)
         {
-            this.QuestionTableAdapter.Update(baseDataSetQuestion);
-            this.QuestionTableAdapter.Fill(this.baseDataSetQuestion.QUESTION);
-            UpdateIdQuestion(DataGridViewQuestion.CurrentCell.RowIndex);
+            try
+            {
+                this.QuestionTableAdapter.Update(baseDataSetQuestion);
+                this.QuestionTableAdapter.Fill(this.baseDataSetQuestion.QUESTION);
+                UpdateIdQuestion(DataGridViewQuestion.CurrentCell.RowIndex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void DataGridViewQuestion_Sorted(object sender, EventArgs e)
@@ -62,13 +69,17 @@ namespace WinFormsApp1
         {
             UpdateIdQuestion(DataGridViewQuestion.CurrentCell.RowIndex);
         }
-
         private void ButtonUpdateSynchronizationAnswerQuestion_Click(object sender, EventArgs e)
         {
-            this.AnswersTableAdapter.Adapter.Update(baseDataSetAnswers);
-            this.AnswersTableAdapter.Fill(this.baseDataSetAnswers.ANSWERS);
+            try
+            {
+                this.AnswersTableAdapter.Adapter.Update(baseDataSetAnswers);
+                this.AnswersTableAdapter.Fill(this.baseDataSetAnswers.ANSWERS);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
-
     }
 }

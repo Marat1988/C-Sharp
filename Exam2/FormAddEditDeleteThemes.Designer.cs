@@ -31,15 +31,15 @@ namespace WindowsFormsApp1
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewThemes = new System.Windows.Forms.DataGridView();
-            this.baseDataSetThemes = new WindowsFormsApp1.BaseDataSetThemes();
             this.ThemesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.baseDataSetThemes = new WindowsFormsApp1.BaseDataSetThemes();
             this.ThemesTableAdapter = new WindowsFormsApp1.BaseDataSetThemesTableAdapters.THEMESTableAdapter();
             this.ButtonUpdateSynchronizationThemes = new System.Windows.Forms.Button();
             this.themesIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewThemes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baseDataSetThemes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThemesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseDataSetThemes)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewThemes
@@ -61,15 +61,15 @@ namespace WindowsFormsApp1
             this.dataGridViewThemes.Size = new System.Drawing.Size(425, 288);
             this.dataGridViewThemes.TabIndex = 0;
             // 
-            // baseDataSetThemes
-            // 
-            this.baseDataSetThemes.DataSetName = "BaseDataSetThemes";
-            this.baseDataSetThemes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // ThemesBindingSource
             // 
             this.ThemesBindingSource.DataMember = "THEMES";
             this.ThemesBindingSource.DataSource = this.baseDataSetThemes;
+            // 
+            // baseDataSetThemes
+            // 
+            this.baseDataSetThemes.DataSetName = "BaseDataSetThemes";
+            this.baseDataSetThemes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ThemesTableAdapter
             // 
@@ -93,6 +93,7 @@ namespace WindowsFormsApp1
             this.themesIdDataGridViewTextBoxColumn.HeaderText = "ThemesId";
             this.themesIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.themesIdDataGridViewTextBoxColumn.Name = "themesIdDataGridViewTextBoxColumn";
+            this.themesIdDataGridViewTextBoxColumn.Visible = false;
             this.themesIdDataGridViewTextBoxColumn.Width = 129;
             // 
             // nameDataGridViewTextBoxColumn
@@ -122,8 +123,8 @@ namespace WindowsFormsApp1
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormAddEditDeleteThemes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewThemes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baseDataSetThemes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThemesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseDataSetThemes)).EndInit();
             this.ResumeLayout(false);
 
         }
