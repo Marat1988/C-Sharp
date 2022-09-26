@@ -46,7 +46,7 @@ namespace WinFormsApp1
             this.TextBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBoxUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TextBoxUser.Location = new System.Drawing.Point(128, 18);
-            this.TextBoxUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextBoxUser.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxUser.MaxLength = 15;
             this.TextBoxUser.Name = "TextBoxUser";
             this.TextBoxUser.Size = new System.Drawing.Size(204, 31);
@@ -81,7 +81,7 @@ namespace WinFormsApp1
             this.TextBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBoxPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TextBoxPassword.Location = new System.Drawing.Point(128, 68);
-            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
             this.TextBoxPassword.Size = new System.Drawing.Size(204, 31);
@@ -94,7 +94,7 @@ namespace WinFormsApp1
             this.ButtonInputSystem.Enabled = false;
             this.ButtonInputSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonInputSystem.Location = new System.Drawing.Point(19, 115);
-            this.ButtonInputSystem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonInputSystem.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonInputSystem.Name = "ButtonInputSystem";
             this.ButtonInputSystem.Size = new System.Drawing.Size(313, 55);
             this.ButtonInputSystem.TabIndex = 2;
@@ -120,7 +120,7 @@ namespace WinFormsApp1
             this.ButtonSeeNotSeePassword.ImageIndex = 0;
             this.ButtonSeeNotSeePassword.ImageList = this.imageList1;
             this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(345, 68);
-            this.ButtonSeeNotSeePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonSeeNotSeePassword.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonSeeNotSeePassword.Name = "ButtonSeeNotSeePassword";
             this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(37, 31);
             this.ButtonSeeNotSeePassword.TabIndex = 4;
@@ -148,7 +148,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.labelUser);
             this.Controls.Add(this.TextBoxUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";

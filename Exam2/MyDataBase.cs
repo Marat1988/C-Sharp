@@ -55,6 +55,7 @@ namespace MyDBHelper
             }
             connection.Close();
         }
+
         private static void CheckAdmin(string strSQL)
         {
             try

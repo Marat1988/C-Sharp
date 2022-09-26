@@ -57,7 +57,7 @@ namespace WinFormsApp1
             // 
             this.TextBoxLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBoxLogin.Location = new System.Drawing.Point(219, 16);
-            this.TextBoxLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextBoxLogin.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxLogin.MaxLength = 15;
             this.TextBoxLogin.Name = "TextBoxLogin";
             this.TextBoxLogin.Size = new System.Drawing.Size(235, 35);
@@ -69,7 +69,7 @@ namespace WinFormsApp1
             // 
             this.TextBoxPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBoxPassword.Location = new System.Drawing.Point(219, 71);
-            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxPassword.MaxLength = 50;
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
@@ -93,7 +93,7 @@ namespace WinFormsApp1
             // 
             this.dateTimePickerBirthday.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePickerBirthday.Location = new System.Drawing.Point(219, 121);
-            this.dateTimePickerBirthday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerBirthday.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
             this.dateTimePickerBirthday.Size = new System.Drawing.Size(235, 35);
             this.dateTimePickerBirthday.TabIndex = 2;
@@ -115,7 +115,7 @@ namespace WinFormsApp1
             this.ButtonUserRegistration.Enabled = false;
             this.ButtonUserRegistration.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonUserRegistration.Location = new System.Drawing.Point(29, 174);
-            this.ButtonUserRegistration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonUserRegistration.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonUserRegistration.Name = "ButtonUserRegistration";
             this.ButtonUserRegistration.Size = new System.Drawing.Size(425, 55);
             this.ButtonUserRegistration.TabIndex = 3;
@@ -128,7 +128,7 @@ namespace WinFormsApp1
             this.ButtonSeeNotSeePassword.ImageIndex = 0;
             this.ButtonSeeNotSeePassword.ImageList = this.imageList1;
             this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(468, 71);
-            this.ButtonSeeNotSeePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonSeeNotSeePassword.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonSeeNotSeePassword.Name = "ButtonSeeNotSeePassword";
             this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(42, 35);
             this.ButtonSeeNotSeePassword.TabIndex = 4;
@@ -156,7 +156,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.TextBoxLogin);
             this.Controls.Add(this.labelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormRegistration";

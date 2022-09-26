@@ -32,12 +32,12 @@ namespace WinFormsApp1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettingUser));
             this.ButtonSeeNotSeePassword = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.labelBirthday = new System.Windows.Forms.Label();
             this.dateTimePickerBirthday = new System.Windows.Forms.DateTimePicker();
             this.TextBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.ButtonSaveSettings = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // ButtonSeeNotSeePassword
@@ -45,19 +45,12 @@ namespace WinFormsApp1
             this.ButtonSeeNotSeePassword.ImageIndex = 0;
             this.ButtonSeeNotSeePassword.ImageList = this.imageList1;
             this.ButtonSeeNotSeePassword.Location = new System.Drawing.Point(452, 23);
-            this.ButtonSeeNotSeePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonSeeNotSeePassword.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonSeeNotSeePassword.Name = "ButtonSeeNotSeePassword";
             this.ButtonSeeNotSeePassword.Size = new System.Drawing.Size(40, 33);
             this.ButtonSeeNotSeePassword.TabIndex = 3;
             this.ButtonSeeNotSeePassword.UseVisualStyleBackColor = true;
             this.ButtonSeeNotSeePassword.Click += new System.EventHandler(this.ButtonSeeNotSeePassword_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8-closed-eye-80.png");
-            this.imageList1.Images.SetKeyName(1, "icons8-eye-80.png");
             // 
             // labelBirthday
             // 
@@ -74,7 +67,7 @@ namespace WinFormsApp1
             // 
             this.dateTimePickerBirthday.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePickerBirthday.Location = new System.Drawing.Point(216, 67);
-            this.dateTimePickerBirthday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerBirthday.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
             this.dateTimePickerBirthday.Size = new System.Drawing.Size(232, 35);
             this.dateTimePickerBirthday.TabIndex = 1;
@@ -84,7 +77,7 @@ namespace WinFormsApp1
             // 
             this.TextBoxPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBoxPassword.Location = new System.Drawing.Point(216, 21);
-            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxPassword.MaxLength = 50;
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
@@ -109,13 +102,20 @@ namespace WinFormsApp1
             this.ButtonSaveSettings.Enabled = false;
             this.ButtonSaveSettings.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold);
             this.ButtonSaveSettings.Location = new System.Drawing.Point(26, 124);
-            this.ButtonSaveSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonSaveSettings.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonSaveSettings.Name = "ButtonSaveSettings";
             this.ButtonSaveSettings.Size = new System.Drawing.Size(422, 55);
             this.ButtonSaveSettings.TabIndex = 2;
             this.ButtonSaveSettings.Text = "Сохранить настройки";
             this.ButtonSaveSettings.UseVisualStyleBackColor = true;
             this.ButtonSaveSettings.Click += new System.EventHandler(this.ButtonSaveSettings_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8-closed-eye-80.png");
+            this.imageList1.Images.SetKeyName(1, "icons8-eye-80.png");
             // 
             // FormSettingUser
             // 
@@ -129,7 +129,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.TextBoxPassword);
             this.Controls.Add(this.labelPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSettingUser";
@@ -144,11 +144,11 @@ namespace WinFormsApp1
         #endregion
 
         private System.Windows.Forms.Button ButtonSeeNotSeePassword;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label labelBirthday;
         private System.Windows.Forms.DateTimePicker dateTimePickerBirthday;
         private System.Windows.Forms.TextBox TextBoxPassword;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Button ButtonSaveSettings;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

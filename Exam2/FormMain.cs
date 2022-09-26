@@ -71,6 +71,7 @@ namespace WinFormsApp1
         private void ButtonAddEditDeleteQuestion_Click(object sender, EventArgs e)
         {
             FormAddEditDeleteQuestion formAddEditDeleteQuestion = new FormAddEditDeleteQuestion();
+            formAddEditDeleteQuestion.themesName = ComboBoxChooseQuiz.Text;
             formAddEditDeleteQuestion.Show();
         }
     }

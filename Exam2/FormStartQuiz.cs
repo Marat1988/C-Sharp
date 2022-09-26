@@ -32,9 +32,9 @@ namespace WinFormsApp1
         private void LoadQuestion()
         {
             //Загружаю вопросы
-            string strSQL = "SELECT TOP 20 q.QuestionId, q.Description FROM THEMES t INNER JOIN QUESTION q ON t.ThemesId = q.ThemesId WHERE t.Name = '" + themesName + "' ORDER BY Rnd(-(100000*q.QuestionId)*Time())";
+            string strSQL = "SELECT TOP 20 q.QuestionId, q.Description FROM ((THEMES t INNER JOIN QUESTION q ON t.ThemesId = q.ThemesId) INNER JOIN ANSWERS a ON q.QuestionId = a.QuestionId) WHERE t.Name = '" + themesName + "' GROUP BY q.QuestionId, q.Description HAVING COUNT(a.QuestionId> 1) ORDER BY Rnd(-(100000 * q.QuestionId) * Time())";
             if (themesName == "Смешанная")
-                strSQL = "SELECT TOP 20 q.QuestionId, q.Description FROM THEMES t INNER JOIN QUESTION q ON t.ThemesId = q.ThemesId ORDER BY Rnd(-(100000*q.QuestionId)*Time())";
+                strSQL = "SELECT TOP 20 q.QuestionId, q.Description FROM ((THEMES t INNER JOIN QUESTION q ON t.ThemesId = q.ThemesId) INNER JOIN ANSWERS a ON q.QuestionId = a.QuestionId) GROUP BY q.QuestionId, q.Description HAVING COUNT(a.QuestionId> 1) ORDER BY Rnd(-(100000 * q.QuestionId) * Time())";
             using (OleDbConnection connection = new OleDbConnection(MyDataBase.connectionString))
             {
                 OleDbCommand command = new OleDbCommand(strSQL, connection);
