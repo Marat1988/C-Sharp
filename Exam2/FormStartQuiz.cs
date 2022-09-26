@@ -68,15 +68,15 @@ namespace WinFormsApp1
                         {
                             games[i].OptionQuestion = new List<(string, bool)>();
                             while (reader.Read())
-                            {         
-                                games[i].OptionQuestion.Add((reader["AnswerText"].ToString(), Convert.ToBoolean(reader["CorrectAnswer"])));
+                            {
+                                    games[i].OptionQuestion.Add((reader["AnswerText"].ToString(), Convert.ToBoolean(reader["CorrectAnswer"])));
                             }
                         }
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
-                    }
+                     }
                 }
             }
         }
@@ -138,7 +138,15 @@ namespace WinFormsApp1
             try
             {
                 LoadQuestion();
-                AddOption(numberQuestion);
+                if (games.Count > 0)
+                {
+                    AddOption(numberQuestion);
+                }
+                else
+                {
+                    MessageBox.Show("По данной теме в базе данных нет вопросов. Обратитесь к администратору базы данных", "Викторина", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    this.Close();
+                }
                 this.Text = $"Викторина. Вопрос {numberQuestion} из {games.Count}";
             }
             catch (Exception ex)
