@@ -83,6 +83,12 @@
     <Compile Include="FormAddEditDeleteQuestion.Designer.cs">
       <DependentUpon>FormAddEditDeleteQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddEditDeleteThemes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditDeleteThemes.Designer.cs">
+      <DependentUpon>FormAddEditDeleteThemes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <Compile Include="Setting.cs" />
     <EmbeddedResource Include="FormAddEditDeleteQuestion.resx">
       <DependentUpon>FormAddEditDeleteQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditDeleteThemes.resx">
+      <DependentUpon>FormAddEditDeleteThemes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace WinFormsApp1
 {
@@ -41,9 +42,11 @@ namespace WinFormsApp1
             toolTip1.SetToolTip(ButtonSettingUser, "Изменить настройки пользователя");
             toolTip1.SetToolTip(ButtonExit, "Выход из системы");
             toolTip1.SetToolTip(ButtonAddEditDeleteQuestion, "Добавить, изменить или удалить вопросы из баз данных");
+            toolTip1.SetToolTip(ButtonAddEditDeleteThemes, "Добавить, изменить или удалить тему из базы данных");
             LabelHelloUser.Text = "Привет " + MyDataBase.login + ".\n" + "Добро пожаловать на игру \"Викторина\"";
             RefreshThemes();
             ButtonAddEditDeleteQuestion.Visible = MyDataBase.isAdmin;
+            ButtonAddEditDeleteThemes.Visible = MyDataBase.isAdmin;
         }
         private void ButtonExit_Click(object sender, EventArgs e) => this.Close();
 
@@ -79,7 +82,13 @@ namespace WinFormsApp1
             FormAddEditDeleteQuestion formAddEditDeleteQuestion = new FormAddEditDeleteQuestion();
             formAddEditDeleteQuestion.themesName = ComboBoxChooseQuiz.Text;
             formAddEditDeleteQuestion.Show();
-            formAddEditDeleteQuestion.Closed += (s, args) => RefreshThemes();
+        }
+
+        private void ButtonAddEditDeleteThemes_Click(object sender, EventArgs e)
+        {
+            FormAddEditDeleteThemes formAddEditDeleteThemes = new FormAddEditDeleteThemes();
+            formAddEditDeleteThemes.Show();
+            formAddEditDeleteThemes.Closed += (s, args) => RefreshThemes();
         }
     }
 }

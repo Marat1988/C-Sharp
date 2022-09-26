@@ -29,6 +29,7 @@ namespace WinFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ButtonSettingUser = new System.Windows.Forms.Button();
             this.ButtonStart = new System.Windows.Forms.Button();
             this.ButtonShowResult = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@ namespace WinFormsApp1
             this.LabelChooseQuiz = new System.Windows.Forms.Label();
             this.LabelHelloUser = new System.Windows.Forms.Label();
             this.ButtonAddEditDeleteQuestion = new System.Windows.Forms.Button();
+            this.ButtonAddEditDeleteThemes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ButtonSettingUser
@@ -148,6 +150,17 @@ namespace WinFormsApp1
             this.ButtonAddEditDeleteQuestion.Visible = false;
             this.ButtonAddEditDeleteQuestion.Click += new System.EventHandler(this.ButtonAddEditDeleteQuestion_Click);
             // 
+            // ButtonAddEditDeleteThemes
+            // 
+            this.ButtonAddEditDeleteThemes.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddEditDeleteThemes.Image")));
+            this.ButtonAddEditDeleteThemes.Location = new System.Drawing.Point(889, 69);
+            this.ButtonAddEditDeleteThemes.Name = "ButtonAddEditDeleteThemes";
+            this.ButtonAddEditDeleteThemes.Size = new System.Drawing.Size(49, 38);
+            this.ButtonAddEditDeleteThemes.TabIndex = 9;
+            this.ButtonAddEditDeleteThemes.UseVisualStyleBackColor = true;
+            this.ButtonAddEditDeleteThemes.Visible = false;
+            this.ButtonAddEditDeleteThemes.Click += new System.EventHandler(this.ButtonAddEditDeleteThemes_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -155,6 +168,7 @@ namespace WinFormsApp1
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(965, 720);
+            this.Controls.Add(this.ButtonAddEditDeleteThemes);
             this.Controls.Add(this.ButtonAddEditDeleteQuestion);
             this.Controls.Add(this.LabelHelloUser);
             this.Controls.Add(this.LabelChooseQuiz);
@@ -185,5 +199,6 @@ namespace WinFormsApp1
         private System.Windows.Forms.Label LabelChooseQuiz;
         private System.Windows.Forms.Label LabelHelloUser;
         private System.Windows.Forms.Button ButtonAddEditDeleteQuestion;
+        private System.Windows.Forms.Button ButtonAddEditDeleteThemes;
     }
 }
