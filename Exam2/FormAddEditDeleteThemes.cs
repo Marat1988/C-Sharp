@@ -19,7 +19,14 @@ namespace WindowsFormsApp1
 
         private void FormAddEditDeleteThemes_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Привет");
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "baseDataSetThemes.THEMES". При необходимости она может быть перемещена или удалена.
+            this.ThemesTableAdapter.Fill(this.baseDataSetThemes.THEMES);
+        }
+
+        private void ButtonUpdateSynchronizationThemes_Click(object sender, EventArgs e)
+        {
+            this.ThemesTableAdapter.Adapter.Update(baseDataSetThemes);
+            this.ThemesTableAdapter.Fill(this.baseDataSetThemes.THEMES);
         }
     }
 }

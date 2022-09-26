@@ -77,6 +77,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BaseDataSetThemes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDataSetThemes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormAddEditDeleteQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +179,17 @@
     </None>
     <None Include="BaseDataSet1.xss">
       <DependentUpon>BaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BaseDataSetThemes.xsc">
+      <DependentUpon>BaseDataSetThemes.xsd</DependentUpon>
+    </None>
+    <None Include="BaseDataSetThemes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaseDataSetThemes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaseDataSetThemes.xss">
+      <DependentUpon>BaseDataSetThemes.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
