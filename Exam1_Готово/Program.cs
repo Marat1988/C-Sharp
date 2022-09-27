@@ -141,7 +141,7 @@ namespace Exam1
         }
         private static void ClearTranslateWord() //Удалить перевод слова
         {
-            Console.Write("Введите id слова: ");
+            Console.Write("Введите слово: ");
             MyDataBase.ClearTranslateWord(Console.ReadLine());
             Console.ReadKey(true);
         }

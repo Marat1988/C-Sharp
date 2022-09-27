@@ -5,3 +5,10 @@ C:\Users\HP\Documents\Шаг\C-Sharp\Exam1\obj\Release\Exam1.csproj.AssemblyRefe
 C:\Users\HP\Documents\Шаг\C-Sharp\Exam1\obj\Release\Exam1.csproj.CoreCompileInputs.cache
 C:\Users\HP\Documents\Шаг\C-Sharp\Exam1\obj\Release\Exam1.exe
 C:\Users\HP\Documents\Шаг\C-Sharp\Exam1\obj\Release\Exam1.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\bin\Release\Exam1.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\bin\Release\Exam1.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\bin\Release\Exam1.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\obj\Release\Exam1.csproj.AssemblyReference.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\obj\Release\Exam1.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\obj\Release\Exam1.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\obj\Release\Exam1.pdb

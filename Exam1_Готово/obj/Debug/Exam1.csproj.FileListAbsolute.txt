@@ -12,3 +12,10 @@ C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1\obj\Debug\Exam1.csproj.Asse
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1\obj\Debug\Exam1.csproj.CoreCompileInputs.cache
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1\obj\Debug\Exam1.exe
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1\obj\Debug\Exam1.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\obj\Debug\Exam1.csproj.AssemblyReference.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\obj\Debug\Exam1.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\obj\Debug\Exam1.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\obj\Debug\Exam1.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\bin\Debug\Exam1.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\bin\Debug\Exam1.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\Exam1_Готово\bin\Debug\Exam1.pdb
