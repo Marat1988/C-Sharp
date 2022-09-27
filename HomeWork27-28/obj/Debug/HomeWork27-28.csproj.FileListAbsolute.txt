@@ -1,0 +1,7 @@
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork27-28\bin\Debug\HomeWork27-28.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork27-28\bin\Debug\HomeWork27-28.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork27-28\bin\Debug\HomeWork27-28.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork27-28\obj\Debug\HomeWork27-28.csproj.AssemblyReference.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork27-28\obj\Debug\HomeWork27-28.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork27-28\obj\Debug\HomeWork27-28.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork27-28\obj\Debug\HomeWork27-28.pdb
