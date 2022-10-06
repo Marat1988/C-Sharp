@@ -1,0 +1,7 @@
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork19-20\Task1_HomeWork19-20\bin\Debug\Task1_HomeWork19-20.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork19-20\Task1_HomeWork19-20\bin\Debug\Task1_HomeWork19-20.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork19-20\Task1_HomeWork19-20\bin\Debug\Task1_HomeWork19-20.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork19-20\Task1_HomeWork19-20\obj\Debug\Task1_HomeWork19-20.csproj.AssemblyReference.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork19-20\Task1_HomeWork19-20\obj\Debug\Task1_HomeWork19-20.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork19-20\Task1_HomeWork19-20\obj\Debug\Task1_HomeWork19-20.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\HomeWork19-20\Task1_HomeWork19-20\obj\Debug\Task1_HomeWork19-20.pdb
