@@ -1,12 +1,47 @@
-﻿<Window x:Class="Task2_HomeWork1_2.MainWindow"
+﻿<Window x:Name="FormCalc" x:Class="Task2_HomeWork1_2.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task2_HomeWork1_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Задание 2. Калькулятор" Height="400" Width="300" WindowStartupLocation="CenterScreen" Background="YellowGreen">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox Name="TextBoxExpression" Grid.ColumnSpan="4" Grid.Column="0" Margin="2px" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Right" IsReadOnly="True" FontSize="18"/>
+        <TextBox Name="TextBoxResult" Grid.ColumnSpan="4" Grid.Column="0" Margin="2px" Grid.Row="1" TextWrapping="Wrap" TextAlignment="Right" IsReadOnly="True" FontSize="40" FontWeight="Bold"/>
+        <Button Content="CE" Name="ButtonCE" Grid.Row="2" Grid.Column="0" FontSize="30" Margin="1px" Click="ButtonCE_Click"/>
+        <Button Content="C" Name="ButtonC" Grid.Row="2" Grid.Column="1" FontSize="30" Margin="1px" Click="ButtonC_Click"/>
+        <Button Content="&lt;" Name="ButtonLastClear" Grid.Row="2" Grid.Column="2" FontSize="30" Margin="1px" Click="ButtonLastClear_Click"/>
+        <Button Content="/" Name="ButtonDivision" Grid.Row="2" Grid.Column="3" FontSize="30" Margin="1px" Click="ButtonOperator_Click" />
+        <Button Content="7" Name="ButtonNumberSeven" Grid.Row="3" Grid.Column="0" FontSize="30" Margin="1px" Click="ButtonNumbers_Click"/>
+        <Button Content="8" Name="ButtonNumberEight" Grid.Row="3" Grid.Column="1" FontSize="30" Margin="1px" Click="ButtonNumbers_Click"/>
+        <Button Content="9" Name="ButtonNumberNine" Grid.Row="3" Grid.Column="2" FontSize="30" Margin="1px" Click="ButtonNumbers_Click"/>
+        <Button Content="*" Name="ButtonMult" Grid.Row="3" Grid.Column="3" FontSize="30" Margin="1px" Click="ButtonOperator_Click"/>
+        <Button Content="4" Name="ButtonNumberFour" Grid.Row="4" Grid.Column="0" FontSize="30" Margin="1px" Click="ButtonNumbers_Click"/>
+        <Button Content="5" Name="ButtonNumberFive" Grid.Row="4" Grid.Column="1" FontSize="30" Margin="1px" Click="ButtonNumbers_Click"/>
+        <Button Content="6" Name="ButtonNumberSix" Grid.Row="4" Grid.Column="2" FontSize="30" Margin="1px" Click="ButtonNumbers_Click"/>
+        <Button Content="-" Name="ButtonMinus" Grid.Row="4" Grid.Column="3" FontSize="30" Margin="1px" Click="ButtonOperator_Click"/>
+        <Button Content="1" Name="ButtonNumberOne" Grid.Row="5" Grid.Column="0" FontSize="30" Margin="1px" Click="ButtonNumbers_Click"/>
+        <Button Content="2" Name="ButtonNumberTwo" Grid.Row="5" Grid.Column="1" FontSize="30" Margin="1px" Click="ButtonNumbers_Click"/>
+        <Button Content="3" Name="ButtonNumberThree" Grid.Row="5" Grid.Column="2" FontSize="30" Margin="1px" Click="ButtonNumbers_Click"/>
+        <Button Content="+" Name="ButtonPlus" Grid.Row="5" Grid.Column="3" FontSize="30" Margin="1px" Click="ButtonOperator_Click"/>
+        <Button Content="." Name="ButtonPoint" Grid.Row="6" Grid.Column="0" FontSize="30" Margin="1px" Click="ButtonPoint_Click"/>
+        <Button Content="0" Name="ButtonNumberZero" Grid.Row="6" Grid.Column="1" FontSize="30" Margin="1px" Click="ButtonNumbers_Click"/>
+        <Button Content="=" Name="ButtonResult" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" FontSize="30" Margin="1px" Click="ButtonResult_Click" />
     </Grid>
 </Window>

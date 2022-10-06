@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Documents\\Шаг\\C-Sharp\\WPF\\Task2_HomeWork1-2\\Task2_HomeWork1-2.csproj": {}
+    "C:\\Users\\HP\\Documents\\Шаг\\C-Sharp\\WPF\\HomeWork1-2\\Task2_HomeWork1-2\\Task2_HomeWork1-2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Documents\\Шаг\\C-Sharp\\WPF\\Task2_HomeWork1-2\\Task2_HomeWork1-2.csproj": {
+    "C:\\Users\\HP\\Documents\\Шаг\\C-Sharp\\WPF\\HomeWork1-2\\Task2_HomeWork1-2\\Task2_HomeWork1-2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Documents\\Шаг\\C-Sharp\\WPF\\Task2_HomeWork1-2\\Task2_HomeWork1-2.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Documents\\Шаг\\C-Sharp\\WPF\\HomeWork1-2\\Task2_HomeWork1-2\\Task2_HomeWork1-2.csproj",
         "projectName": "Task2_HomeWork1-2",
-        "projectPath": "C:\\Users\\HP\\Documents\\Шаг\\C-Sharp\\WPF\\Task2_HomeWork1-2\\Task2_HomeWork1-2.csproj",
+        "projectPath": "C:\\Users\\HP\\Documents\\Шаг\\C-Sharp\\WPF\\HomeWork1-2\\Task2_HomeWork1-2\\Task2_HomeWork1-2.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Documents\\Шаг\\C-Sharp\\WPF\\Task2_HomeWork1-2\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Documents\\Шаг\\C-Sharp\\WPF\\HomeWork1-2\\Task2_HomeWork1-2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Z.Expressions.Eval": {
+              "target": "Package",
+              "version": "[4.0.88, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
