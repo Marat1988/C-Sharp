@@ -1,0 +1,17 @@
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\bin\Release\Calculator.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\bin\Release\Calculator.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\bin\Release\Calculator.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\bin\Release\Z.Expressions.Eval.dll
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\bin\Release\Z.Expressions.Eval.xml
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\MainWindow.g.cs
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\App.g.cs
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\Calculator_MarkupCompile.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\Calculator_MarkupCompile.lref
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\MainWindow.baml
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\Calculator.g.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\Task2_HomeWork1_2.Properties.Resources.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\Task2_HomeWork1-2.csproj.GenerateResource.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\Task2_HomeWork1-2.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\Task2_HomeWork1-2.csproj.CopyComplete
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\Calculator.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task2_HomeWork1-2\obj\Release\Calculator.pdb
