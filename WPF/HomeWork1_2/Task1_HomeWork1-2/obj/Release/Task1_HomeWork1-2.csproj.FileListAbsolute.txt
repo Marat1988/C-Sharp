@@ -12,3 +12,17 @@ C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2_New\Task1_HomeWor
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2_New\Task1_HomeWork1-2\obj\Release\Task1_HomeWork1-2.csproj.CoreCompileInputs.cache
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2_New\Task1_HomeWork1-2\obj\Release\Task1_HomeWork1-2.exe
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2_New\Task1_HomeWork1-2\obj\Release\Task1_HomeWork1-2.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\bin\Release\Task1_HomeWork1-2.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\bin\Release\Task1_HomeWork1-2.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\bin\Release\Task1_HomeWork1-2.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\obj\Release\MainWindow.g.cs
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\obj\Release\App.g.cs
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\obj\Release\Task1_HomeWork1-2_MarkupCompile.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\obj\Release\Task1_HomeWork1-2_MarkupCompile.lref
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\obj\Release\MainWindow.baml
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\obj\Release\Task1_HomeWork1-2.g.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\obj\Release\Task1_HomeWork1_2.Properties.Resources.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\obj\Release\Task1_HomeWork1-2.csproj.GenerateResource.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\obj\Release\Task1_HomeWork1-2.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\obj\Release\Task1_HomeWork1-2.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork1_2\Task1_HomeWork1-2\obj\Release\Task1_HomeWork1-2.pdb
