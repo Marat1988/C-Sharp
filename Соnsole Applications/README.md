@@ -1,4 +1,4 @@
-# C Sharp
+# Console Application
 
 <b>HomeWork 1-2</b>
 
