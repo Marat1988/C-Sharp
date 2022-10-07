@@ -1,4 +1,2 @@
-# C-Sharp
-Я изучаю C# в академии
-Соnsole Applications - консольные приложения<b>
-WPF - Windows Presentation Foundation
+<b>Соnsole Applications</b> - консольные приложения<br>
+<b>WPF</b> - Windows Presentation Foundation
