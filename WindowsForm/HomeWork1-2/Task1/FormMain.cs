@@ -29,7 +29,7 @@ namespace Task1
         {
             Localizer.LocaleChanged += Localizer_LocaleChanged;
             InitializeComponent();
-            InitialControls();
+            InitialValue();
         }
 
         private void Localizer_LocaleChanged(object sender, EventArgs e)
@@ -37,10 +37,10 @@ namespace Task1
             timer.Stop();
             Controls.Clear();
             InitializeComponent();
-            InitialControls();
+            InitialValue();
         }
 
-        private void InitialControls()
+        private void InitialValue()
         {
             ComboBoxChooseTypeFuel.SelectedIndex = 0;
             toolStripStatusLabelTimeOrDate.Text = DateTime.Now.ToLongTimeString();
@@ -107,5 +107,6 @@ namespace Task1
         private void RusToolStripMenuItem_Click(object sender, EventArgs e) => Localizer.SetLocale("ru-RU");
 
         private void TextBoxPrice_TextChanged(object sender, EventArgs e) => ButtonTotalPrice.Enabled = (string.IsNullOrEmpty(TextBoxPrice.Text) == false && string.IsNullOrEmpty(TextBoxVolume.Text) == false);
+
     }
 }

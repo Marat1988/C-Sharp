@@ -117,11 +117,134 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;LabelTotalPrice.Name" xml:space="preserve">
+    <value>LabelTotalPrice</value>
+  </data>
+  <data name="&gt;&gt;LabelTotalPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTotalPrice.Parent" xml:space="preserve">
+    <value>GroupBoxData</value>
+  </data>
+  <data name="&gt;&gt;LabelTotalPrice.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ButtonTotalPrice.Name" xml:space="preserve">
+    <value>ButtonTotalPrice</value>
+  </data>
+  <data name="&gt;&gt;ButtonTotalPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonTotalPrice.Parent" xml:space="preserve">
+    <value>GroupBoxData</value>
+  </data>
+  <data name="&gt;&gt;ButtonTotalPrice.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TextBoxVolume.Name" xml:space="preserve">
+    <value>TextBoxVolume</value>
+  </data>
+  <data name="&gt;&gt;TextBoxVolume.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBoxVolume.Parent" xml:space="preserve">
+    <value>GroupBoxData</value>
+  </data>
+  <data name="&gt;&gt;TextBoxVolume.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.Name" xml:space="preserve">
+    <value>LabelVolume</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.Parent" xml:space="preserve">
+    <value>GroupBoxData</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LabelPrice.Name" xml:space="preserve">
+    <value>LabelPrice</value>
+  </data>
+  <data name="&gt;&gt;LabelPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelPrice.Parent" xml:space="preserve">
+    <value>GroupBoxData</value>
+  </data>
+  <data name="&gt;&gt;LabelPrice.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;TextBoxPrice.Name" xml:space="preserve">
+    <value>TextBoxPrice</value>
+  </data>
+  <data name="&gt;&gt;TextBoxPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBoxPrice.Parent" xml:space="preserve">
+    <value>GroupBoxData</value>
+  </data>
+  <data name="&gt;&gt;TextBoxPrice.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;LabelChooseTypeFuel.Name" xml:space="preserve">
+    <value>LabelChooseTypeFuel</value>
+  </data>
+  <data name="&gt;&gt;LabelChooseTypeFuel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelChooseTypeFuel.Parent" xml:space="preserve">
+    <value>GroupBoxData</value>
+  </data>
+  <data name="&gt;&gt;LabelChooseTypeFuel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ComboBoxChooseTypeFuel.Name" xml:space="preserve">
+    <value>ComboBoxChooseTypeFuel</value>
+  </data>
+  <data name="&gt;&gt;ComboBoxChooseTypeFuel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBoxChooseTypeFuel.Parent" xml:space="preserve">
+    <value>GroupBoxData</value>
+  </data>
+  <data name="&gt;&gt;ComboBoxChooseTypeFuel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="GroupBoxData.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="GroupBoxData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="GroupBoxData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 313</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GroupBoxData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GroupBoxData.Text" xml:space="preserve">
+    <value>Исходные данные</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxData.Name" xml:space="preserve">
+    <value>GroupBoxData</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxData.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="LabelTotalPrice.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelTotalPrice.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
@@ -347,60 +470,9 @@
   <data name="&gt;&gt;ComboBoxChooseTypeFuel.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="GroupBoxData.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="GroupBoxData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="GroupBoxData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>404, 313</value>
-  </data>
-  <data name="GroupBoxData.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="GroupBoxData.Text" xml:space="preserve">
-    <value>Исходные данные</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxData.Name" xml:space="preserve">
-    <value>GroupBoxData</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxData.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxData.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <metadata name="statusStripFormMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="statusStripFormMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 428</value>
-  </data>
-  <data name="statusStripFormMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 22</value>
-  </data>
-  <data name="statusStripFormMain.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="statusStripFormMain.Text" xml:space="preserve">
-    <value>Автозаправка</value>
-  </data>
-  <data name="&gt;&gt;statusStripFormMain.Name" xml:space="preserve">
-    <value>statusStripFormMain</value>
-  </data>
-  <data name="&gt;&gt;statusStripFormMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusStripFormMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;statusStripFormMain.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="toolStripStatusLabelTimeOrDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 17</value>
   </data>
@@ -431,18 +503,6 @@
   <data name="toolStripDropDownButton1.Text" xml:space="preserve">
     <value>toolStripDropDownButton1</value>
   </data>
-  <data name="ToolStripMenuItemDayOfWeek.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
-  </data>
-  <data name="ToolStripMenuItemDayOfWeek.Text" xml:space="preserve">
-    <value>День недели</value>
-  </data>
-  <data name="ToolStripMenuItemBackgroundColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
-  </data>
-  <data name="ToolStripMenuItemBackgroundColor.Text" xml:space="preserve">
-    <value>Цвет фона</value>
-  </data>
   <data name="toolStripDropDownButtonLanguage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -467,14 +527,50 @@
   <data name="toolStripDropDownButtonLanguage.Text" xml:space="preserve">
     <value>toolStripDropDownButton2</value>
   </data>
+  <data name="statusStripFormMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 369</value>
+  </data>
+  <data name="statusStripFormMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>647, 22</value>
+  </data>
+  <data name="statusStripFormMain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="statusStripFormMain.Text" xml:space="preserve">
+    <value>Автозаправка</value>
+  </data>
+  <data name="&gt;&gt;statusStripFormMain.Name" xml:space="preserve">
+    <value>statusStripFormMain</value>
+  </data>
+  <data name="&gt;&gt;statusStripFormMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStripFormMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusStripFormMain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ToolStripMenuItemDayOfWeek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 22</value>
+  </data>
+  <data name="ToolStripMenuItemDayOfWeek.Text" xml:space="preserve">
+    <value>День недели</value>
+  </data>
+  <data name="ToolStripMenuItemBackgroundColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 22</value>
+  </data>
+  <data name="ToolStripMenuItemBackgroundColor.Text" xml:space="preserve">
+    <value>Цвет фона</value>
+  </data>
   <data name="RusToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>97, 22</value>
   </data>
   <data name="RusToolStripMenuItem.Text" xml:space="preserve">
     <value>RUS</value>
   </data>
   <data name="EngToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>97, 22</value>
   </data>
   <data name="EngToolStripMenuItem.Text" xml:space="preserve">
     <value>ENG</value>
@@ -579,7 +675,7 @@
     <value>7</value>
   </data>
   <data name="PanelColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 189</value>
+    <value>440, 110</value>
   </data>
   <data name="PanelColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 215</value>
@@ -897,15 +993,12 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>647, 391</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
