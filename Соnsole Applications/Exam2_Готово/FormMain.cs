@@ -90,5 +90,10 @@ namespace WinFormsApp1
             formAddEditDeleteThemes.Show();
             formAddEditDeleteThemes.Closed += (s, args) => RefreshThemes();
         }
+
+        private void ComboBoxChooseQuiz_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

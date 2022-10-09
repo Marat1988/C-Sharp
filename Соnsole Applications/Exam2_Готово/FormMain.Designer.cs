@@ -46,7 +46,7 @@ namespace WinFormsApp1
             // 
             this.ButtonSettingUser.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.ButtonSettingUser.Location = new System.Drawing.Point(20, 276);
-            this.ButtonSettingUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonSettingUser.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonSettingUser.Name = "ButtonSettingUser";
             this.ButtonSettingUser.Size = new System.Drawing.Size(283, 74);
             this.ButtonSettingUser.TabIndex = 4;
@@ -58,7 +58,7 @@ namespace WinFormsApp1
             // 
             this.ButtonStart.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.ButtonStart.Location = new System.Drawing.Point(20, 15);
-            this.ButtonStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonStart.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonStart.Name = "ButtonStart";
             this.ButtonStart.Size = new System.Drawing.Size(283, 63);
             this.ButtonStart.TabIndex = 1;
@@ -70,7 +70,7 @@ namespace WinFormsApp1
             // 
             this.ButtonShowResult.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.ButtonShowResult.Location = new System.Drawing.Point(20, 96);
-            this.ButtonShowResult.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonShowResult.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonShowResult.Name = "ButtonShowResult";
             this.ButtonShowResult.Size = new System.Drawing.Size(283, 71);
             this.ButtonShowResult.TabIndex = 2;
@@ -82,7 +82,7 @@ namespace WinFormsApp1
             // 
             this.ButtonShowTop20.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.ButtonShowTop20.Location = new System.Drawing.Point(20, 185);
-            this.ButtonShowTop20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonShowTop20.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonShowTop20.Name = "ButtonShowTop20";
             this.ButtonShowTop20.Size = new System.Drawing.Size(283, 70);
             this.ButtonShowTop20.TabIndex = 3;
@@ -95,7 +95,7 @@ namespace WinFormsApp1
             this.ButtonExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ButtonExit.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.ButtonExit.Location = new System.Drawing.Point(20, 369);
-            this.ButtonExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonExit.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonExit.Name = "ButtonExit";
             this.ButtonExit.Size = new System.Drawing.Size(283, 63);
             this.ButtonExit.TabIndex = 5;
@@ -109,10 +109,11 @@ namespace WinFormsApp1
             this.ComboBoxChooseQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ComboBoxChooseQuiz.FormattingEnabled = true;
             this.ComboBoxChooseQuiz.Location = new System.Drawing.Point(330, 56);
-            this.ComboBoxChooseQuiz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ComboBoxChooseQuiz.Margin = new System.Windows.Forms.Padding(2);
             this.ComboBoxChooseQuiz.Name = "ComboBoxChooseQuiz";
             this.ComboBoxChooseQuiz.Size = new System.Drawing.Size(333, 33);
             this.ComboBoxChooseQuiz.TabIndex = 0;
+            this.ComboBoxChooseQuiz.SelectedIndexChanged += new System.EventHandler(this.ComboBoxChooseQuiz_SelectedIndexChanged);
             // 
             // LabelChooseQuiz
             // 
@@ -143,7 +144,7 @@ namespace WinFormsApp1
             this.ButtonAddEditDeleteQuestion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ButtonAddEditDeleteQuestion.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.ButtonAddEditDeleteQuestion.Location = new System.Drawing.Point(20, 453);
-            this.ButtonAddEditDeleteQuestion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonAddEditDeleteQuestion.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonAddEditDeleteQuestion.Name = "ButtonAddEditDeleteQuestion";
             this.ButtonAddEditDeleteQuestion.Size = new System.Drawing.Size(283, 73);
             this.ButtonAddEditDeleteQuestion.TabIndex = 8;
@@ -156,7 +157,7 @@ namespace WinFormsApp1
             // 
             this.ButtonAddEditDeleteThemes.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddEditDeleteThemes.Image")));
             this.ButtonAddEditDeleteThemes.Location = new System.Drawing.Point(667, 56);
-            this.ButtonAddEditDeleteThemes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonAddEditDeleteThemes.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonAddEditDeleteThemes.Name = "ButtonAddEditDeleteThemes";
             this.ButtonAddEditDeleteThemes.Size = new System.Drawing.Size(37, 33);
             this.ButtonAddEditDeleteThemes.TabIndex = 9;
@@ -181,7 +182,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.ButtonShowResult);
             this.Controls.Add(this.ButtonStart);
             this.Controls.Add(this.ButtonSettingUser);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главное меню";
