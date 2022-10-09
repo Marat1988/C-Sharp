@@ -63,7 +63,11 @@ namespace Task3
         private void comboBoxListProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DataBaseProduct.FindProduct(comboBoxListProducts.Text, out int index) == true)
+            {
                 TextBoxPrice.Text = DataBaseProduct.products[index].Price.ToString();
+                TextBoxDescription.Text = DataBaseProduct.products[index].Description;
+            }
+  
             ButtonEditProducts.Enabled = comboBoxListProducts.Text.Length > 0;
             ButtonSellProducts.Enabled = comboBoxListProducts.Text.Length > 0 && TextBoxCount.TextLength > 0;
         }

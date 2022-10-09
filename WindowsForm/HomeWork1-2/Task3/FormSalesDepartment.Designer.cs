@@ -39,11 +39,13 @@ namespace Task3
             this.ButtonEditProducts = new System.Windows.Forms.Button();
             this.ButtonAddProduct = new System.Windows.Forms.Button();
             this.GroupBoxSales = new System.Windows.Forms.GroupBox();
+            this.TextBoxTotalSum = new System.Windows.Forms.TextBox();
+            this.LabelSalesSumProduct = new System.Windows.Forms.Label();
             this.LabelCount = new System.Windows.Forms.Label();
             this.TextBoxCount = new System.Windows.Forms.TextBox();
             this.ButtonSellProducts = new System.Windows.Forms.Button();
-            this.LabelSalesSumProduct = new System.Windows.Forms.Label();
-            this.TextBoxTotalSum = new System.Windows.Forms.TextBox();
+            this.TextBoxDescription = new System.Windows.Forms.TextBox();
+            this.LabelDescription = new System.Windows.Forms.Label();
             this.GroupBoxListProducts.SuspendLayout();
             this.GroupBoxAddEdit.SuspendLayout();
             this.GroupBoxSales.SuspendLayout();
@@ -54,7 +56,7 @@ namespace Task3
             this.ListBoxSales.FormattingEnabled = true;
             this.ListBoxSales.Location = new System.Drawing.Point(12, 12);
             this.ListBoxSales.Name = "ListBoxSales";
-            this.ListBoxSales.Size = new System.Drawing.Size(247, 407);
+            this.ListBoxSales.Size = new System.Drawing.Size(247, 498);
             this.ListBoxSales.Sorted = true;
             this.ListBoxSales.TabIndex = 0;
             // 
@@ -71,13 +73,15 @@ namespace Task3
             // 
             // GroupBoxListProducts
             // 
+            this.GroupBoxListProducts.Controls.Add(this.LabelDescription);
+            this.GroupBoxListProducts.Controls.Add(this.TextBoxDescription);
             this.GroupBoxListProducts.Controls.Add(this.LabelPrice);
             this.GroupBoxListProducts.Controls.Add(this.TextBoxPrice);
             this.GroupBoxListProducts.Controls.Add(this.label1);
             this.GroupBoxListProducts.Controls.Add(this.comboBoxListProducts);
             this.GroupBoxListProducts.Location = new System.Drawing.Point(281, 12);
             this.GroupBoxListProducts.Name = "GroupBoxListProducts";
-            this.GroupBoxListProducts.Size = new System.Drawing.Size(200, 116);
+            this.GroupBoxListProducts.Size = new System.Drawing.Size(200, 216);
             this.GroupBoxListProducts.TabIndex = 2;
             this.GroupBoxListProducts.TabStop = false;
             this.GroupBoxListProducts.Text = "Список товаров:";
@@ -112,7 +116,7 @@ namespace Task3
             // 
             this.GroupBoxAddEdit.Controls.Add(this.ButtonEditProducts);
             this.GroupBoxAddEdit.Controls.Add(this.ButtonAddProduct);
-            this.GroupBoxAddEdit.Location = new System.Drawing.Point(281, 134);
+            this.GroupBoxAddEdit.Location = new System.Drawing.Point(281, 234);
             this.GroupBoxAddEdit.Name = "GroupBoxAddEdit";
             this.GroupBoxAddEdit.Size = new System.Drawing.Size(200, 105);
             this.GroupBoxAddEdit.TabIndex = 3;
@@ -147,12 +151,32 @@ namespace Task3
             this.GroupBoxSales.Controls.Add(this.LabelCount);
             this.GroupBoxSales.Controls.Add(this.TextBoxCount);
             this.GroupBoxSales.Controls.Add(this.ButtonSellProducts);
-            this.GroupBoxSales.Location = new System.Drawing.Point(281, 254);
+            this.GroupBoxSales.Location = new System.Drawing.Point(281, 345);
             this.GroupBoxSales.Name = "GroupBoxSales";
             this.GroupBoxSales.Size = new System.Drawing.Size(200, 165);
             this.GroupBoxSales.TabIndex = 4;
             this.GroupBoxSales.TabStop = false;
             this.GroupBoxSales.Text = "Продажа:";
+            // 
+            // TextBoxTotalSum
+            // 
+            this.TextBoxTotalSum.Location = new System.Drawing.Point(9, 126);
+            this.TextBoxTotalSum.Name = "TextBoxTotalSum";
+            this.TextBoxTotalSum.ReadOnly = true;
+            this.TextBoxTotalSum.Size = new System.Drawing.Size(184, 20);
+            this.TextBoxTotalSum.TabIndex = 4;
+            this.TextBoxTotalSum.Text = "0";
+            this.TextBoxTotalSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // LabelSalesSumProduct
+            // 
+            this.LabelSalesSumProduct.AutoSize = true;
+            this.LabelSalesSumProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelSalesSumProduct.Location = new System.Drawing.Point(20, 100);
+            this.LabelSalesSumProduct.Name = "LabelSalesSumProduct";
+            this.LabelSalesSumProduct.Size = new System.Drawing.Size(173, 13);
+            this.LabelSalesSumProduct.TabIndex = 3;
+            this.LabelSalesSumProduct.Text = "Общая сумма продаж (руб.)";
             // 
             // LabelCount
             // 
@@ -183,31 +207,30 @@ namespace Task3
             this.ButtonSellProducts.UseVisualStyleBackColor = true;
             this.ButtonSellProducts.Click += new System.EventHandler(this.ButtonSellProducts_Click);
             // 
-            // LabelSalesSumProduct
+            // TextBoxDescription
             // 
-            this.LabelSalesSumProduct.AutoSize = true;
-            this.LabelSalesSumProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelSalesSumProduct.Location = new System.Drawing.Point(20, 100);
-            this.LabelSalesSumProduct.Name = "LabelSalesSumProduct";
-            this.LabelSalesSumProduct.Size = new System.Drawing.Size(173, 13);
-            this.LabelSalesSumProduct.TabIndex = 3;
-            this.LabelSalesSumProduct.Text = "Общая сумма продаж (руб.)";
+            this.TextBoxDescription.Location = new System.Drawing.Point(9, 137);
+            this.TextBoxDescription.Multiline = true;
+            this.TextBoxDescription.Name = "TextBoxDescription";
+            this.TextBoxDescription.ReadOnly = true;
+            this.TextBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.TextBoxDescription.Size = new System.Drawing.Size(184, 73);
+            this.TextBoxDescription.TabIndex = 5;
             // 
-            // TextBoxTotalSum
+            // LabelDescription
             // 
-            this.TextBoxTotalSum.Location = new System.Drawing.Point(9, 126);
-            this.TextBoxTotalSum.Name = "TextBoxTotalSum";
-            this.TextBoxTotalSum.ReadOnly = true;
-            this.TextBoxTotalSum.Size = new System.Drawing.Size(184, 20);
-            this.TextBoxTotalSum.TabIndex = 4;
-            this.TextBoxTotalSum.Text = "0";
-            this.TextBoxTotalSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.LabelDescription.AutoSize = true;
+            this.LabelDescription.Location = new System.Drawing.Point(6, 121);
+            this.LabelDescription.Name = "LabelDescription";
+            this.LabelDescription.Size = new System.Drawing.Size(98, 13);
+            this.LabelDescription.TabIndex = 6;
+            this.LabelDescription.Text = "Описание товара:";
             // 
             // FormSalesDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 434);
+            this.ClientSize = new System.Drawing.Size(517, 538);
             this.Controls.Add(this.GroupBoxSales);
             this.Controls.Add(this.GroupBoxAddEdit);
             this.Controls.Add(this.GroupBoxListProducts);
@@ -241,6 +264,8 @@ namespace Task3
         private System.Windows.Forms.Button ButtonSellProducts;
         private System.Windows.Forms.TextBox TextBoxTotalSum;
         private System.Windows.Forms.Label LabelSalesSumProduct;
+        private System.Windows.Forms.Label LabelDescription;
+        private System.Windows.Forms.TextBox TextBoxDescription;
     }
 }
 
