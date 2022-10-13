@@ -31,6 +31,7 @@ namespace Task4
         {
             this.TextBoxEditTextFile = new System.Windows.Forms.TextBox();
             this.ButtonSaveTextFile = new System.Windows.Forms.Button();
+            this.ButtonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TextBoxEditTextFile
@@ -56,6 +57,17 @@ namespace Task4
             this.ButtonSaveTextFile.UseVisualStyleBackColor = true;
             this.ButtonSaveTextFile.Click += new System.EventHandler(this.ButtonSaveTextFile_Click);
             // 
+            // ButtonCancel
+            // 
+            this.ButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonCancel.Location = new System.Drawing.Point(211, 12);
+            this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.Size = new System.Drawing.Size(154, 60);
+            this.ButtonCancel.TabIndex = 2;
+            this.ButtonCancel.Text = "Отмена";
+            this.ButtonCancel.UseVisualStyleBackColor = true;
+            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            // 
             // FormEditTextFiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -63,6 +75,7 @@ namespace Task4
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(594, 450);
+            this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonSaveTextFile);
             this.Controls.Add(this.TextBoxEditTextFile);
             this.Name = "FormEditTextFiles";
@@ -77,5 +90,6 @@ namespace Task4
 
         private System.Windows.Forms.TextBox TextBoxEditTextFile;
         private System.Windows.Forms.Button ButtonSaveTextFile;
+        private System.Windows.Forms.Button ButtonCancel;
     }
 }

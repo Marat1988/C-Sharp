@@ -27,7 +27,6 @@ namespace Task4
             TextBoxEditTextFile.Text = textData;
         }
 
-
         private void ButtonSaveTextFile_Click(object sender, EventArgs e)
         {
             StreamWriter writer = new StreamWriter(fileName);
@@ -35,9 +34,10 @@ namespace Task4
             writer.Write(TextBoxEditTextFile.Text);
             writer.Close();
             this.DialogResult = DialogResult.OK;
-            MessageBox.Show(this.DialogResult.ToString());
-            this.Close();
             //Закрывем writer;
+            this.Close();
         }
+
+        private void ButtonCancel_Click(object sender, EventArgs e) => this.Close();
     }
 }
