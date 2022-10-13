@@ -41,6 +41,7 @@ namespace Task4
             this.TextBoxEditTextFile.Location = new System.Drawing.Point(12, 94);
             this.TextBoxEditTextFile.Multiline = true;
             this.TextBoxEditTextFile.Name = "TextBoxEditTextFile";
+            this.TextBoxEditTextFile.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TextBoxEditTextFile.Size = new System.Drawing.Size(558, 344);
             this.TextBoxEditTextFile.TabIndex = 0;
             // 
@@ -53,6 +54,7 @@ namespace Task4
             this.ButtonSaveTextFile.TabIndex = 1;
             this.ButtonSaveTextFile.Text = "Сохранить изменения";
             this.ButtonSaveTextFile.UseVisualStyleBackColor = true;
+            this.ButtonSaveTextFile.Click += new System.EventHandler(this.ButtonSaveTextFile_Click);
             // 
             // FormEditTextFiles
             // 

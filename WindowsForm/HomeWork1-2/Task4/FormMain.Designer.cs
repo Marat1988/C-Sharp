@@ -47,6 +47,7 @@ namespace Task4
             this.TextBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TextBoxDescription.Size = new System.Drawing.Size(688, 386);
             this.TextBoxDescription.TabIndex = 0;
+            this.TextBoxDescription.TextChanged += new System.EventHandler(this.TextBoxDescription_TextChanged);
             // 
             // ButtonLoadTextFile
             // 
@@ -61,6 +62,7 @@ namespace Task4
             // 
             // ButtonEditTextFile
             // 
+            this.ButtonEditTextFile.Enabled = false;
             this.ButtonEditTextFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonEditTextFile.Location = new System.Drawing.Point(276, 12);
             this.ButtonEditTextFile.Name = "ButtonEditTextFile";
@@ -68,6 +70,7 @@ namespace Task4
             this.ButtonEditTextFile.TabIndex = 2;
             this.ButtonEditTextFile.Text = "Изменить";
             this.ButtonEditTextFile.UseVisualStyleBackColor = true;
+            this.ButtonEditTextFile.Click += new System.EventHandler(this.ButtonEditTextFile_Click);
             // 
             // FormMain
             // 
