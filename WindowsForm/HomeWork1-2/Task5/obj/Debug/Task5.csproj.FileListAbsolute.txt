@@ -1,0 +1,10 @@
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork1-2\Task5\bin\Debug\Task5.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork1-2\Task5\bin\Debug\Task5.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork1-2\Task5\bin\Debug\Task5.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Debug\Task5.csproj.AssemblyReference.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Debug\Task5.Properties.Resources.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Debug\Task5.csproj.GenerateResource.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Debug\Task5.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Debug\Task5.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Debug\Task5.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Debug\Task5.FormTextEditor.resources
