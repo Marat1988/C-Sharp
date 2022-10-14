@@ -370,6 +370,7 @@ namespace Task5
             this.Name = "FormTextEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Текстовый редактор";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

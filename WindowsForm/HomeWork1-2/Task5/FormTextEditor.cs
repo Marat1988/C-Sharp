@@ -16,7 +16,7 @@ namespace Task5
         private OpenFileDialog open = new OpenFileDialog
         {
             //Создали экземпляр. Установим фильтр для файлов
-            Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*",
+            Filter = "txt files (*.txt)|*.txt",
             FilterIndex = 1, //по умолчанию фильтруются текстовые файлы
             InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) //По-умолчанию. Пусть к рабочему столу
         };
@@ -50,28 +50,36 @@ namespace Task5
             textBox.Clear();
             if (open.ShowDialog() == DialogResult.OK)
             {
-                StreamReader reader = File.OpenText(open.FileName);
-                textBox.Text = reader.ReadToEnd(); //Считываем файл до конца
-                if (textBox.Text.Length > 0)
+                using (StreamReader reader = File.OpenText(open.FileName))
                 {
-                    this.Text = open.FileName;
+                    textBox.Text = reader.ReadToEnd(); //Считываем файл до конца
+                    if (textBox.Text.Length > 0)
+                        this.Text = open.FileName;
                 }
-                reader.Close();
             }
         }
 
         private void toolStripButtonSaveDocument_Click(object sender, EventArgs e)
         {
-            StreamWriter writer = new StreamWriter(open.FileName);
-            //Записываем в файл содержимое поля
-            writer.Write(textBox.Text);
-            writer.Close();
+            using (StreamWriter writer = new StreamWriter(open.FileName))
+            {
+                //Записываем в файл содержимое поля
+                writer.Write(textBox.Text);
+            }
         }
 
         private void toolStripButtonNewDocument_Click(object sender, EventArgs e)
         {
-            FormTextEditor newDocument = new FormTextEditor();
-            newDocument.Show();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                open.FileName = saveFileDialog.FileName;
+                this.Text = open.FileName;
+                statusEnableNotEnableButtons();
+            }
         }
 
         private void SelectAllTextToolStripMenuItem_Click(object sender, EventArgs e) => textBox.SelectAll();
@@ -79,17 +87,18 @@ namespace Task5
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
             saveFileDialog.FilterIndex = 1;
             saveFileDialog.RestoreDirectory = true;
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                StreamWriter writer = new StreamWriter(saveFileDialog.FileName);
-                writer.Write(textBox.Text);
-                writer.Close();
-                open.FileName = saveFileDialog.FileName;
-                this.Text = open.FileName;
-                statusEnableNotEnableButtons();
+                using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName))
+                {
+                    writer.Write(textBox.Text);
+                    open.FileName = saveFileDialog.FileName;
+                    this.Text = open.FileName;
+                    statusEnableNotEnableButtons();
+                }
             }
         }
         /***************************Меню Правка***************************/
