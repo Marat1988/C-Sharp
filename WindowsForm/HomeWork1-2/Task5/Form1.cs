@@ -13,7 +13,6 @@ namespace Task5
 {
     public partial class FormTextEditor : Form
     {
-        private string fileName = "";
         private OpenFileDialog open = new OpenFileDialog
         {
             //Создали экземпляр. Установим фильтр для файлов
@@ -26,23 +25,7 @@ namespace Task5
         {
             InitializeComponent();
         }
-
-        private void toolStripButtonAddOpenDocument_Click(object sender, EventArgs e)
-        {
-            textBox.Clear();
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                StreamReader reader = File.OpenText(open.FileName);
-                textBox.Text = reader.ReadToEnd(); //Считываем файл до конца
-                if (textBox.Text.Length > 0)
-                {
-                    fileName = open.FileName;
-                    this.Text = fileName;
-                }
-                reader.Close();
-            }
-        }
-
+        //Обновление статуса кнопок (т.е. когда должна быть кнопка доступна (свойство Enable))
         private void statusEnableNotEnableButtons()
         {
             toolStripButtonSaveDocument.Enabled = textBox.Text.Length > 0 && open.FileName.Length > 0;
@@ -55,9 +38,31 @@ namespace Task5
             UndoToolStripMenuItem.Enabled = toolStripButtonUndo.Enabled;
         }
 
+        private void textBox_TextChanged(object sender, EventArgs e) => statusEnableNotEnableButtons();
+
+        private void textBox_Click(object sender, EventArgs e) => statusEnableNotEnableButtons();
+
+        private void textBox_KeyUp(object sender, KeyEventArgs e) => statusEnableNotEnableButtons();
+
+        /***************************Меню Файл***************************/
+        private void toolStripButtonAddOpenDocument_Click(object sender, EventArgs e)
+        {
+            textBox.Clear();
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader reader = File.OpenText(open.FileName);
+                textBox.Text = reader.ReadToEnd(); //Считываем файл до конца
+                if (textBox.Text.Length > 0)
+                {
+                    this.Text = open.FileName;
+                }
+                reader.Close();
+            }
+        }
+
         private void toolStripButtonSaveDocument_Click(object sender, EventArgs e)
         {
-            StreamWriter writer = new StreamWriter(fileName);
+            StreamWriter writer = new StreamWriter(open.FileName);
             //Записываем в файл содержимое поля
             writer.Write(textBox.Text);
             writer.Close();
@@ -69,20 +74,39 @@ namespace Task5
             newDocument.Show();
         }
 
-        private void textBox_TextChanged(object sender, EventArgs e) => statusEnableNotEnableButtons();
+        private void SelectAllTextToolStripMenuItem_Click(object sender, EventArgs e) => textBox.SelectAll();
 
-        private void textBox_Click(object sender, EventArgs e) => statusEnableNotEnableButtons();
-
-        private void textBox_KeyUp(object sender, KeyEventArgs e) => statusEnableNotEnableButtons();
-
-
-
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(saveFileDialog.FileName);
+                writer.Write(textBox.Text);
+                writer.Close();
+                open.FileName = saveFileDialog.FileName;
+                this.Text = open.FileName;
+                statusEnableNotEnableButtons();
+            }
+        }
+        /***************************Меню Правка***************************/
         private void toolStripButtonCopy_Click(object sender, EventArgs e)
         {
             //Ensure that text is selected in the text box.    
             if (textBox.SelectionLength > 0)
                 //Copy the selected text to the Clipboard
                 textBox.Copy();
+        }
+
+        private void toolStripButtonСut_Click(object sender, EventArgs e)
+        {
+            //Ensure that text is currently selected in the text box
+            if (textBox.SelectedText != "")
+                //Cut the selected text in the control and paste it into the Clipboard
+                textBox.Cut();
         }
 
         private void toolStripButtonPaste_Click(object sender, EventArgs e)
@@ -101,14 +125,6 @@ namespace Task5
             }
         }
 
-        private void toolStripButtonСut_Click(object sender, EventArgs e)
-        {
-            //Ensure that text is currently selected in the text box
-            if (textBox.SelectedText != "")
-                //Cut the selected text in the control and paste it into the Clipboard
-                textBox.Cut();
-        }
-
         private void toolStripButtonUndo_Click(object sender, EventArgs e)
         {
             //Determine if last operation can be undone in the text box.
@@ -121,11 +137,26 @@ namespace Task5
             }
             statusEnableNotEnableButtons();
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        /***************************Меню Настройки***************************/
+        private void toolStripButtonFontAndColorText_Click(object sender, EventArgs e)
         {
-
+            FontDialog fontDialog = new FontDialog();
+            fontDialog.ShowColor = true;
+            fontDialog.Font = textBox.Font;
+            fontDialog.Color = textBox.ForeColor;
+            if (fontDialog.ShowDialog() != DialogResult.Cancel)
+            {
+                textBox.Font = fontDialog.Font;
+                textBox.ForeColor = fontDialog.Color;
+            }
         }
 
+        private void toolStripButtonBackColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = textBox.BackColor;
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+                textBox.BackColor = colorDialog.Color;
+        }
     }
 }
