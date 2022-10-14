@@ -35,20 +35,20 @@ namespace Task5
             this.toolStripButtonAddOpenDocument = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSaveDocument = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonNewDocument = new System.Windows.Forms.ToolStripButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonCopy = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonСut = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonPaste = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonCancel = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.textBox = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.открытьДокументToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьДокументToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.новыйДокументToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.правкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NewDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.копироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вырезатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вставитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,11 +68,11 @@ namespace Task5
             this.toolStripButtonCopy,
             this.toolStripButtonСut,
             this.toolStripButtonPaste,
-            this.toolStripButtonCancel,
+            this.toolStripButtonUndo,
             this.toolStripSeparator2});
-            this.toolStripMenu.Location = new System.Drawing.Point(0, 28);
+            this.toolStripMenu.Location = new System.Drawing.Point(0, 24);
             this.toolStripMenu.Name = "toolStripMenu";
-            this.toolStripMenu.Size = new System.Drawing.Size(800, 57);
+            this.toolStripMenu.Size = new System.Drawing.Size(600, 57);
             this.toolStripMenu.TabIndex = 0;
             this.toolStripMenu.Text = "toolStripMenu";
             // 
@@ -84,15 +84,18 @@ namespace Task5
             this.toolStripButtonAddOpenDocument.Name = "toolStripButtonAddOpenDocument";
             this.toolStripButtonAddOpenDocument.Size = new System.Drawing.Size(54, 54);
             this.toolStripButtonAddOpenDocument.Text = "Открыть документ";
+            this.toolStripButtonAddOpenDocument.Click += new System.EventHandler(this.toolStripButtonAddOpenDocument_Click);
             // 
             // toolStripButtonSaveDocument
             // 
             this.toolStripButtonSaveDocument.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSaveDocument.Enabled = false;
             this.toolStripButtonSaveDocument.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSaveDocument.Image")));
             this.toolStripButtonSaveDocument.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSaveDocument.Name = "toolStripButtonSaveDocument";
             this.toolStripButtonSaveDocument.Size = new System.Drawing.Size(54, 54);
             this.toolStripButtonSaveDocument.Text = "Сохранить документ";
+            this.toolStripButtonSaveDocument.Click += new System.EventHandler(this.toolStripButtonSaveDocument_Click);
             // 
             // toolStripButtonNewDocument
             // 
@@ -102,12 +105,7 @@ namespace Task5
             this.toolStripButtonNewDocument.Name = "toolStripButtonNewDocument";
             this.toolStripButtonNewDocument.Size = new System.Drawing.Size(54, 54);
             this.toolStripButtonNewDocument.Text = "Новый документ";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "open.bmp");
+            this.toolStripButtonNewDocument.Click += new System.EventHandler(this.toolStripButtonNewDocument_Click);
             // 
             // toolStripSeparator1
             // 
@@ -117,20 +115,24 @@ namespace Task5
             // toolStripButtonCopy
             // 
             this.toolStripButtonCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonCopy.Enabled = false;
             this.toolStripButtonCopy.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCopy.Image")));
             this.toolStripButtonCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonCopy.Name = "toolStripButtonCopy";
             this.toolStripButtonCopy.Size = new System.Drawing.Size(54, 54);
             this.toolStripButtonCopy.Text = "Копировать";
+            this.toolStripButtonCopy.Click += new System.EventHandler(this.toolStripButtonCopy_Click);
             // 
             // toolStripButtonСut
             // 
             this.toolStripButtonСut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonСut.Enabled = false;
             this.toolStripButtonСut.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonСut.Image")));
             this.toolStripButtonСut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonСut.Name = "toolStripButtonСut";
             this.toolStripButtonСut.Size = new System.Drawing.Size(54, 54);
             this.toolStripButtonСut.Text = "Вырезать";
+            this.toolStripButtonСut.Click += new System.EventHandler(this.toolStripButtonСut_Click);
             // 
             // toolStripButtonPaste
             // 
@@ -140,115 +142,131 @@ namespace Task5
             this.toolStripButtonPaste.Name = "toolStripButtonPaste";
             this.toolStripButtonPaste.Size = new System.Drawing.Size(54, 54);
             this.toolStripButtonPaste.Text = "Вставить";
+            this.toolStripButtonPaste.Click += new System.EventHandler(this.toolStripButtonPaste_Click);
             // 
-            // toolStripButtonCancel
+            // toolStripButtonUndo
             // 
-            this.toolStripButtonCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonCancel.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancel.Image")));
-            this.toolStripButtonCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCancel.Name = "toolStripButtonCancel";
-            this.toolStripButtonCancel.Size = new System.Drawing.Size(54, 54);
-            this.toolStripButtonCancel.Text = "Отменить";
+            this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUndo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonUndo.Image")));
+            this.toolStripButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUndo.Name = "toolStripButtonUndo";
+            this.toolStripButtonUndo.Size = new System.Drawing.Size(54, 54);
+            this.toolStripButtonUndo.Text = "Отменить";
+            this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 57);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "open.bmp");
+            // 
             // textBox
             // 
             this.textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox.Location = new System.Drawing.Point(0, 85);
+            this.textBox.Location = new System.Drawing.Point(0, 81);
+            this.textBox.Margin = new System.Windows.Forms.Padding(2);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox.Size = new System.Drawing.Size(800, 365);
+            this.textBox.ShortcutsEnabled = false;
+            this.textBox.Size = new System.Drawing.Size(600, 285);
             this.textBox.TabIndex = 1;
+            this.textBox.Click += new System.EventHandler(this.textBox_Click);
+            this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyUp);
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
-            this.правкаToolStripMenuItem});
+            this.FileToolStripMenuItem,
+            this.EditToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // файлToolStripMenuItem
+            // FileToolStripMenuItem
             // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.открытьДокументToolStripMenuItem,
-            this.сохранитьДокументToolStripMenuItem,
-            this.новыйДокументToolStripMenuItem});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
-            this.файлToolStripMenuItem.Text = "Файл";
+            this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenDocumentToolStripMenuItem,
+            this.SaveDocumentToolStripMenuItem,
+            this.NewDocumentToolStripMenuItem});
+            this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.FileToolStripMenuItem.Text = "Файл";
             // 
-            // открытьДокументToolStripMenuItem
+            // OpenDocumentToolStripMenuItem
             // 
-            this.открытьДокументToolStripMenuItem.Name = "открытьДокументToolStripMenuItem";
-            this.открытьДокументToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.открытьДокументToolStripMenuItem.Text = "Открыть документ";
+            this.OpenDocumentToolStripMenuItem.Name = "OpenDocumentToolStripMenuItem";
+            this.OpenDocumentToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.OpenDocumentToolStripMenuItem.Text = "Открыть документ";
             // 
-            // сохранитьДокументToolStripMenuItem
+            // SaveDocumentToolStripMenuItem
             // 
-            this.сохранитьДокументToolStripMenuItem.Name = "сохранитьДокументToolStripMenuItem";
-            this.сохранитьДокументToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.сохранитьДокументToolStripMenuItem.Text = "Сохранить документ";
+            this.SaveDocumentToolStripMenuItem.Enabled = false;
+            this.SaveDocumentToolStripMenuItem.Name = "SaveDocumentToolStripMenuItem";
+            this.SaveDocumentToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.SaveDocumentToolStripMenuItem.Text = "Сохранить документ";
             // 
-            // новыйДокументToolStripMenuItem
+            // NewDocumentToolStripMenuItem
             // 
-            this.новыйДокументToolStripMenuItem.Name = "новыйДокументToolStripMenuItem";
-            this.новыйДокументToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.новыйДокументToolStripMenuItem.Text = "Новый документ";
+            this.NewDocumentToolStripMenuItem.Name = "NewDocumentToolStripMenuItem";
+            this.NewDocumentToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.NewDocumentToolStripMenuItem.Text = "Новый документ";
             // 
-            // правкаToolStripMenuItem
+            // EditToolStripMenuItem
             // 
-            this.правкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.EditToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.копироватьToolStripMenuItem,
             this.вырезатьToolStripMenuItem,
             this.вставитьToolStripMenuItem,
             this.отменитьToolStripMenuItem});
-            this.правкаToolStripMenuItem.Name = "правкаToolStripMenuItem";
-            this.правкаToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.правкаToolStripMenuItem.Text = "Правка";
+            this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.EditToolStripMenuItem.Text = "Правка";
             // 
             // копироватьToolStripMenuItem
             // 
             this.копироватьToolStripMenuItem.Name = "копироватьToolStripMenuItem";
-            this.копироватьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.копироватьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.копироватьToolStripMenuItem.Text = "Копировать";
             // 
             // вырезатьToolStripMenuItem
             // 
             this.вырезатьToolStripMenuItem.Name = "вырезатьToolStripMenuItem";
-            this.вырезатьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.вырезатьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.вырезатьToolStripMenuItem.Text = "Вырезать";
             // 
             // вставитьToolStripMenuItem
             // 
             this.вставитьToolStripMenuItem.Name = "вставитьToolStripMenuItem";
-            this.вставитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.вставитьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.вставитьToolStripMenuItem.Text = "Вставить";
             // 
             // отменитьToolStripMenuItem
             // 
             this.отменитьToolStripMenuItem.Name = "отменитьToolStripMenuItem";
-            this.отменитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.отменитьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.отменитьToolStripMenuItem.Text = "Отменить";
             // 
             // FormTextEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.toolStripMenu);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormTextEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Текстовый редактор";
@@ -272,15 +290,15 @@ namespace Task5
         private System.Windows.Forms.ToolStripButton toolStripButtonCopy;
         private System.Windows.Forms.ToolStripButton toolStripButtonСut;
         private System.Windows.Forms.ToolStripButton toolStripButtonPaste;
-        private System.Windows.Forms.ToolStripButton toolStripButtonCancel;
+        private System.Windows.Forms.ToolStripButton toolStripButtonUndo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem открытьДокументToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьДокументToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem новыйДокументToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem правкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenDocumentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SaveDocumentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NewDocumentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem EditToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem копироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вырезатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вставитьToolStripMenuItem;
