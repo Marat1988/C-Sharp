@@ -30,12 +30,18 @@ namespace Task5
         {
             toolStripButtonSaveDocument.Enabled = textBox.Text.Length > 0 && open.FileName.Length > 0;
             SaveDocumentToolStripMenuItem.Enabled = toolStripButtonSaveDocument.Enabled;
+            //Копировать
             toolStripButtonCopy.Enabled = textBox.SelectionLength > 0;
             CopyToolStripMenuItem.Enabled = toolStripButtonCopy.Enabled;
+            copyContextToolStripMenuItem.Enabled = toolStripButtonCopy.Enabled;
+            //Вырезать
             toolStripButtonСut.Enabled = textBox.SelectionLength > 0;
             CutToolStripMenuItem.Enabled = toolStripButtonСut.Enabled;
+            cutContextToolStripMenuItem.Enabled = toolStripButtonСut.Enabled;
+            //Отменить последние изменения
             toolStripButtonUndo.Enabled = (textBox.CanUndo == true);
             UndoToolStripMenuItem.Enabled = toolStripButtonUndo.Enabled;
+            undoContextToolStripMenuItem.Enabled = toolStripButtonUndo.Enabled;
         }
 
         private void textBox_TextChanged(object sender, EventArgs e) => statusEnableNotEnableButtons();
@@ -167,5 +173,7 @@ namespace Task5
             if (colorDialog.ShowDialog() == DialogResult.OK)
                 textBox.BackColor = colorDialog.Color;
         }
+
+
     }
 }
