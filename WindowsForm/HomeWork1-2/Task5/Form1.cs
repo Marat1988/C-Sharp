@@ -46,9 +46,13 @@ namespace Task5
         private void statusEnableNotEnableButtons()
         {
             toolStripButtonSaveDocument.Enabled = textBox.Text.Length > 0 && open.FileName.Length > 0;
-            SaveDocumentToolStripMenuItem.Enabled = textBox.Text.Length > 0 && open.FileName.Length > 0;
+            SaveDocumentToolStripMenuItem.Enabled = toolStripButtonSaveDocument.Enabled;
             toolStripButtonCopy.Enabled = textBox.SelectionLength > 0;
+            CopyToolStripMenuItem.Enabled = toolStripButtonCopy.Enabled;
             toolStripButtonСut.Enabled = textBox.SelectionLength > 0;
+            CutToolStripMenuItem.Enabled = toolStripButtonСut.Enabled;
+            toolStripButtonUndo.Enabled = (textBox.CanUndo == true);
+            UndoToolStripMenuItem.Enabled = toolStripButtonUndo.Enabled;
         }
 
         private void toolStripButtonSaveDocument_Click(object sender, EventArgs e)
@@ -115,8 +119,13 @@ namespace Task5
                 //Clear the undo buffer to prevent last action from being redone
                 textBox.ClearUndo();
             }
+            statusEnableNotEnableButtons();
         }
 
-        
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
     }
 }
