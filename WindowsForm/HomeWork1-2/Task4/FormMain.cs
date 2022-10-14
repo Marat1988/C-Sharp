@@ -23,11 +23,13 @@ namespace Task4
         private void Load_Data()
         {
             TextBoxDescription.Clear();
-            OpenFileDialog open = new OpenFileDialog();
-            //создали экземпляр. Установим фильтр для файлов
-            open.Filter = "All Files(*.*)|*.*|Text Files(*.txt)|*.txt||";
-            open.FilterIndex = 1; //По умолчанию фильтруются текстовые файлы
-            open.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); //По умолчанию путь к рабочему столу
+            OpenFileDialog open = new OpenFileDialog
+            {
+                //создали экземпляр. Установим фильтр для файлов
+                Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*",
+                FilterIndex = 1, //По умолчанию фильтруются текстовые файлы
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) //По умолчанию путь к рабочему столу
+            };
             if (open.ShowDialog() == DialogResult.OK)
             {
                 StreamReader reader = File.OpenText(open.FileName);
