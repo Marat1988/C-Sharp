@@ -83,6 +83,11 @@ namespace Task5
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 open.FileName = saveFileDialog.FileName;
+                using (StreamWriter writer = new StreamWriter(open.FileName))
+                {
+                    //Записываем в файл содержимое поля
+                    writer.Write(textBox.Text);
+                }
                 this.Text = open.FileName;
                 statusEnableNotEnableButtons();
             }
@@ -173,7 +178,5 @@ namespace Task5
             if (colorDialog.ShowDialog() == DialogResult.OK)
                 textBox.BackColor = colorDialog.Color;
         }
-
-
     }
 }
