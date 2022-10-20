@@ -1,0 +1,15 @@
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\bin\Debug\Task2.exe.config
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\bin\Debug\Task2.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\bin\Debug\Task2.pdb
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\Task2.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\MainWindow.g.cs
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\App.g.cs
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\Task2_MarkupCompile.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\Task2_MarkupCompile.lref
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\MainWindow.baml
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\Task2.g.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\Task2.Properties.Resources.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\Task2.csproj.GenerateResource.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\Task2.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\Task2.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\WPF\HomeWork5-6\Task2\obj\Debug\Task2.pdb

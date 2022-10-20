@@ -1,0 +1,63 @@
+﻿<Window x:Name="FormAuthentication" x:Class="Task2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task2"
+        mc:Ignorable="d"
+        Title="Authentication" Height="200" Width="400" Background="#FF444141" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="Label" x:Key="defaultLabelResources">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Style.Resources>
+            <Setter Property="Margin" Value="6px"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Background" Value="#FF5F5F5F"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        </Style>
+
+        <ControlTemplate x:Key="passwordbox" TargetType="{x:Type PasswordBox}">
+            <Border Background="{TemplateBinding Background}" 
+                    x:Name="Bd" BorderBrush="#FFE6DDDD"
+                    BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                <ScrollViewer Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Width" Value="Auto">
+                    <Setter Property="Margin" Value="6px"/>
+                    <Setter Property="FontSize" Value="18"/>
+                    <Setter Property="Background" Value="#FF5F5F5F"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid x:Name="GridAuthentication" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Style="{StaticResource defaultLabelResources}" Grid.Row="0" Grid.Column="0" Name="LabelUserName" Content="Username:"/>
+        <Label Style="{StaticResource defaultLabelResources}" Grid.Row="1" Grid.Column="0" Name="LabelUserPassword" Content="Password:"/>
+        <TextBox Name="TextBoxUserName" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Text="Marat" />
+        <PasswordBox  Template="{StaticResource passwordbox}" Name="TextBoxUserPassword" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"/>
+    </Grid>
+</Window>
