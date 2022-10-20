@@ -1,0 +1,10 @@
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task5\bin\Release\Task5.exe.config
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task5\bin\Release\Task5.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task5\bin\Release\Task5.pdb
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Release\Task5.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Release\Task5.FormTextEditor.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Release\Task5.Properties.Resources.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Release\Task5.csproj.GenerateResource.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Release\Task5.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Release\Task5.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task5\obj\Release\Task5.pdb

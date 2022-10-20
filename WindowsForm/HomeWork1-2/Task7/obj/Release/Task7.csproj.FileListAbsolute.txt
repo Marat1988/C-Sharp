@@ -1,0 +1,9 @@
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task7\bin\Release\Task7.exe.config
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task7\bin\Release\Task7.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task7\bin\Release\Task7.pdb
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task7\obj\Release\Task7.FormMenu.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task7\obj\Release\Task7.Properties.Resources.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task7\obj\Release\Task7.csproj.GenerateResource.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task7\obj\Release\Task7.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task7\obj\Release\Task7.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork1-2\Task7\obj\Release\Task7.pdb
