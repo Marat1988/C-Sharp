@@ -1,0 +1,61 @@
+C:\Users\HP\source\repos\KeyboardTraining\bin\Debug\KeyboardTraining.exe.config
+C:\Users\HP\source\repos\KeyboardTraining\bin\Debug\KeyboardTraining.exe
+C:\Users\HP\source\repos\KeyboardTraining\bin\Debug\KeyboardTraining.pdb
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\KeyboardTraining.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\MainWindow.g.cs
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\App.g.cs
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\KeyboardTraining_MarkupCompile.cache
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\KeyboardTraining_MarkupCompile.lref
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\MainWindow.baml
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\KeyboardTraining.g.resources
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\KeyboardTraining.Properties.Resources.resources
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\KeyboardTraining.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\KeyboardTraining.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\KeyboardTraining.exe
+C:\Users\HP\source\repos\KeyboardTraining\obj\Debug\KeyboardTraining.pdb
+D:\KeyboardTraining\bin\Debug\KeyboardTraining.exe.config
+D:\KeyboardTraining\bin\Debug\KeyboardTraining.exe
+D:\KeyboardTraining\bin\Debug\KeyboardTraining.pdb
+D:\KeyboardTraining\obj\Debug\KeyboardTraining.csproj.AssemblyReference.cache
+D:\KeyboardTraining\obj\Debug\MainWindow.g.cs
+D:\KeyboardTraining\obj\Debug\App.g.cs
+D:\KeyboardTraining\obj\Debug\KeyboardTraining_MarkupCompile.cache
+D:\KeyboardTraining\obj\Debug\KeyboardTraining_MarkupCompile.lref
+D:\KeyboardTraining\obj\Debug\MainWindow.baml
+D:\KeyboardTraining\obj\Debug\KeyboardTraining.g.resources
+D:\KeyboardTraining\obj\Debug\KeyboardTraining.Properties.Resources.resources
+D:\KeyboardTraining\obj\Debug\KeyboardTraining.csproj.GenerateResource.cache
+D:\KeyboardTraining\obj\Debug\KeyboardTraining.csproj.CoreCompileInputs.cache
+D:\KeyboardTraining\obj\Debug\KeyboardTraining.exe
+D:\KeyboardTraining\obj\Debug\KeyboardTraining.pdb
+C:\Users\217 student\Desktop\KeyboardTraining\bin\Debug\KeyboardTraining.exe.config
+C:\Users\217 student\Desktop\KeyboardTraining\bin\Debug\KeyboardTraining.exe
+C:\Users\217 student\Desktop\KeyboardTraining\bin\Debug\KeyboardTraining.pdb
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\KeyboardTraining.csproj.AssemblyReference.cache
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\KeyboardTraining.csproj.SuggestedBindingRedirects.cache
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\MainWindow.g.cs
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\App.g.cs
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\KeyboardTraining_MarkupCompile.cache
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\KeyboardTraining_MarkupCompile.lref
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\MainWindow.baml
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\KeyboardTraining.g.resources
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\KeyboardTraining.Properties.Resources.resources
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\KeyboardTraining.csproj.GenerateResource.cache
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\KeyboardTraining.csproj.CoreCompileInputs.cache
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\KeyboardTraining.exe
+C:\Users\217 student\Desktop\KeyboardTraining\obj\Debug\KeyboardTraining.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\bin\Debug\KeyboardTraining.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\bin\Debug\KeyboardTraining.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\bin\Debug\KeyboardTraining.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\KeyboardTraining.csproj.AssemblyReference.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\MainWindow.g.cs
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\App.g.cs
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\KeyboardTraining_MarkupCompile.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\KeyboardTraining_MarkupCompile.lref
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\MainWindow.baml
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\KeyboardTraining.g.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\KeyboardTraining.Properties.Resources.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\KeyboardTraining.csproj.GenerateResource.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\KeyboardTraining.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\KeyboardTraining.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WPF\HomeWork3_4\obj\Debug\KeyboardTraining.pdb
