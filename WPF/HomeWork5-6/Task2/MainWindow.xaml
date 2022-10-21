@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task2"
         mc:Ignorable="d"
-        Title="Authentication" Height="200" Width="400" Background="#FF444141" WindowStartupLocation="CenterScreen">
+        Title="Authentication" Height="200" Width="400" Background="#FF444141" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
     <Window.Resources>
         <Style TargetType="Label" x:Key="defaultLabelResources">
             <Setter Property="HorizontalAlignment" Value="Right"/>
@@ -24,8 +24,8 @@
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Background" Value="#FF5F5F5F"/>
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
-
         <ControlTemplate x:Key="passwordbox" TargetType="{x:Type PasswordBox}">
             <Border Background="{TemplateBinding Background}" 
                     x:Name="Bd" BorderBrush="#FFE6DDDD"
@@ -38,26 +38,53 @@
                     <Setter Property="FontSize" Value="18"/>
                     <Setter Property="Background" Value="#FF5F5F5F"/>
                     <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+        <Style TargetType="CheckBox" x:Key="defaultCheckBoxResources">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </Style.Resources>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#FFB1ADAD"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="11"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="defaultButtonResources">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20" />
+                </Style>
+            </Style.Resources>
+            <Setter Property="Background" Value="#FF7FF077"/>
+            <Setter Property="Margin" Value="9"></Setter>
+            <Setter Property="FontSize" Value="25"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
     </Window.Resources>
-    <Grid x:Name="GridAuthentication" >
+    <Grid x:Name="GridAuthentication">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="98*"/>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="46*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <Label Style="{StaticResource defaultLabelResources}" Grid.Row="0" Grid.Column="0" Name="LabelUserName" Content="Username:"/>
         <Label Style="{StaticResource defaultLabelResources}" Grid.Row="1" Grid.Column="0" Name="LabelUserPassword" Content="Password:"/>
         <TextBox Name="TextBoxUserName" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Text="Marat" />
-        <PasswordBox  Template="{StaticResource passwordbox}" Name="TextBoxUserPassword" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <PasswordBox Name="TextBoxUserPassword" Template="{StaticResource passwordbox}"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <CheckBox  Style="{StaticResource defaultCheckBoxResources}" Content="Remember Me" Grid.Column="1" Grid.Row="2" />
+        <Button Name="ButtonLogIn" Style="{StaticResource defaultButtonResources}" Content="Log In" Grid.Column="1"  Grid.Row="3" />
+        <Button Name="ButtonCancel" Style="{StaticResource defaultButtonResources}" Content="Cancel" Grid.Column="2"  Grid.Row="3" Background="Red"/>
     </Grid>
 </Window>
