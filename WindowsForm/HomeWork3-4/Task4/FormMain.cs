@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -49,7 +50,7 @@ namespace Task4
 
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            /*Немного отошел от задания. Сделал по-доугому. В TreeView отображаются логические диски и папки. В ListView папки с файлы выбранной директории из TreeView
+            /*Немного отошел от задания. Сделал по-другому. В TreeView отображаются логические диски и папки. В ListView папки с файлы выбранной директории из TreeView
              При этом в ListView отображается информация, касающая папки или файла:
             1). Дата время создания файла или папки;
             2). Размер файла. Для папки ничего не выаодится;
