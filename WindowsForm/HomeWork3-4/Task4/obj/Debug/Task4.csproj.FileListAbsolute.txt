@@ -8,3 +8,14 @@ C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork3-4\Task4\obj
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork3-4\Task4\obj\Debug\Task4.csproj.CoreCompileInputs.cache
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork3-4\Task4\obj\Debug\Task4.exe
 C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork3-4\Task4\obj\Debug\Task4.pdb
+C:\Users\217 student\Downloads\C-Sharp-main (2)\C-Sharp-main\WindowsForm\HomeWork3-4\Task4\bin\Debug\Task4.exe.config
+C:\Users\217 student\Downloads\C-Sharp-main (2)\C-Sharp-main\WindowsForm\HomeWork3-4\Task4\bin\Debug\Task4.exe
+C:\Users\217 student\Downloads\C-Sharp-main (2)\C-Sharp-main\WindowsForm\HomeWork3-4\Task4\bin\Debug\Task4.pdb
+C:\Users\217 student\Downloads\C-Sharp-main (2)\C-Sharp-main\WindowsForm\HomeWork3-4\Task4\obj\Debug\Task4.csproj.AssemblyReference.cache
+C:\Users\217 student\Downloads\C-Sharp-main (2)\C-Sharp-main\WindowsForm\HomeWork3-4\Task4\obj\Debug\Task4.csproj.SuggestedBindingRedirects.cache
+C:\Users\217 student\Downloads\C-Sharp-main (2)\C-Sharp-main\WindowsForm\HomeWork3-4\Task4\obj\Debug\Task4.Properties.Resources.resources
+C:\Users\217 student\Downloads\C-Sharp-main (2)\C-Sharp-main\WindowsForm\HomeWork3-4\Task4\obj\Debug\Task4.csproj.GenerateResource.cache
+C:\Users\217 student\Downloads\C-Sharp-main (2)\C-Sharp-main\WindowsForm\HomeWork3-4\Task4\obj\Debug\Task4.csproj.CoreCompileInputs.cache
+C:\Users\217 student\Downloads\C-Sharp-main (2)\C-Sharp-main\WindowsForm\HomeWork3-4\Task4\obj\Debug\Task4.exe
+C:\Users\217 student\Downloads\C-Sharp-main (2)\C-Sharp-main\WindowsForm\HomeWork3-4\Task4\obj\Debug\Task4.pdb
+C:\Users\217 student\Downloads\C-Sharp-main (2)\C-Sharp-main\WindowsForm\HomeWork3-4\Task4\obj\Debug\Task4.FormMain.resources

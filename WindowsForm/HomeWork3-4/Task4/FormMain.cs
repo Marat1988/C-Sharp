@@ -11,14 +11,13 @@ using System.Windows.Forms;
 
 namespace Task4
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
             PopulateTreeView();
         }
-
         private void PopulateTreeView()
         {
             TreeNode rootNode;
@@ -29,10 +28,8 @@ namespace Task4
                 rootNode.Tag = info;
                 GetDirectories(info.GetDirectories(), rootNode);
                 treeView1.Nodes.Add(rootNode);
-
             }
         }
-
         private void GetDirectories(DirectoryInfo[] subDirs, TreeNode nodeToAddTo)
         {
             TreeNode aNode;
@@ -69,8 +66,11 @@ namespace Task4
                 item = new ListViewItem(dir.Name, 0);
                 subItems = new ListViewItem.ListViewSubItem[]
                 {
-                    new ListViewItem.ListViewSubItem(item,dir.LastAccessTime.ToShortDateString()),
-                    new ListViewItem.ListViewSubItem(item,"Directory")
+                    new ListViewItem.ListViewSubItem(item,dir.CreationTime.ToString()),
+                    new ListViewItem.ListViewSubItem(item,""),
+                    new ListViewItem.ListViewSubItem(item,"Directory"),
+                    new ListViewItem.ListViewSubItem(item,dir.GetFiles().Length.ToString()),
+                    new ListViewItem.ListViewSubItem(item,dir.Attributes.ToString())
                 };
                 item.SubItems.AddRange(subItems);
                 listView1.Items.Add(item);
@@ -81,13 +81,22 @@ namespace Task4
                 item = new ListViewItem(file.Name, 1);
                 subItems = new ListViewItem.ListViewSubItem[]
                 {
-                    new ListViewItem.ListViewSubItem(item,file.CreationTime.ToShortDateString()),
-                    new ListViewItem.ListViewSubItem(item,"File")
+                    new ListViewItem.ListViewSubItem(item,file.CreationTime.ToString()),
+                    new ListViewItem.ListViewSubItem(item,file.Length.ToString()),
+                    new ListViewItem.ListViewSubItem(item,"File"),
+                    new ListViewItem.ListViewSubItem(item,""),
+                    new ListViewItem.ListViewSubItem(item,file.Attributes.ToString())
+
                 };
                 item.SubItems.AddRange(subItems);
                 listView1.Items.Add(item);
             }
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
         }
     }
 }
