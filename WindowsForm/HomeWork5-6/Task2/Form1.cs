@@ -104,6 +104,7 @@ namespace Task2
 
         private void buttonShowSaveFigure_Click(object sender, EventArgs e)
         {
+            pictureBox1.Refresh();
             panelSettingRectangleOrOval.Visible = false;          
             if (saveFileDialog.ShowDialog() == DialogResult.OK) //При необходимости сохраняем в файл
             {
@@ -120,6 +121,7 @@ namespace Task2
 
         private void buttonSaveAbstractFigure_Click(object sender, EventArgs e)
         {
+            pictureBox1.Refresh();
             panelSettingAbstractFigure.Visible = false;
             if (saveFileDialog.ShowDialog() == DialogResult.OK) //При необходимости сохраняем в файл
             {

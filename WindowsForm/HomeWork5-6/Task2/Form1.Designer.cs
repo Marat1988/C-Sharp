@@ -34,6 +34,7 @@ namespace Task2
             this.toolStripButtonSettingRectangle = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSettingOval = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonAbstractFigure = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSettingRectangleOrOval = new System.Windows.Forms.Panel();
@@ -44,28 +45,27 @@ namespace Task2
             this.labelHeight = new System.Windows.Forms.Label();
             this.numericWidth = new System.Windows.Forms.NumericUpDown();
             this.labelWidth = new System.Windows.Forms.Label();
-            this.toolStripButtonAbstractFigure = new System.Windows.Forms.ToolStripButton();
             this.panelSettingAbstractFigure = new System.Windows.Forms.Panel();
+            this.labelY = new System.Windows.Forms.Label();
+            this.labelX = new System.Windows.Forms.Label();
+            this.labelPoint5 = new System.Windows.Forms.Label();
+            this.labelPoint4 = new System.Windows.Forms.Label();
+            this.labelPoint3 = new System.Windows.Forms.Label();
+            this.labelPoint2 = new System.Windows.Forms.Label();
+            this.labelPoint1 = new System.Windows.Forms.Label();
+            this.numericPoint5_Y = new System.Windows.Forms.NumericUpDown();
+            this.numericPoint5_X = new System.Windows.Forms.NumericUpDown();
+            this.numericPoint4_Y = new System.Windows.Forms.NumericUpDown();
+            this.numericPoint4_X = new System.Windows.Forms.NumericUpDown();
+            this.numericPoint3_Y = new System.Windows.Forms.NumericUpDown();
+            this.numericPoint3_X = new System.Windows.Forms.NumericUpDown();
+            this.numericPoint2_Y = new System.Windows.Forms.NumericUpDown();
+            this.numericPoint2_X = new System.Windows.Forms.NumericUpDown();
             this.buttonHidePanelSettingAbstractFigure = new System.Windows.Forms.Button();
             this.buttonSaveAbstractFigure = new System.Windows.Forms.Button();
             this.buttonFillingAbstractFigure = new System.Windows.Forms.Button();
             this.numericPoint1_Y = new System.Windows.Forms.NumericUpDown();
             this.numericPoint1_X = new System.Windows.Forms.NumericUpDown();
-            this.numericPoint2_Y = new System.Windows.Forms.NumericUpDown();
-            this.numericPoint2_X = new System.Windows.Forms.NumericUpDown();
-            this.numericPoint3_Y = new System.Windows.Forms.NumericUpDown();
-            this.numericPoint3_X = new System.Windows.Forms.NumericUpDown();
-            this.numericPoint4_Y = new System.Windows.Forms.NumericUpDown();
-            this.numericPoint4_X = new System.Windows.Forms.NumericUpDown();
-            this.numericPoint5_Y = new System.Windows.Forms.NumericUpDown();
-            this.numericPoint5_X = new System.Windows.Forms.NumericUpDown();
-            this.labelPoint1 = new System.Windows.Forms.Label();
-            this.labelPoint2 = new System.Windows.Forms.Label();
-            this.labelPoint3 = new System.Windows.Forms.Label();
-            this.labelPoint4 = new System.Windows.Forms.Label();
-            this.labelPoint5 = new System.Windows.Forms.Label();
-            this.labelX = new System.Windows.Forms.Label();
-            this.labelY = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,16 +73,16 @@ namespace Task2
             ((System.ComponentModel.ISupportInitialize)(this.numericHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericWidth)).BeginInit();
             this.panelSettingAbstractFigure.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint1_Y)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint1_X)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint2_Y)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint2_X)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint3_Y)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint3_X)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint4_Y)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint4_X)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPoint5_Y)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPoint5_X)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint4_Y)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint4_X)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint3_Y)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint3_X)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint2_Y)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint2_X)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint1_Y)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint1_X)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -125,6 +125,16 @@ namespace Task2
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 57);
+            // 
+            // toolStripButtonAbstractFigure
+            // 
+            this.toolStripButtonAbstractFigure.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAbstractFigure.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAbstractFigure.Image")));
+            this.toolStripButtonAbstractFigure.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAbstractFigure.Name = "toolStripButtonAbstractFigure";
+            this.toolStripButtonAbstractFigure.Size = new System.Drawing.Size(54, 54);
+            this.toolStripButtonAbstractFigure.Text = "Рисование абстрактной фигуры из 5 вершин";
+            this.toolStripButtonAbstractFigure.Click += new System.EventHandler(this.toolStripButtonAbstractFigure_Click);
             // 
             // toolStripContainer1
             // 
@@ -259,16 +269,6 @@ namespace Task2
             this.labelWidth.TabIndex = 0;
             this.labelWidth.Text = "Ширина:";
             // 
-            // toolStripButtonAbstractFigure
-            // 
-            this.toolStripButtonAbstractFigure.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAbstractFigure.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAbstractFigure.Image")));
-            this.toolStripButtonAbstractFigure.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAbstractFigure.Name = "toolStripButtonAbstractFigure";
-            this.toolStripButtonAbstractFigure.Size = new System.Drawing.Size(54, 54);
-            this.toolStripButtonAbstractFigure.Text = "Рисование абстрактной фигуры из 5 вершин";
-            this.toolStripButtonAbstractFigure.Click += new System.EventHandler(this.toolStripButtonAbstractFigure_Click);
-            // 
             // panelSettingAbstractFigure
             // 
             this.panelSettingAbstractFigure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -296,6 +296,252 @@ namespace Task2
             this.panelSettingAbstractFigure.Name = "panelSettingAbstractFigure";
             this.panelSettingAbstractFigure.Size = new System.Drawing.Size(319, 296);
             this.panelSettingAbstractFigure.TabIndex = 6;
+            // 
+            // labelY
+            // 
+            this.labelY.AutoSize = true;
+            this.labelY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelY.Location = new System.Drawing.Point(246, 12);
+            this.labelY.Name = "labelY";
+            this.labelY.Size = new System.Drawing.Size(21, 20);
+            this.labelY.TabIndex = 21;
+            this.labelY.Text = "Y";
+            // 
+            // labelX
+            // 
+            this.labelX.AutoSize = true;
+            this.labelX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelX.Location = new System.Drawing.Point(184, 12);
+            this.labelX.Name = "labelX";
+            this.labelX.Size = new System.Drawing.Size(21, 20);
+            this.labelX.TabIndex = 20;
+            this.labelX.Text = "X";
+            // 
+            // labelPoint5
+            // 
+            this.labelPoint5.AutoSize = true;
+            this.labelPoint5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPoint5.Location = new System.Drawing.Point(15, 144);
+            this.labelPoint5.Name = "labelPoint5";
+            this.labelPoint5.Size = new System.Drawing.Size(149, 13);
+            this.labelPoint5.TabIndex = 19;
+            this.labelPoint5.Text = "Координаты 5-ой точки:";
+            // 
+            // labelPoint4
+            // 
+            this.labelPoint4.AutoSize = true;
+            this.labelPoint4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPoint4.Location = new System.Drawing.Point(15, 118);
+            this.labelPoint4.Name = "labelPoint4";
+            this.labelPoint4.Size = new System.Drawing.Size(149, 13);
+            this.labelPoint4.TabIndex = 18;
+            this.labelPoint4.Text = "Координаты 4-ой точки:";
+            // 
+            // labelPoint3
+            // 
+            this.labelPoint3.AutoSize = true;
+            this.labelPoint3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPoint3.Location = new System.Drawing.Point(15, 92);
+            this.labelPoint3.Name = "labelPoint3";
+            this.labelPoint3.Size = new System.Drawing.Size(149, 13);
+            this.labelPoint3.TabIndex = 17;
+            this.labelPoint3.Text = "Координаты 3-ой точки:";
+            // 
+            // labelPoint2
+            // 
+            this.labelPoint2.AutoSize = true;
+            this.labelPoint2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPoint2.Location = new System.Drawing.Point(15, 66);
+            this.labelPoint2.Name = "labelPoint2";
+            this.labelPoint2.Size = new System.Drawing.Size(149, 13);
+            this.labelPoint2.TabIndex = 16;
+            this.labelPoint2.Text = "Координаты 2-ой точки:";
+            // 
+            // labelPoint1
+            // 
+            this.labelPoint1.AutoSize = true;
+            this.labelPoint1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPoint1.Location = new System.Drawing.Point(15, 41);
+            this.labelPoint1.Name = "labelPoint1";
+            this.labelPoint1.Size = new System.Drawing.Size(149, 13);
+            this.labelPoint1.TabIndex = 15;
+            this.labelPoint1.Text = "Координаты 1-ой точки:";
+            // 
+            // numericPoint5_Y
+            // 
+            this.numericPoint5_Y.Location = new System.Drawing.Point(232, 141);
+            this.numericPoint5_Y.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericPoint5_Y.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericPoint5_Y.Name = "numericPoint5_Y";
+            this.numericPoint5_Y.Size = new System.Drawing.Size(58, 20);
+            this.numericPoint5_Y.TabIndex = 14;
+            this.numericPoint5_Y.Value = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            // 
+            // numericPoint5_X
+            // 
+            this.numericPoint5_X.Location = new System.Drawing.Point(168, 142);
+            this.numericPoint5_X.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericPoint5_X.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericPoint5_X.Name = "numericPoint5_X";
+            this.numericPoint5_X.Size = new System.Drawing.Size(58, 20);
+            this.numericPoint5_X.TabIndex = 13;
+            this.numericPoint5_X.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // numericPoint4_Y
+            // 
+            this.numericPoint4_Y.Location = new System.Drawing.Point(232, 116);
+            this.numericPoint4_Y.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericPoint4_Y.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericPoint4_Y.Name = "numericPoint4_Y";
+            this.numericPoint4_Y.Size = new System.Drawing.Size(58, 20);
+            this.numericPoint4_Y.TabIndex = 12;
+            this.numericPoint4_Y.Value = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            // 
+            // numericPoint4_X
+            // 
+            this.numericPoint4_X.Location = new System.Drawing.Point(168, 116);
+            this.numericPoint4_X.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericPoint4_X.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericPoint4_X.Name = "numericPoint4_X";
+            this.numericPoint4_X.Size = new System.Drawing.Size(58, 20);
+            this.numericPoint4_X.TabIndex = 11;
+            this.numericPoint4_X.Value = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            // 
+            // numericPoint3_Y
+            // 
+            this.numericPoint3_Y.Location = new System.Drawing.Point(232, 90);
+            this.numericPoint3_Y.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericPoint3_Y.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericPoint3_Y.Name = "numericPoint3_Y";
+            this.numericPoint3_Y.Size = new System.Drawing.Size(58, 20);
+            this.numericPoint3_Y.TabIndex = 10;
+            this.numericPoint3_Y.Value = new decimal(new int[] {
+            65,
+            0,
+            0,
+            0});
+            // 
+            // numericPoint3_X
+            // 
+            this.numericPoint3_X.Location = new System.Drawing.Point(168, 90);
+            this.numericPoint3_X.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericPoint3_X.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericPoint3_X.Name = "numericPoint3_X";
+            this.numericPoint3_X.Size = new System.Drawing.Size(58, 20);
+            this.numericPoint3_X.TabIndex = 9;
+            this.numericPoint3_X.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
+            // numericPoint2_Y
+            // 
+            this.numericPoint2_Y.Location = new System.Drawing.Point(232, 64);
+            this.numericPoint2_Y.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericPoint2_Y.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericPoint2_Y.Name = "numericPoint2_Y";
+            this.numericPoint2_Y.Size = new System.Drawing.Size(58, 20);
+            this.numericPoint2_Y.TabIndex = 8;
+            this.numericPoint2_Y.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // numericPoint2_X
+            // 
+            this.numericPoint2_X.Location = new System.Drawing.Point(168, 65);
+            this.numericPoint2_X.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericPoint2_X.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericPoint2_X.Name = "numericPoint2_X";
+            this.numericPoint2_X.Size = new System.Drawing.Size(58, 20);
+            this.numericPoint2_X.TabIndex = 7;
+            this.numericPoint2_X.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             // 
             // buttonHidePanelSettingAbstractFigure
             // 
@@ -347,7 +593,7 @@ namespace Task2
             this.numericPoint1_Y.Size = new System.Drawing.Size(58, 20);
             this.numericPoint1_Y.TabIndex = 3;
             this.numericPoint1_Y.Value = new decimal(new int[] {
-            50,
+            65,
             0,
             0,
             0});
@@ -369,256 +615,10 @@ namespace Task2
             this.numericPoint1_X.Size = new System.Drawing.Size(58, 20);
             this.numericPoint1_X.TabIndex = 1;
             this.numericPoint1_X.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // numericPoint2_Y
-            // 
-            this.numericPoint2_Y.Location = new System.Drawing.Point(232, 64);
-            this.numericPoint2_Y.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numericPoint2_Y.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericPoint2_Y.Name = "numericPoint2_Y";
-            this.numericPoint2_Y.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint2_Y.TabIndex = 8;
-            this.numericPoint2_Y.Value = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            // 
-            // numericPoint2_X
-            // 
-            this.numericPoint2_X.Location = new System.Drawing.Point(168, 65);
-            this.numericPoint2_X.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numericPoint2_X.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericPoint2_X.Name = "numericPoint2_X";
-            this.numericPoint2_X.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint2_X.TabIndex = 7;
-            this.numericPoint2_X.Value = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            // 
-            // numericPoint3_Y
-            // 
-            this.numericPoint3_Y.Location = new System.Drawing.Point(232, 90);
-            this.numericPoint3_Y.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numericPoint3_Y.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericPoint3_Y.Name = "numericPoint3_Y";
-            this.numericPoint3_Y.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint3_Y.TabIndex = 10;
-            this.numericPoint3_Y.Value = new decimal(new int[] {
             20,
             0,
             0,
             0});
-            // 
-            // numericPoint3_X
-            // 
-            this.numericPoint3_X.Location = new System.Drawing.Point(168, 90);
-            this.numericPoint3_X.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numericPoint3_X.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericPoint3_X.Name = "numericPoint3_X";
-            this.numericPoint3_X.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint3_X.TabIndex = 9;
-            this.numericPoint3_X.Value = new decimal(new int[] {
-            90,
-            0,
-            0,
-            0});
-            // 
-            // numericPoint4_Y
-            // 
-            this.numericPoint4_Y.Location = new System.Drawing.Point(232, 116);
-            this.numericPoint4_Y.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numericPoint4_Y.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericPoint4_Y.Name = "numericPoint4_Y";
-            this.numericPoint4_Y.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint4_Y.TabIndex = 12;
-            this.numericPoint4_Y.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            // 
-            // numericPoint4_X
-            // 
-            this.numericPoint4_X.Location = new System.Drawing.Point(168, 116);
-            this.numericPoint4_X.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numericPoint4_X.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericPoint4_X.Name = "numericPoint4_X";
-            this.numericPoint4_X.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint4_X.TabIndex = 11;
-            this.numericPoint4_X.Value = new decimal(new int[] {
-            140,
-            0,
-            0,
-            0});
-            // 
-            // numericPoint5_Y
-            // 
-            this.numericPoint5_Y.Location = new System.Drawing.Point(232, 141);
-            this.numericPoint5_Y.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numericPoint5_Y.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericPoint5_Y.Name = "numericPoint5_Y";
-            this.numericPoint5_Y.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint5_Y.TabIndex = 14;
-            this.numericPoint5_Y.Value = new decimal(new int[] {
-            150,
-            0,
-            0,
-            0});
-            // 
-            // numericPoint5_X
-            // 
-            this.numericPoint5_X.Location = new System.Drawing.Point(168, 142);
-            this.numericPoint5_X.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numericPoint5_X.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericPoint5_X.Name = "numericPoint5_X";
-            this.numericPoint5_X.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint5_X.TabIndex = 13;
-            this.numericPoint5_X.Value = new decimal(new int[] {
-            40,
-            0,
-            0,
-            0});
-            // 
-            // labelPoint1
-            // 
-            this.labelPoint1.AutoSize = true;
-            this.labelPoint1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPoint1.Location = new System.Drawing.Point(15, 41);
-            this.labelPoint1.Name = "labelPoint1";
-            this.labelPoint1.Size = new System.Drawing.Size(149, 13);
-            this.labelPoint1.TabIndex = 15;
-            this.labelPoint1.Text = "Координаты 1-ой точки:";
-            // 
-            // labelPoint2
-            // 
-            this.labelPoint2.AutoSize = true;
-            this.labelPoint2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPoint2.Location = new System.Drawing.Point(15, 66);
-            this.labelPoint2.Name = "labelPoint2";
-            this.labelPoint2.Size = new System.Drawing.Size(149, 13);
-            this.labelPoint2.TabIndex = 16;
-            this.labelPoint2.Text = "Координаты 2-ой точки:";
-            // 
-            // labelPoint3
-            // 
-            this.labelPoint3.AutoSize = true;
-            this.labelPoint3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPoint3.Location = new System.Drawing.Point(15, 92);
-            this.labelPoint3.Name = "labelPoint3";
-            this.labelPoint3.Size = new System.Drawing.Size(149, 13);
-            this.labelPoint3.TabIndex = 17;
-            this.labelPoint3.Text = "Координаты 3-ой точки:";
-            // 
-            // labelPoint4
-            // 
-            this.labelPoint4.AutoSize = true;
-            this.labelPoint4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPoint4.Location = new System.Drawing.Point(15, 118);
-            this.labelPoint4.Name = "labelPoint4";
-            this.labelPoint4.Size = new System.Drawing.Size(149, 13);
-            this.labelPoint4.TabIndex = 18;
-            this.labelPoint4.Text = "Координаты 4-ой точки:";
-            // 
-            // labelPoint5
-            // 
-            this.labelPoint5.AutoSize = true;
-            this.labelPoint5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPoint5.Location = new System.Drawing.Point(15, 144);
-            this.labelPoint5.Name = "labelPoint5";
-            this.labelPoint5.Size = new System.Drawing.Size(149, 13);
-            this.labelPoint5.TabIndex = 19;
-            this.labelPoint5.Text = "Координаты 5-ой точки:";
-            // 
-            // labelX
-            // 
-            this.labelX.AutoSize = true;
-            this.labelX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelX.Location = new System.Drawing.Point(184, 12);
-            this.labelX.Name = "labelX";
-            this.labelX.Size = new System.Drawing.Size(21, 20);
-            this.labelX.TabIndex = 20;
-            this.labelX.Text = "X";
-            // 
-            // labelY
-            // 
-            this.labelY.AutoSize = true;
-            this.labelY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelY.Location = new System.Drawing.Point(246, 12);
-            this.labelY.Name = "labelY";
-            this.labelY.Size = new System.Drawing.Size(21, 20);
-            this.labelY.TabIndex = 21;
-            this.labelY.Text = "Y";
             // 
             // FormMain
             // 
@@ -645,16 +645,16 @@ namespace Task2
             ((System.ComponentModel.ISupportInitialize)(this.numericWidth)).EndInit();
             this.panelSettingAbstractFigure.ResumeLayout(false);
             this.panelSettingAbstractFigure.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint1_Y)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint1_X)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint2_Y)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint2_X)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint3_Y)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint3_X)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint4_Y)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPoint4_X)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPoint5_Y)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPoint5_X)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint4_Y)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint4_X)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint3_Y)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint3_X)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint2_Y)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint2_X)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint1_Y)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPoint1_X)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
