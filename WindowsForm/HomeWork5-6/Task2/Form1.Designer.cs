@@ -178,7 +178,7 @@ namespace Task2
             this.buttonHidePanelSettingRectangleOrOval.Location = new System.Drawing.Point(18, 190);
             this.buttonHidePanelSettingRectangleOrOval.Name = "buttonHidePanelSettingRectangleOrOval";
             this.buttonHidePanelSettingRectangleOrOval.Size = new System.Drawing.Size(154, 51);
-            this.buttonHidePanelSettingRectangleOrOval.TabIndex = 6;
+            this.buttonHidePanelSettingRectangleOrOval.TabIndex = 5;
             this.buttonHidePanelSettingRectangleOrOval.Text = "Скрыть панель настроек";
             this.buttonHidePanelSettingRectangleOrOval.UseVisualStyleBackColor = true;
             this.buttonHidePanelSettingRectangleOrOval.Click += new System.EventHandler(this.buttonHidePanel_Click);
@@ -189,7 +189,7 @@ namespace Task2
             this.buttonShowSaveFigure.Location = new System.Drawing.Point(18, 133);
             this.buttonShowSaveFigure.Name = "buttonShowSaveFigure";
             this.buttonShowSaveFigure.Size = new System.Drawing.Size(154, 51);
-            this.buttonShowSaveFigure.TabIndex = 5;
+            this.buttonShowSaveFigure.TabIndex = 4;
             this.buttonShowSaveFigure.Text = "Отобразить на форме и сохранить";
             this.buttonShowSaveFigure.UseVisualStyleBackColor = true;
             this.buttonShowSaveFigure.Click += new System.EventHandler(this.buttonShowSaveFigure_Click);
@@ -200,7 +200,7 @@ namespace Task2
             this.buttonFilling.Location = new System.Drawing.Point(18, 97);
             this.buttonFilling.Name = "buttonFilling";
             this.buttonFilling.Size = new System.Drawing.Size(154, 30);
-            this.buttonFilling.TabIndex = 4;
+            this.buttonFilling.TabIndex = 3;
             this.buttonFilling.Text = "Выбор цвета заливки:";
             this.buttonFilling.UseVisualStyleBackColor = true;
             this.buttonFilling.Click += new System.EventHandler(this.buttonFilling_Click);
@@ -220,7 +220,7 @@ namespace Task2
             0});
             this.numericHeight.Name = "numericHeight";
             this.numericHeight.Size = new System.Drawing.Size(79, 20);
-            this.numericHeight.TabIndex = 3;
+            this.numericHeight.TabIndex = 2;
             this.numericHeight.Value = new decimal(new int[] {
             100,
             0,
@@ -382,7 +382,7 @@ namespace Task2
             0});
             this.numericPoint5_Y.Name = "numericPoint5_Y";
             this.numericPoint5_Y.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint5_Y.TabIndex = 14;
+            this.numericPoint5_Y.TabIndex = 10;
             this.numericPoint5_Y.Value = new decimal(new int[] {
             150,
             0,
@@ -404,7 +404,7 @@ namespace Task2
             0});
             this.numericPoint5_X.Name = "numericPoint5_X";
             this.numericPoint5_X.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint5_X.TabIndex = 13;
+            this.numericPoint5_X.TabIndex = 9;
             this.numericPoint5_X.Value = new decimal(new int[] {
             50,
             0,
@@ -426,7 +426,7 @@ namespace Task2
             0});
             this.numericPoint4_Y.Name = "numericPoint4_Y";
             this.numericPoint4_Y.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint4_Y.TabIndex = 12;
+            this.numericPoint4_Y.TabIndex = 8;
             this.numericPoint4_Y.Value = new decimal(new int[] {
             150,
             0,
@@ -448,7 +448,7 @@ namespace Task2
             0});
             this.numericPoint4_X.Name = "numericPoint4_X";
             this.numericPoint4_X.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint4_X.TabIndex = 11;
+            this.numericPoint4_X.TabIndex = 7;
             this.numericPoint4_X.Value = new decimal(new int[] {
             150,
             0,
@@ -470,7 +470,7 @@ namespace Task2
             0});
             this.numericPoint3_Y.Name = "numericPoint3_Y";
             this.numericPoint3_Y.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint3_Y.TabIndex = 10;
+            this.numericPoint3_Y.TabIndex = 6;
             this.numericPoint3_Y.Value = new decimal(new int[] {
             65,
             0,
@@ -492,7 +492,7 @@ namespace Task2
             0});
             this.numericPoint3_X.Name = "numericPoint3_X";
             this.numericPoint3_X.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint3_X.TabIndex = 9;
+            this.numericPoint3_X.TabIndex = 5;
             this.numericPoint3_X.Value = new decimal(new int[] {
             175,
             0,
@@ -514,7 +514,7 @@ namespace Task2
             0});
             this.numericPoint2_Y.Name = "numericPoint2_Y";
             this.numericPoint2_Y.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint2_Y.TabIndex = 8;
+            this.numericPoint2_Y.TabIndex = 4;
             this.numericPoint2_Y.Value = new decimal(new int[] {
             10,
             0,
@@ -536,7 +536,7 @@ namespace Task2
             0});
             this.numericPoint2_X.Name = "numericPoint2_X";
             this.numericPoint2_X.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint2_X.TabIndex = 7;
+            this.numericPoint2_X.TabIndex = 3;
             this.numericPoint2_X.Value = new decimal(new int[] {
             100,
             0,
@@ -549,7 +549,7 @@ namespace Task2
             this.buttonHidePanelSettingAbstractFigure.Location = new System.Drawing.Point(18, 250);
             this.buttonHidePanelSettingAbstractFigure.Name = "buttonHidePanelSettingAbstractFigure";
             this.buttonHidePanelSettingAbstractFigure.Size = new System.Drawing.Size(272, 30);
-            this.buttonHidePanelSettingAbstractFigure.TabIndex = 6;
+            this.buttonHidePanelSettingAbstractFigure.TabIndex = 13;
             this.buttonHidePanelSettingAbstractFigure.Text = "Скрыть панель настроек";
             this.buttonHidePanelSettingAbstractFigure.UseVisualStyleBackColor = true;
             this.buttonHidePanelSettingAbstractFigure.Click += new System.EventHandler(this.buttonHidePanelSettingAbstractFigure_Click);
@@ -560,7 +560,7 @@ namespace Task2
             this.buttonSaveAbstractFigure.Location = new System.Drawing.Point(18, 214);
             this.buttonSaveAbstractFigure.Name = "buttonSaveAbstractFigure";
             this.buttonSaveAbstractFigure.Size = new System.Drawing.Size(272, 30);
-            this.buttonSaveAbstractFigure.TabIndex = 5;
+            this.buttonSaveAbstractFigure.TabIndex = 12;
             this.buttonSaveAbstractFigure.Text = "Отобразить на форме и сохранить";
             this.buttonSaveAbstractFigure.UseVisualStyleBackColor = true;
             this.buttonSaveAbstractFigure.Click += new System.EventHandler(this.buttonSaveAbstractFigure_Click);
@@ -571,7 +571,7 @@ namespace Task2
             this.buttonFillingAbstractFigure.Location = new System.Drawing.Point(18, 178);
             this.buttonFillingAbstractFigure.Name = "buttonFillingAbstractFigure";
             this.buttonFillingAbstractFigure.Size = new System.Drawing.Size(272, 30);
-            this.buttonFillingAbstractFigure.TabIndex = 4;
+            this.buttonFillingAbstractFigure.TabIndex = 11;
             this.buttonFillingAbstractFigure.Text = "Выбор цвета заливки:";
             this.buttonFillingAbstractFigure.UseVisualStyleBackColor = true;
             this.buttonFillingAbstractFigure.Click += new System.EventHandler(this.buttonFilling_Click);
@@ -591,7 +591,7 @@ namespace Task2
             0});
             this.numericPoint1_Y.Name = "numericPoint1_Y";
             this.numericPoint1_Y.Size = new System.Drawing.Size(58, 20);
-            this.numericPoint1_Y.TabIndex = 3;
+            this.numericPoint1_Y.TabIndex = 2;
             this.numericPoint1_Y.Value = new decimal(new int[] {
             65,
             0,
