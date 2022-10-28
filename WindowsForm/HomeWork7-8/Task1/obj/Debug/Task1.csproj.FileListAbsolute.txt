@@ -1,0 +1,10 @@
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task1\bin\Debug\Task1.exe.config
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task1\bin\Debug\Task1.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task1\bin\Debug\Task1.pdb
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task1\obj\Debug\Task1.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task1\obj\Debug\Task1.FormResume.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task1\obj\Debug\Task1.Properties.Resources.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task1\obj\Debug\Task1.csproj.GenerateResource.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task1\obj\Debug\Task1.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task1\obj\Debug\Task1.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task1\obj\Debug\Task1.pdb

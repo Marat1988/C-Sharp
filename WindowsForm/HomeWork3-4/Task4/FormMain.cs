@@ -143,5 +143,10 @@ namespace Task4
             }
             catch (Exception) { }
         }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 }
