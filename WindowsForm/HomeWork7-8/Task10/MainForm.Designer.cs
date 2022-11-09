@@ -85,7 +85,7 @@ namespace Task10
             this.labelCountDays.AutoSize = true;
             this.labelCountDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCountDays.ForeColor = System.Drawing.Color.Red;
-            this.labelCountDays.Location = new System.Drawing.Point(175, 257);
+            this.labelCountDays.Location = new System.Drawing.Point(112, 293);
             this.labelCountDays.Name = "labelCountDays";
             this.labelCountDays.Size = new System.Drawing.Size(0, 20);
             this.labelCountDays.TabIndex = 5;
@@ -113,6 +113,7 @@ namespace Task10
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerBegin);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Количество дней между двумя датами";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
             this.ResumeLayout(false);
