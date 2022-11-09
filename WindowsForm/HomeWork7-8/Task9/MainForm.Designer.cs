@@ -30,6 +30,7 @@ namespace Task9
         private void InitializeComponent()
         {
             this.groupBoxProfile = new System.Windows.Forms.GroupBox();
+            this.buttonSaveProfileTextFile = new System.Windows.Forms.Button();
             this.textBoxAdditionalInfo = new System.Windows.Forms.TextBox();
             this.labelAdditionalInfo = new System.Windows.Forms.Label();
             this.dateTimePickerBirthday = new System.Windows.Forms.DateTimePicker();
@@ -44,7 +45,6 @@ namespace Task9
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxSurName = new System.Windows.Forms.TextBox();
             this.labelSurName = new System.Windows.Forms.Label();
-            this.buttonSaveProfileTextFile = new System.Windows.Forms.Button();
             this.groupBoxProfile.SuspendLayout();
             this.groupBoxGender.SuspendLayout();
             this.SuspendLayout();
@@ -64,18 +64,30 @@ namespace Task9
             this.groupBoxProfile.Controls.Add(this.textBoxSurName);
             this.groupBoxProfile.Controls.Add(this.labelSurName);
             this.groupBoxProfile.Location = new System.Drawing.Point(16, 15);
-            this.groupBoxProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxProfile.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxProfile.Name = "groupBoxProfile";
-            this.groupBoxProfile.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxProfile.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxProfile.Size = new System.Drawing.Size(673, 392);
             this.groupBoxProfile.TabIndex = 0;
             this.groupBoxProfile.TabStop = false;
             this.groupBoxProfile.Text = "Анкета:";
             // 
+            // buttonSaveProfileTextFile
+            // 
+            this.buttonSaveProfileTextFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSaveProfileTextFile.Location = new System.Drawing.Point(408, 306);
+            this.buttonSaveProfileTextFile.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSaveProfileTextFile.Name = "buttonSaveProfileTextFile";
+            this.buttonSaveProfileTextFile.Size = new System.Drawing.Size(240, 58);
+            this.buttonSaveProfileTextFile.TabIndex = 7;
+            this.buttonSaveProfileTextFile.Text = "Сохранить в файл";
+            this.buttonSaveProfileTextFile.UseVisualStyleBackColor = true;
+            this.buttonSaveProfileTextFile.Click += new System.EventHandler(this.buttonSaveProfileTextFile_Click);
+            // 
             // textBoxAdditionalInfo
             // 
             this.textBoxAdditionalInfo.Location = new System.Drawing.Point(165, 179);
-            this.textBoxAdditionalInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAdditionalInfo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAdditionalInfo.Multiline = true;
             this.textBoxAdditionalInfo.Name = "textBoxAdditionalInfo";
             this.textBoxAdditionalInfo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -95,7 +107,7 @@ namespace Task9
             // dateTimePickerBirthday
             // 
             this.dateTimePickerBirthday.Location = new System.Drawing.Point(418, 68);
-            this.dateTimePickerBirthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerBirthday.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
             this.dateTimePickerBirthday.Size = new System.Drawing.Size(195, 22);
             this.dateTimePickerBirthday.TabIndex = 4;
@@ -117,9 +129,9 @@ namespace Task9
             this.groupBoxGender.Controls.Add(this.radioButtonWoman);
             this.groupBoxGender.Controls.Add(this.radioButtonMens);
             this.groupBoxGender.Location = new System.Drawing.Point(12, 112);
-            this.groupBoxGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxGender.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxGender.Name = "groupBoxGender";
-            this.groupBoxGender.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxGender.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxGender.Size = new System.Drawing.Size(333, 59);
             this.groupBoxGender.TabIndex = 5;
             this.groupBoxGender.TabStop = false;
@@ -130,7 +142,7 @@ namespace Task9
             this.radioButtonIt.AutoSize = true;
             this.radioButtonIt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButtonIt.Location = new System.Drawing.Point(271, 23);
-            this.radioButtonIt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonIt.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonIt.Name = "radioButtonIt";
             this.radioButtonIt.Size = new System.Drawing.Size(59, 21);
             this.radioButtonIt.TabIndex = 2;
@@ -142,7 +154,7 @@ namespace Task9
             this.radioButtonWoman.AutoSize = true;
             this.radioButtonWoman.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButtonWoman.Location = new System.Drawing.Point(133, 23);
-            this.radioButtonWoman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonWoman.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonWoman.Name = "radioButtonWoman";
             this.radioButtonWoman.Size = new System.Drawing.Size(95, 21);
             this.radioButtonWoman.TabIndex = 1;
@@ -155,7 +167,7 @@ namespace Task9
             this.radioButtonMens.Checked = true;
             this.radioButtonMens.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButtonMens.Location = new System.Drawing.Point(8, 23);
-            this.radioButtonMens.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonMens.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonMens.Name = "radioButtonMens";
             this.radioButtonMens.Size = new System.Drawing.Size(93, 21);
             this.radioButtonMens.TabIndex = 0;
@@ -166,7 +178,7 @@ namespace Task9
             // textBoxMiddleName
             // 
             this.textBoxMiddleName.Location = new System.Drawing.Point(116, 70);
-            this.textBoxMiddleName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxMiddleName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMiddleName.Name = "textBoxMiddleName";
             this.textBoxMiddleName.Size = new System.Drawing.Size(133, 22);
             this.textBoxMiddleName.TabIndex = 3;
@@ -185,7 +197,7 @@ namespace Task9
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(418, 38);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(133, 22);
             this.textBoxName.TabIndex = 2;
@@ -204,7 +216,7 @@ namespace Task9
             // textBoxSurName
             // 
             this.textBoxSurName.Location = new System.Drawing.Point(116, 33);
-            this.textBoxSurName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSurName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSurName.Name = "textBoxSurName";
             this.textBoxSurName.Size = new System.Drawing.Size(133, 22);
             this.textBoxSurName.TabIndex = 1;
@@ -220,25 +232,14 @@ namespace Task9
             this.labelSurName.TabIndex = 0;
             this.labelSurName.Text = "Фамилия:";
             // 
-            // buttonSaveProfileTextFile
-            // 
-            this.buttonSaveProfileTextFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSaveProfileTextFile.Location = new System.Drawing.Point(408, 306);
-            this.buttonSaveProfileTextFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonSaveProfileTextFile.Name = "buttonSaveProfileTextFile";
-            this.buttonSaveProfileTextFile.Size = new System.Drawing.Size(240, 58);
-            this.buttonSaveProfileTextFile.TabIndex = 7;
-            this.buttonSaveProfileTextFile.Text = "Сохранить в файл";
-            this.buttonSaveProfileTextFile.UseVisualStyleBackColor = true;
-            this.buttonSaveProfileTextFile.Click += new System.EventHandler(this.buttonSaveProfileTextFile_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 433);
             this.Controls.Add(this.groupBoxProfile);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Анкета";
