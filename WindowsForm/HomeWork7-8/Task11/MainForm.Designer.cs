@@ -33,6 +33,8 @@ namespace Task11
             this.textBoxMonth = new System.Windows.Forms.TextBox();
             this.textBoxYear = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxDays
@@ -68,11 +70,31 @@ namespace Task11
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(111, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 23);
+            this.label1.TabIndex = 4;
+            this.label1.Text = ".";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(206, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 23);
+            this.label2.TabIndex = 5;
+            this.label2.Text = ".";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.textBoxYear);
             this.Controls.Add(this.textBoxMonth);
@@ -90,6 +112,8 @@ namespace Task11
         private System.Windows.Forms.TextBox textBoxMonth;
         private System.Windows.Forms.TextBox textBoxYear;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
