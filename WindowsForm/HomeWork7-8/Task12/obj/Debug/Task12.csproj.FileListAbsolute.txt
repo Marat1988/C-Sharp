@@ -8,3 +8,13 @@ C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task12\obj\Debug\Ta
 C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task12\obj\Debug\Task12.csproj.CoreCompileInputs.cache
 C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task12\obj\Debug\Task12.exe
 C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork7-8\Task12\obj\Debug\Task12.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork7-8\Task12\bin\Debug\Task12.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork7-8\Task12\bin\Debug\Task12.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork7-8\Task12\bin\Debug\Task12.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork7-8\Task12\obj\Debug\Task12.csproj.AssemblyReference.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork7-8\Task12\obj\Debug\Task12.MainForm.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork7-8\Task12\obj\Debug\Task12.Properties.Resources.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork7-8\Task12\obj\Debug\Task12.csproj.GenerateResource.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork7-8\Task12\obj\Debug\Task12.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork7-8\Task12\obj\Debug\Task12.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\C-Sharp\WindowsForm\HomeWork7-8\Task12\obj\Debug\Task12.pdb

@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace Task12
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonLoadTextFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Текстовые файлы(*txt)|*.txt";
@@ -28,25 +28,16 @@ namespace Task12
             {
                 using (StreamReader reader = File.OpenText(openFileDialog.FileName))
                 {
-                    string text = reader.ReadToEnd();
-
-                        string text2 = text;
-                        //progressBar1.Maximum = text.Length;
-                        for (int i = 0; i < text.Length-1; i++)
-                        {
-
-                        Task.Run(() => {
-                            textBox1.Text += text[i];
-                            progressBar1.Value++;
-
-
-                        });
-                           
-                           // System.Threading.Thread.Sleep(100);
-                        }
-                    
- 
-                }
+                    string textFromFile = reader.ReadToEnd();
+                    progressBar1.Maximum = textFromFile.Length;
+                    for (int i = 0; i < textFromFile.Length; i++)
+                    {
+                        textBoxDescription.Text += textFromFile[i];
+                        System.Threading.Thread.Sleep(100);
+                        progressBar1.Value++;
+                    }
+                    MessageBox.Show($"Количество символов в тексте {textFromFile.Length}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }                  
             }
         }
     }
