@@ -50,7 +50,7 @@ namespace Task13
             this.buttonDownloadFromTextFile = new System.Windows.Forms.Button();
             this.labelInfo = new System.Windows.Forms.Label();
             this.buttonExportXMLFile = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonDownloadFromXMLFile = new System.Windows.Forms.Button();
             this.groupBoxPersonalData.SuspendLayout();
             this.contextMenuStripEditDeleteUser.SuspendLayout();
             this.SuspendLayout();
@@ -88,9 +88,9 @@ namespace Task13
             this.labelName.AutoSize = true;
             this.labelName.Location = new System.Drawing.Point(7, 29);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(32, 13);
+            this.labelName.Size = new System.Drawing.Size(29, 13);
             this.labelName.TabIndex = 0;
-            this.labelName.Text = "Имя:";
+            this.labelName.Text = "Имя";
             // 
             // textBoxName
             // 
@@ -104,9 +104,9 @@ namespace Task13
             this.labelSurname.AutoSize = true;
             this.labelSurname.Location = new System.Drawing.Point(7, 67);
             this.labelSurname.Name = "labelSurname";
-            this.labelSurname.Size = new System.Drawing.Size(59, 13);
+            this.labelSurname.Size = new System.Drawing.Size(56, 13);
             this.labelSurname.TabIndex = 2;
-            this.labelSurname.Text = "Фамилия:";
+            this.labelSurname.Text = "Фамилия";
             // 
             // textBoxSurName
             // 
@@ -120,9 +120,9 @@ namespace Task13
             this.labelMail.AutoSize = true;
             this.labelMail.Location = new System.Drawing.Point(7, 108);
             this.labelMail.Name = "labelMail";
-            this.labelMail.Size = new System.Drawing.Size(37, 13);
+            this.labelMail.Size = new System.Drawing.Size(34, 13);
             this.labelMail.TabIndex = 5;
-            this.labelMail.Text = "e-mail:";
+            this.labelMail.Text = "e-mail";
             // 
             // textBoxMail
             // 
@@ -136,9 +136,9 @@ namespace Task13
             this.labelTelephone.AutoSize = true;
             this.labelTelephone.Location = new System.Drawing.Point(6, 149);
             this.labelTelephone.Name = "labelTelephone";
-            this.labelTelephone.Size = new System.Drawing.Size(69, 13);
+            this.labelTelephone.Size = new System.Drawing.Size(52, 13);
             this.labelTelephone.TabIndex = 7;
-            this.labelTelephone.Text = "Моб. номер:";
+            this.labelTelephone.Text = "Телефон";
             // 
             // textBoxTelephone
             // 
@@ -235,21 +235,22 @@ namespace Task13
             this.buttonExportXMLFile.UseVisualStyleBackColor = true;
             this.buttonExportXMLFile.Click += new System.EventHandler(this.buttonExportXMLFile_Click);
             // 
-            // button2
+            // buttonDownloadFromXMLFile
             // 
-            this.button2.Location = new System.Drawing.Point(518, 371);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 54);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Импорт из XML файла";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonDownloadFromXMLFile.Location = new System.Drawing.Point(518, 371);
+            this.buttonDownloadFromXMLFile.Name = "buttonDownloadFromXMLFile";
+            this.buttonDownloadFromXMLFile.Size = new System.Drawing.Size(134, 54);
+            this.buttonDownloadFromXMLFile.TabIndex = 7;
+            this.buttonDownloadFromXMLFile.Text = "Импорт из XML файла";
+            this.buttonDownloadFromXMLFile.UseVisualStyleBackColor = true;
+            this.buttonDownloadFromXMLFile.Click += new System.EventHandler(this.buttonDownloadFromXMLFile_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 450);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(692, 450);
+            this.Controls.Add(this.buttonDownloadFromXMLFile);
             this.Controls.Add(this.buttonExportXMLFile);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.buttonDownloadFromTextFile);
@@ -258,7 +259,8 @@ namespace Task13
             this.Controls.Add(this.listBoxUser);
             this.Controls.Add(this.groupBoxPersonalData);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Пользователи";
             this.groupBoxPersonalData.ResumeLayout(false);
             this.groupBoxPersonalData.PerformLayout();
             this.contextMenuStripEditDeleteUser.ResumeLayout(false);
@@ -288,7 +290,7 @@ namespace Task13
         private System.Windows.Forms.Button buttonDownloadFromTextFile;
         private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.Button buttonExportXMLFile;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonDownloadFromXMLFile;
     }
 }
 

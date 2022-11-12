@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Task13
@@ -104,6 +99,7 @@ namespace Task13
 
         private void buttonExportXMLFile_Click(object sender, EventArgs e)
         {
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Текстовый файлы(*.xml)|*.xml";
             saveFileDialog.FilterIndex = 1;
@@ -120,10 +116,18 @@ namespace Task13
                     for (int i = 0; i < listBoxUser.Items.Count; i++)
                     {
                         writer.WriteStartElement("People");
-                        string[] userInfo = listBoxUser.Items[i].ToString().Split('\t');
-                        for (int j = 0; j < userInfo.Length; j++)
+                        listBoxUser.SelectedIndex = i;
+                        string[] user = listBoxUser.SelectedItem?.ToString().Split('\t');
+                        int index = 0;
+                        for (int j = 0; j < groupBoxPersonalData.Controls.Count; j++)
                         {
-                            writer.WriteAttributeString("Свойство" + j, userInfo[j]);
+                            if (groupBoxPersonalData.Controls[j] is TextBoxBase)
+                            {
+                                (groupBoxPersonalData.Controls[j] as TextBoxBase).Text = user?[index];
+                                var label = groupBoxPersonalData.Controls[(groupBoxPersonalData.Controls[j] as TextBoxBase).Name.Replace("textBox", "label")];
+                                writer.WriteAttributeString(label.Text, (groupBoxPersonalData.Controls[j] as TextBoxBase).Text);
+                                index++;
+                            }
                         }
                         writer.WriteEndElement();
                     }
@@ -139,6 +143,49 @@ namespace Task13
                         writer.Close();
                 }
             }
+        }
+
+        private void buttonDownloadFromXMLFile_Click(object sender, EventArgs e)
+        {
+            listBoxUser.Items.Clear();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Текстовый файлы(*.xml)|*.xml"; ;
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                XmlTextReader reader = null;
+                try
+                {
+                    reader = new XmlTextReader(openFileDialog.FileName);
+                    reader.ReadStartElement("Peoples");
+                    reader.WhitespaceHandling = WhitespaceHandling.None;
+                    while (reader.Read())
+                    {
+                        if (reader.AttributeCount > 0)
+                        {
+                            string textReader = "";
+                            while (reader.MoveToNextAttribute())
+                            {
+                                textReader += reader.Value + "\t";
+                            }
+                            listBoxUser.Items.Add(textReader.Remove(textReader.Length - 1, 1));
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (reader != null)
+                    {
+                        reader.Close();
+                    }
+                }
+            }
+            UpdateStatusEnableElement();
         }
     }
 }
