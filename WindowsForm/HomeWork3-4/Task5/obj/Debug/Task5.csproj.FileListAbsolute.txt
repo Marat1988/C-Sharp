@@ -1,0 +1,11 @@
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork3-4\Task5\bin\Debug\Task5.exe.config
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork3-4\Task5\bin\Debug\Task5.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork3-4\Task5\bin\Debug\Task5.pdb
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork3-4\Task5\obj\Debug\Task5.FormChild.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork3-4\Task5\obj\Debug\Task5.MainForm.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork3-4\Task5\obj\Debug\Task5.Properties.Resources.resources
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork3-4\Task5\obj\Debug\Task5.csproj.GenerateResource.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork3-4\Task5\obj\Debug\Task5.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork3-4\Task5\obj\Debug\Task5.exe
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork3-4\Task5\obj\Debug\Task5.pdb
+C:\Users\HP\Documents\Шаг\C-Sharp\WindowsForm\HomeWork3-4\Task5\obj\Debug\Task5.csproj.AssemblyReference.cache
