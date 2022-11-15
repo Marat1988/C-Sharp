@@ -26,6 +26,8 @@ namespace Task5
             numberFormChild++;
         }
 
+
+
         private void closeAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach(Form form in this.MdiChildren)
@@ -38,6 +40,12 @@ namespace Task5
         private void tileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.LayoutMdi((MdiLayout)int.Parse((sender as ToolStripMenuItem).Tag.ToString()));
+        }
+
+        public Form[] getFormChild()
+        {
+            Form[] forms = MdiChildren;
+            return forms;
         }
     }
 }
