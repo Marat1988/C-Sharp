@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,7 @@ namespace Task5
         [Serializable]
         public class Employee
         {
+            [XmlAttribute("Id")]
             public int Id { get; set; }
             public string SurName { get; set; }
             public string Name { get; set; }
@@ -24,23 +26,34 @@ namespace Task5
             public DateTime BirthDay { get; set; }
             public string PlaceBirth { get; set; }
             [XmlIgnore]
-            public DateTime DateTimeCreateObject = new DateTime(1988, 3, 7);
+            public DateTime DateTimeCreateObject;
 
             public Employee() { }
 
             public Employee(int id, string surName, string name, string middleName, DateTime birthDay, string placeBirth)
             {
                 this.Id = id;
-                this.SurName = surName ?? "Нет фамилии";
-                this.Name = name ?? "Нет имени";
-                this.MiddleName = middleName ?? "Нет отчества";
+                this.SurName = (surName.Length > 0) ? surName : "Нет фамилии";
+                this.Name = (name.Length > 0) ? name: "Нет имени";
+                this.MiddleName = (middleName.Length > 0) ? middleName : "Нет отчества";
                 this.BirthDay = birthDay;
-                this.PlaceBirth = placeBirth ?? "Нет места рождения";
+                this.PlaceBirth = (placeBirth.Length > 0) ? placeBirth : "Нет места рождения";
+            }
+
+            //Вызывется во время процесса сериализации
+            private void OnSerializing(StreamingContext context)
+            {
+                DateTimeCreateObject = DateTimeCreateObject.ToUniversalTime();
+            }
+
+            //вызывается по завершению процесса десериализации
+            [OnDeserialized]
+            private void OnDeserialized(StreamingContext context)
+            {
+                DateTimeCreateObject = DateTime.Now;
             }
         }
         private List<Employee> employees = new List<Employee>();
-
-
 
         public FormChild(int numberFormChild)
         {         
@@ -61,7 +74,7 @@ namespace Task5
 
         private void buttonAddEmployee_Click(object sender, EventArgs e)
         {
-            Employee newEmployee = new Employee(employees.Count + 1, textBoxSurName.Text, textBoxName.Text, textBoxMiddleName.Text, dateTimePickerBirthDay.Value, textBoxPlaceBirth.Text);
+            Employee newEmployee = new Employee(employees.Count + 1, textBoxSurName.Text, textBoxName.Text, textBoxMiddleName.Text, dateTimePickerBirthDay.Value.Date, textBoxPlaceBirth.Text);
             employees.Add(newEmployee);
             UpdateEmployee();
         }
@@ -155,7 +168,6 @@ namespace Task5
                 }
             }
         }
-
         private void buttonGetChildForms_Click(object sender, EventArgs e)
         {
             foreach (Form forms in this.ParentForm.MdiChildren)
@@ -182,6 +194,27 @@ namespace Task5
                     form.DataTransfer(employees);
                 }
             }
+        }
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            var result = from element in employees
+                         where element.PlaceBirth == textBoxCitySearch.Text
+                         select new { Id = element.Id,
+                                      SurName = element.SurName,
+                                      Name = element.Name,
+                                      MiddleName = element.MiddleName,
+                                      BirthDay = element.BirthDay,
+                                      PlaceBirth = element.PlaceBirth,
+                                      Age = DateTime.Now.Year-element.BirthDay.Year};
+
+            string message = "";
+            foreach (var item in result)
+            {
+                message += item.SurName + "\t" + item.Age + "\n";
+            }
+            MessageBox.Show(message, "Сотрудники", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Количество сотрудников: { result.Count()}", "Количество сотрудников", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }
