@@ -54,13 +54,19 @@ namespace Task5
             this.buttonDataTransfer = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
-            this.labelCitySearch = new System.Windows.Forms.Label();
             this.textBoxCitySearch = new System.Windows.Forms.TextBox();
+            this.labelCitySearch = new System.Windows.Forms.Label();
             this.groupBoxFile = new System.Windows.Forms.GroupBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSaveOtherXMLFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItembuttonSaveXMLFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemLoadXMLFile = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployees)).BeginInit();
             this.groupBoxEmployees.SuspendLayout();
             this.groupBoxSearch.SuspendLayout();
             this.groupBoxFile.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewEmployees
@@ -68,12 +74,12 @@ namespace Task5
             this.dataGridViewEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmployees.Location = new System.Drawing.Point(16, 89);
+            this.dataGridViewEmployees.Location = new System.Drawing.Point(16, 128);
             this.dataGridViewEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewEmployees.MultiSelect = false;
             this.dataGridViewEmployees.Name = "dataGridViewEmployees";
             this.dataGridViewEmployees.RowHeadersWidth = 51;
-            this.dataGridViewEmployees.Size = new System.Drawing.Size(759, 214);
+            this.dataGridViewEmployees.Size = new System.Drawing.Size(746, 214);
             this.dataGridViewEmployees.TabIndex = 2;
             // 
             // groupBoxEmployees
@@ -89,7 +95,7 @@ namespace Task5
             this.groupBoxEmployees.Controls.Add(this.labelName);
             this.groupBoxEmployees.Controls.Add(this.textBoxSurName);
             this.groupBoxEmployees.Controls.Add(this.labelSurName);
-            this.groupBoxEmployees.Location = new System.Drawing.Point(16, 311);
+            this.groupBoxEmployees.Location = new System.Drawing.Point(16, 352);
             this.groupBoxEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxEmployees.Name = "groupBoxEmployees";
             this.groupBoxEmployees.Padding = new System.Windows.Forms.Padding(4);
@@ -216,7 +222,7 @@ namespace Task5
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(16, 60);
+            this.label1.Location = new System.Drawing.Point(16, 99);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(700, 25);
@@ -263,7 +269,7 @@ namespace Task5
             // 
             this.labelCurrentFilePath.AutoSize = true;
             this.labelCurrentFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCurrentFilePath.Location = new System.Drawing.Point(21, 16);
+            this.labelCurrentFilePath.Location = new System.Drawing.Point(18, 49);
             this.labelCurrentFilePath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCurrentFilePath.Name = "labelCurrentFilePath";
             this.labelCurrentFilePath.Size = new System.Drawing.Size(159, 17);
@@ -272,7 +278,7 @@ namespace Task5
             // 
             // textBoxCurrentFilePath
             // 
-            this.textBoxCurrentFilePath.Location = new System.Drawing.Point(197, 12);
+            this.textBoxCurrentFilePath.Location = new System.Drawing.Point(204, 49);
             this.textBoxCurrentFilePath.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCurrentFilePath.Name = "textBoxCurrentFilePath";
             this.textBoxCurrentFilePath.ReadOnly = true;
@@ -284,7 +290,7 @@ namespace Task5
             this.listBoxChildForms.FormattingEnabled = true;
             this.listBoxChildForms.HorizontalScrollbar = true;
             this.listBoxChildForms.ItemHeight = 16;
-            this.listBoxChildForms.Location = new System.Drawing.Point(735, 322);
+            this.listBoxChildForms.Location = new System.Drawing.Point(735, 352);
             this.listBoxChildForms.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxChildForms.Name = "listBoxChildForms";
             this.listBoxChildForms.ScrollAlwaysVisible = true;
@@ -294,7 +300,7 @@ namespace Task5
             // buttonGetChildForms
             // 
             this.buttonGetChildForms.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonGetChildForms.Location = new System.Drawing.Point(735, 526);
+            this.buttonGetChildForms.Location = new System.Drawing.Point(735, 556);
             this.buttonGetChildForms.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGetChildForms.Name = "buttonGetChildForms";
             this.buttonGetChildForms.Size = new System.Drawing.Size(407, 44);
@@ -306,7 +312,7 @@ namespace Task5
             // buttonDataTransfer
             // 
             this.buttonDataTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDataTransfer.Location = new System.Drawing.Point(735, 578);
+            this.buttonDataTransfer.Location = new System.Drawing.Point(735, 608);
             this.buttonDataTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDataTransfer.Name = "buttonDataTransfer";
             this.buttonDataTransfer.Size = new System.Drawing.Size(407, 48);
@@ -330,12 +336,20 @@ namespace Task5
             this.groupBoxSearch.Controls.Add(this.textBoxCitySearch);
             this.groupBoxSearch.Controls.Add(this.labelCitySearch);
             this.groupBoxSearch.Controls.Add(this.buttonSearch);
-            this.groupBoxSearch.Location = new System.Drawing.Point(782, 5);
+            this.groupBoxSearch.Location = new System.Drawing.Point(782, 99);
             this.groupBoxSearch.Name = "groupBoxSearch";
-            this.groupBoxSearch.Size = new System.Drawing.Size(358, 298);
+            this.groupBoxSearch.Size = new System.Drawing.Size(358, 243);
             this.groupBoxSearch.TabIndex = 17;
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "Поиск:";
+            // 
+            // textBoxCitySearch
+            // 
+            this.textBoxCitySearch.Location = new System.Drawing.Point(120, 33);
+            this.textBoxCitySearch.Name = "textBoxCitySearch";
+            this.textBoxCitySearch.Size = new System.Drawing.Size(226, 22);
+            this.textBoxCitySearch.TabIndex = 18;
+            this.textBoxCitySearch.Text = "Калининград";
             // 
             // labelCitySearch
             // 
@@ -346,33 +360,67 @@ namespace Task5
             this.labelCitySearch.TabIndex = 17;
             this.labelCitySearch.Text = "Введите город:";
             // 
-            // textBoxCitySearch
-            // 
-            this.textBoxCitySearch.Location = new System.Drawing.Point(120, 33);
-            this.textBoxCitySearch.Name = "textBoxCitySearch";
-            this.textBoxCitySearch.Size = new System.Drawing.Size(226, 22);
-            this.textBoxCitySearch.TabIndex = 18;
-            this.textBoxCitySearch.Text = "Калининград";
-            // 
             // groupBoxFile
             // 
             this.groupBoxFile.Controls.Add(this.buttonSaveOtherXMLFile);
             this.groupBoxFile.Controls.Add(this.buttonSaveXMLFile);
             this.groupBoxFile.Controls.Add(this.buttonLoadXMLFile);
             this.groupBoxFile.Controls.Add(this.buttonRemoveEmployee);
-            this.groupBoxFile.Location = new System.Drawing.Point(394, 311);
+            this.groupBoxFile.Location = new System.Drawing.Point(394, 352);
             this.groupBoxFile.Name = "groupBoxFile";
             this.groupBoxFile.Size = new System.Drawing.Size(334, 259);
             this.groupBoxFile.TabIndex = 18;
             this.groupBoxFile.TabStop = false;
             this.groupBoxFile.Text = "Действия с файлами";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1184, 28);
+            this.menuStrip1.TabIndex = 19;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemSaveOtherXMLFile,
+            this.ToolStripMenuItembuttonSaveXMLFile,
+            this.ToolStripMenuItemLoadXMLFile});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // ToolStripMenuItemSaveOtherXMLFile
+            // 
+            this.ToolStripMenuItemSaveOtherXMLFile.Name = "ToolStripMenuItemSaveOtherXMLFile";
+            this.ToolStripMenuItemSaveOtherXMLFile.Size = new System.Drawing.Size(304, 26);
+            this.ToolStripMenuItemSaveOtherXMLFile.Text = "Сохранить в другой XML-файл";
+            this.ToolStripMenuItemSaveOtherXMLFile.Click += new System.EventHandler(this.buttonSaveOtherXMLFile_Click);
+            // 
+            // ToolStripMenuItembuttonSaveXMLFile
+            // 
+            this.ToolStripMenuItembuttonSaveXMLFile.Name = "ToolStripMenuItembuttonSaveXMLFile";
+            this.ToolStripMenuItembuttonSaveXMLFile.Size = new System.Drawing.Size(304, 26);
+            this.ToolStripMenuItembuttonSaveXMLFile.Text = "Сохранить текущий XML-файл";
+            this.ToolStripMenuItembuttonSaveXMLFile.Click += new System.EventHandler(this.buttonSaveXMLFile_Click);
+            // 
+            // ToolStripMenuItemLoadXMLFile
+            // 
+            this.ToolStripMenuItemLoadXMLFile.Name = "ToolStripMenuItemLoadXMLFile";
+            this.ToolStripMenuItemLoadXMLFile.Size = new System.Drawing.Size(304, 26);
+            this.ToolStripMenuItemLoadXMLFile.Text = "Загрузить из XML-файла";
+            this.ToolStripMenuItemLoadXMLFile.Click += new System.EventHandler(this.buttonLoadXMLFile_Click);
+            // 
             // FormChild
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1184, 638);
+            this.ClientSize = new System.Drawing.Size(1184, 672);
             this.Controls.Add(this.groupBoxFile);
             this.Controls.Add(this.groupBoxSearch);
             this.Controls.Add(this.buttonDataTransfer);
@@ -383,6 +431,8 @@ namespace Task5
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBoxEmployees);
             this.Controls.Add(this.dataGridViewEmployees);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormChild";
             this.Text = "MDI Child";
@@ -392,6 +442,8 @@ namespace Task5
             this.groupBoxSearch.ResumeLayout(false);
             this.groupBoxSearch.PerformLayout();
             this.groupBoxFile.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,5 +478,10 @@ namespace Task5
         private System.Windows.Forms.TextBox textBoxCitySearch;
         private System.Windows.Forms.Label labelCitySearch;
         private System.Windows.Forms.GroupBox groupBoxFile;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSaveOtherXMLFile;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItembuttonSaveXMLFile;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemLoadXMLFile;
     }
 }

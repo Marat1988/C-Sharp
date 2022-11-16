@@ -216,5 +216,7 @@ namespace Task5
             MessageBox.Show($"Количество сотрудников: { result.Count()}", "Количество сотрудников", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
+
     }
 }
